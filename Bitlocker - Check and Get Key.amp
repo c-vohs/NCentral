@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="48574f48-be54-4602-b7ae-5b832a7a4502" Name="Bitlocker - Check and Get Key" Description="Q2hlY2tzIGZvciBCaXRsb2NrZXIgYW5kIHJldHJpZXZlcyBrZXkgaWYgYXBwbGljYWJsZQ==" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{2522f0de-b300-40d0-beba-c4617ecac1fe}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;BitLockKeyIn&quot; Label=&quot;Bitlocker Key Input&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;/Parameters&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;BitlockerStatus&quot; Label=&quot;Bitlocker Status&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Bitlocker Status&quot; /&gt;&lt;Parameter ParameterName=&quot;BitLockKeyOut&quot; Label=&quot;Bitlocker Key Output&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Bitlocker Key Output&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>c1b146a7-91fc-4d65-90e7-67d102071512.BitlockerStatus</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>BitlockerStatus</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>c1b146a7-91fc-4d65-90e7-67d102071512.BitLockKey</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>BitLockKeyOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.40.0.10" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,745</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,745" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" Moniker="c1b146a7-91fc-4d65-90e7-67d102071512" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="057a44df-dcf3-4094-9dd2-5c33614f244d" m_bTextLinkChange="False" script="JABCAGkAdABMAG8AYwBrAEsAZQB5ACAAPQAgACQAQgBpAHQATABvAGMAawBLAGUAeQBJAG4ADQAKACQAQgBpAHQAbABvAGMAawBlAHIAUwB0AGEAdAB1AHMAIAA9ACAAIgBFAHIAcgBvAHIAIgANAAoADQAKAGkAZgAgACgAKABHAGUAdAAtAFcATQBJAE8AYgBqAGUAYwB0ACAAdwBpAG4AMwAyAF8AbwBwAGUAcgBhAHQAaQBuAGcAcwB5AHMAdABlAG0AKQAuAG4AYQBtAGUAIAAtAG4AbwB0AGwAaQBrAGUAIAAiACoASABvAG0AZQAqACIAKQAgAHsAIAANAAoAIAAgACAAIABpAGYAIAAoAFsAYgBvAG8AbABdACgAKABHAGUAdAAtAFcAbQBpAE8AYgBqAGUAYwB0ACAALQBuAGEAbQBlAHMAcABhAGMAZQAgACIAUgBvAG8AdABcAGMAaQBtAHYAMgBcAHMAZQBjAHUAcgBpAHQAeQBcAE0AaQBjAHIAbwBzAG8AZgB0AFYAbwBsAHUAbQBlAEUAbgBjAHIAeQBwAHQAaQBvAG4AIgAgAC0AQwBsAGEAcwBzACAAIgBXAGkAbgAzADIAXwBFAG4AYwByAHkAcAB0AGEAYgBsAGUAdgBvAGwAdQBtAGUAIgAgAC0AZgBpAGwAdABlAHIAIAAiAEQAcgBpAHYAZQBMAGUAdAB0AGUAcgAgAD0AIAAnAEMAOgAnACIAKQAuAEkAcwBWAG8AbAB1AG0AZQBJAG4AaQB0AGkAYQBsAGkAegBlAGQARgBvAHIAUAByAG8AdABlAGMAdABpAG8AbgApAC4AQwBvAHUAbgB0ACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAaQBmACAAKABbAGIAbwBvAGwAXQAoAEMAOgBcAFcAaQBuAGQAbwB3AHMAXABTAHkAcwB0AGUAbQAzADIAXABiAGQAZQBoAGQAYwBmAGcAIAAtAGQAcgBpAHYAZQBpAG4AZgBvACAAfAAgAHMAZQBsAGUAYwB0AC0AcwB0AHIAaQBuAGcAIAAiAFQAaABpAHMAIABjAG8AbQBwAHUAdABlAHIAJwBzACAAaABhAHIAZAAgAGQAcgBpAHYAZQAgAGkAcwAgAHAAcgBvAHAAZQByAGwAeQAgAGMAbwBuAGYAaQBnAHUAcgBlAGQAIgApAC4AYwBvAHUAbgB0ACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIABpAGYAIAAoAFsAYgBvAG8AbABdACgAKABHAGUAdAAtAEIAaQB0AEwAbwBjAGsAZQByAFYAbwBsAHUAbQBlACAALQBNAG8AdQBuAHQAUABvAGkAbgB0ACAAQwApAC4AVgBvAGwAdQBtAGUAUwB0AGEAdAB1AHMAIAB8ACAAUwBlAGwAZQBjAHQALQBTAHQAcgBpAG4AZwAgACIARgB1AGwAbAB5AEUAbgBjAHIAeQBwAHQAZQBkACIAKQAuAEMAbwB1AG4AdAApACAAewANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIABpAGYAIAAoAFsAYgBvAG8AbABdACgAbQBhAG4AYQBnAGUALQBiAGQAZQAgAC0AcwB0AGEAdAB1AHMAIABDADoAIAB8ACAAUwBlAGwAZQBjAHQALQBTAHQAcgBpAG4AZwAgACIAVQBzAGUAZAAgAFMAcABhAGMAZQAgAE8AbgBsAHkAIABFAG4AYwByAHkAcAB0AGUAZAAiACkALgBDAG8AdQBuAHQAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAkAEIAaQB0AGwAbwBjAGsAZQByAFMAdABhAHQAdQBzACAAPQAgACIAVQBzAGUAZAAgAFMAcABhAGMAZQAgAE8AbgBsAHkAIABFAG4AYwByAHkAcAB0AGUAZAAiAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAH0ADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAaQBmACAAKABbAGIAbwBvAGwAXQAoAG0AYQBuAGEAZwBlAC0AYgBkAGUAIAAtAHMAdABhAHQAdQBzACAAQwA6ACAAfAAgAFMAZQBsAGUAYwB0AC0AUwB0AHIAaQBuAGcAIAAiAEYAdQBsAGwAeQAgAEUAbgBjAHIAeQBwAHQAZQBkACIAKQAuAEMAbwB1AG4AdAApACAAewANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACQAQgBpAHQAbABvAGMAawBlAHIAUwB0AGEAdAB1AHMAIAA9ACAAIgBGAHUAbABsAHkAIABFAG4AYwByAHkAcAB0AGUAZAAiAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAH0ADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAaQBmACAAKABbAGIAbwBvAGwAXQAoACgARwBlAHQALQBCAGkAdABMAG8AYwBrAGUAcgBWAG8AbAB1AG0AZQAgAC0ATQBvAHUAbgB0AFAAbwBpAG4AdAAgAEMAKQAuAEsAZQB5AFAAcgBvAHQAZQBjAHQAbwByAC4ASwBlAHkAUAByAG8AdABlAGMAdABvAHIAVAB5AHAAZQAgAHwAIABTAGUAbABlAGMAdAAtAFMAdAByAGkAbgBnACAAIgBSAGUAYwBvAHYAZQByAHkAUABhAHMAcwB3AG8AcgBkACIAKQAuAGMAbwB1AG4AdAApACAAewANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACQAQgBpAHQATABvAGMAawBLAGUAeQAgAD0AIAAoAEcAZQB0AC0AQgBpAHQATABvAGMAawBlAHIAVgBvAGwAdQBtAGUAIAAtAE0AbwB1AG4AdABQAG8AaQBuAHQAIABDACkALgBLAGUAeQBQAHIAbwB0AGUAYwB0AG8AcgAuAHIAZQBjAG8AdgBlAHIAeQBwAGEAcwBzAHcAbwByAGQAIAB8ACAATwB1AHQALQBTAHQAcgBpAG4AZwANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAB9AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAGUAbABzAGUAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAJABCAGkAdABMAG8AYwBrAEsAZQB5ACAAPQAgACIATgBvACAAUgBlAGMAbwB2AGUAcgB5ACAAUABhAHMAcwB3AG8AcgBkACIADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAfQANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAfQANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAZQBsAHMAZQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAJABCAGkAdABsAG8AYwBrAGUAcgBTAHQAYQB0AHUAcwAgAD0AIAAiAFIAZQBhAGQAeQAgAEIAdQB0ACAATgBvAHQAIABQAHIAbwB0AGUAYwB0AGUAZAAiAA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAB9AA0ACgAgACAAIAAgACAAIAAgACAAfQANAAoAIAAgACAAIAAgACAAIAAgAGUAbABzAGUAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAkAEIAaQB0AGwAbwBjAGsAZQByAFMAdABhAHQAdQBzACAAPQAgACIASABhAHIAZAAgAGQAcgBpAHYAZQAgAGkAcwAgAG4AbwB0ACAAYwBvAG4AZgBpAGcAdQByAGUAZAAgAGYAbwByACAAQgBpAHQAbABvAGMAawBlAHIALAAgAHIAdQBuACAAYgBkAGUAaABkAGMAZgBnACAAdABvACAAYwBvAG4AZgBpAGcAdQByAGUAIgANAAoAIAAgACAAIAAgACAAIAAgAH0ADQAKACAAIAAgACAAfQANAAoAIAAgACAAIABlAGwAcwBlACAAewANAAoAIAAgACAAIAAgACAAIAAgACMAIgBCAEkAVABMAE8AQwBLAEUAUgAgAE4ATwBUACAAVABVAFIATgBFAEQAIABPAE4AIgANAAoAIAAgACAAIAAgACAAIAAgAGkAZgAgACgAJABCAGkAdABMAG8AYwBrAEsAZQB5ACAALQBuAG8AdABtAGEAdABjAGgAIAAiAC0AIgApACAAewANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAJABCAGkAdABMAG8AYwBrAEsAZQB5ACAAPQAgACIATgBvACAAUgBlAGMAbwB2AGUAcgB5ACAAUABhAHMAcwB3AG8AcgBkACIADQAKACAAIAAgACAAIAAgACAAIAB9AA0ACgAgACAAIAAgACAAIAAgACAAIAAgACAAIAAkAFcAaQBuAFYAZQByACAAPQAgACgARwBlAHQALQBXAG0AaQBPAGIAagBlAGMAdAAgAC0AYwBsAGEAcwBzACAAVwBpAG4AMwAyAF8ATwBwAGUAcgBhAHQAaQBuAGcAUwB5AHMAdABlAG0AKQAuAEMAYQBwAHQAaQBvAG4ADQAKACAAIAAgACAAIAAgACAAIABpAGYAIAAoACQAVwBpAG4AVgBlAHIAIAAtAGwAaQBrAGUAIAAiACoAaABvAG0AZQAqACIAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACQAQgBpAHQAbABvAGMAawBlAHIAUwB0AGEAdAB1AHMAIAA9ACAAIgBOAG8AdAAgAFMAdQBwAHAAbwByAHQAZQBkACIAIAANAAoAIAAgACAAIAAgACAAIAAgAH0ADQAKACAAIAAgACAAIAAgACAAIABlAGwAcwBlACAAewANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAJABCAGkAdABsAG8AYwBrAGUAcgBTAHQAYQB0AHUAcwAgAD0AIAAiAFQAUABNACAATQBvAGQAdQBsAGUAIABpAHMAIABuAG8AdAAgAGUAbgBhAGIAbABlAGQAIABvAHIAIABuAG8AdAAgAHIAZQBhAGQAeQAiAA0ACgAgACAAIAAgACAAIAAgACAAfQANAAoAIAAgACAAIAB9AA0ACgB9AA0ACgBlAGwAcwBlACAAewANAAoAIAAgACAAIAAkAEIAaQB0AGwAbwBjAGsAZQByAFMAdABhAHQAdQBzACAAPQAgACIAQgBpAHQAbABvAGMAawBlAHIAIABuAG8AdAAgAHMAdQBwAHAAbwByAHQAZQBkACAAYgB5ACAATwBTACIADQAKAH0A">
+          <p:RunPowerShellScript.InArgs>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="BitLockKeyIn" ArgType="string" DisplayArg="Input Parameters.Bitlocker Key Input" DisplayName="Bitlocker Key Input" Name="BitLockKeyIn" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:Object">[BitLockKeyIn]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="BitlockerStatus" ArgType="string" DisplayName="Bitlocker Status" Name="BitlockerStatus">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_BitlockerStatus]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="BitLockKey" ArgType="string" DisplayName="Bitlocker Key Output" Name="BitLockKey">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_BitLockKey]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_BitlockerStatus" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_BitLockKey" />
+        <Variable x:TypeArguments="x:String" Default="no" Name="BitLockKeyIn" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

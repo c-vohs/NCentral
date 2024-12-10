@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="a0248e88-fa65-4129-953f-431477082244" Name="Log4ShellScan" Description="U2NhbnMgZmlsZXMgb24gbWFjaGluZSBmb3IgTG9nNFNoZWxsIGZpbGVzLiBPdXRwdXRzIGNvdW50cyB0byBjdXN0b20gcHJvcGVydGllcyBhbmQgbG9ncyBmaWxlcyB0byB0aGUgQzpcVGVtcCBmb2xkZXIgYXMgYSBMb2c0U2hlbGwgZmlsZSBhbmQgTG9nNFNoZWxsRmFpbCBmaWxlLg==" Version="2.16.0.1" MinRequiredVersion="2.16.0.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{260195ed-319a-475f-b728-eccd08d9d650}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;ResultsOut&quot; Label=&quot;Results&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Results Status&quot; /&gt;&lt;Parameter ParameterName=&quot;ErrResultsOut&quot; Label=&quot;Scan Error Count&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Scan Error Count&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>833f586b-e51f-4fb5-ab3b-fed567bd6558.status</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>ResultsOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>833f586b-e51f-4fb5-ab3b-fed567bd6558.checkFileErrCount</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>ErrResultsOut</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.3.1" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>490,1250</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="490,1250" MinRequiredVersion="2.16.0.1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:FolderExists Folder_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" Conditional="[FolderExists_Conditional]" DisplayName="Folder Exists" Folder="C:\Temp\" Folder_DisplayArg="C:\Temp\" Folder_Item="{x:Null}" sap:VirtualizedContainerService.HintSize="454,88" MinRequiredVersion="2.10.0.19" Moniker="74968f65-0309-4a4a-9ff9-093d4caa54d4" Result="[FolderExists_Result]" ResultString="[FolderExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="FolderExists" m_bTextLinkChange="False" />
+        <p:IfObject CaseSensitive_ItemProp="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" CaseSensitive_Item="{x:Null}" Condition="equals" Condition_DisplayArg="equals" Condition_Item="{x:Null}" DisplayName="If" sap:VirtualizedContainerService.HintSize="454,511" MinRequiredVersion="2.16.0.1" Moniker="fb08f1d5-4e4b-4f25-a6e3-68404f3a5c06" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="False" Value_Type="x:String" Variable="[FolderExists_Conditional]" Variable_DisplayArg="Folder Exists.Conditional" Variable_Item="{x:Null}" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" VerboseOutput_Item="{x:Null}" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="371,238" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:CreateFolder Folder_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Create Folder" Folder="C:\Temp\" FolderInfo="[CreateFolder_FolderInfo]" Folder_DisplayArg="C:\Temp\" Folder_Item="{x:Null}" sap:VirtualizedContainerService.HintSize="333,88" MinRequiredVersion="2.10.0.19" Moniker="9379acdb-4738-42db-8362-470745aa5c0d" Result="[CreateFolder_Result]" ResultString="[CreateFolder_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CreateFolder" m_bTextLinkChange="False" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="CreateFolder_FolderInfo" />
+                <Variable x:TypeArguments="x:Double" Name="CreateFolder_Result" />
+                <Variable x:TypeArguments="x:String" Name="CreateFolder_ResultString" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="False" />
+            </InArgument>
+          </p:IfObject.Value>
+        </p:IfObject>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="454,348" MinRequiredVersion="2.10.0.19" Moniker="833f586b-e51f-4fb5-ab3b-fed567bd6558" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="7b00c867-cd37-414a-9bbc-819588706369" m_bTextLinkChange="False" script="IwBnAGUAdAAgAGEAbABsACAAbABvAGcAaQBjAGEAbAAgAGQAaQBzAGsAcwAgAGUAeABjAGUAcAB0ACAAQQAgAGEAbgBkACAAQgAgAGQAcgBpAHYAZQBzAA0ACgAkAGQAaQBzAGsAcwAgAD0AIAAgAEcAZQB0AC0AVwBtAGkATwBiAGoAZQBjAHQAIAAtAEMAbABhAHMAcwAgAFcAaQBuADMAMgBfAGwAbwBnAGkAYwBhAGwAZABpAHMAawAgAHwAIAA/ACAAewAgACQAXwAuAEQAcgBpAHYAZQBUAHkAcABlACAALQBlAHEAIAAyACAALQBvAHIAIAAkAF8ALgBEAHIAaQB2AGUAVAB5AHAAZQAgAC0AZQBxACAAMwAgAH0AIAB8ACAAPwAgAHsAIAAkAF8ALgBGAHIAZQBlAFMAcABhAGMAZQAgAH0AIAB8ACAAJQAgAHsAIAAkAF8ALgBEAGUAdgBpAGMAZQBJAEQAIAB9AA0ACgAkAGQAaQBzAGsAcwAgAD0AIAAkAGQAaQBzAGsAcwAgAHwAIAA/ACAAewAgACQAXwAuAEQAZQB2AGkAYwBlAEkARAAgAC0AbgBvAHQAbQBhAHQAYwBoACAAIgBbAGEAYgBdADoAIgAgAH0ADQAKACQAcgBlAHMAdQBsAHQAcwAgAD0AIABAACgAKQANAAoAJABzAHQAYQB0AHUAcwAgAD0AIAAiAHUAbgBrAG4AbwB3AG4AIgANAAoADQAKACMAbABvAG8AcAAgAHQAaAByAG8AdQBnAGgAIABlAGEAYwBoACAAZAByAGkAdgBlACAAZgBvAHUAbgBkACAAYQBuAGQAIAANAAoAJABnAGUAdABGAGkAbABlAEUAcgByACAAPQAgAEAAKAApAA0ACgAkAGMAaABlAGMAawBGAGkAbABlAEUAcgByACAAPQAgAEAAKAApAA0ACgBGAG8AcgBlAGEAYwBoACAAKAAkAGQAaQBzAGsAIABpAG4AIAAkAGQAaQBzAGsAcwApACAAewANAAoAIAAgACAAIAAjAGkAZgAgACQAcgBlAHMAdQBsAHQAcwAgAGkAcwAgAG4AbwB0ACAAJABuAHUAbABsACAAdABoAGUAbgAgAHMAeQBzAHQAZQBtACAAcwBoAG8AdQBsAGQAIABiAGUAIABmAHUAbABsAHkAIABhAHUAZABpAHQAZQBkACAAZgBvAHIAIABMAG8AZwA0AFMAaABlAGwAbAAgAHYAdQBsAG4AZQByAGEAYgBpAGwAaQB0AHkAIAB3AGkAdABoACAAZABlAGQAaQBjAGEAdABlAGQAIAB0AG8AbwBsAHMADQAKACAAIAAgACAAIAAgACAAIABHAGUAdAAtAEMAaABpAGwAZABJAHQAZQBtACAAIgAkAGQAaQBzAGsAXAAiACAALQBGAG8AcgBjAGUAIAB8ACAAPwAgAHsAIAAkAF8ALgBQAFMASQBzAEMAbwBuAHQAYQBpAG4AZQByACAAfQAgAHwAIAAlACAAewANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAJAByAGUAcwB1AGwAdABzACAAKwA9ACAARwBlAHQALQBDAGgAaQBsAGQASQB0AGUAbQAgAC0AUABhAHQAaAAgACIAJABkAGkAcwBrAFwAJABfAFwAIgAgAC0AcgBlAGMAIAAtAGYAbwByAGMAZQAgAC0ASQBuAGMAbAB1AGQAZQAgACoALgBqAGEAcgAsACAAKgAuAGwAbwBnACwAIAAqAC4AdAB4AHQAIAAtAEUAcgByAG8AcgBBAGMAdABpAG8AbgAgADAAIAAtAEUAcgByAG8AcgBWAGEAcgBpAGEAYgBsAGUAIAArAGcAZQB0AEYAaQBsAGUARQByAHIAIAB8ACAAJQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAcwBlAGwAZQBjAHQALQBzAHQAcgBpAG4AZwAgACIASgBuAGQAaQBMAG8AbwBrAHUAcAAuAGMAbABhAHMAcwAiACAAJABfACAALQBFAHIAcgBvAHIAQQBjAHQAaQBvAG4AIAAwACAALQBFAHIAcgBvAHIAVgBhAHIAaQBhAGIAbABlACAAKwBjAGgAZQBjAGsARgBpAGwAZQBFAHIAcgAgAH0AIAB8ACAAcwBlAGwAZQBjAHQAIAAtAGUAeABwACAAUABhAHQAaAANAAoAIAAgACAAIAAgACAAIAAgAH0ADQAKAH0ADQAKAA0ACgBpAGYAIAAoACQAcgBlAHMAdQBsAHQAcwApACAAewANAAoAIAAgACAAIAAjAGUAeABpAHQAIAAxADAAMAAxAA0ACgAgACAAIAAgACQAcwB0AGEAdAB1AHMAIAA9ACAAIgBQAG8AcwBzAGkAYgBsAGUAIABWAHUAbABuAGUAcgBhAGIAaQBsAGkAdABpAGUAcwAgAEYAbwB1AG4AZAA6ACAAIgAgACsAIAAkAHIAZQBzAHUAbAB0AHMALgBDAG8AdQBuAHQADQAKACAAIAAgACAAJAByAGUAcwB1AGwAdABzACAAfAAgAE8AdQB0AC0ARgBpAGwAZQAgAEMAOgBcAFQAZQBtAHAAXABTAGMAYQBuAFIAZQBzAHUAbAB0AHMALgBjAHMAdgAgAC0ARQBuAGMAbwBkAGkAbgBnACAAdQB0AGYAOAANAAoAIAAgACAAIABpAGYAIAAoACQAZwBlAHQARgBpAGwAZQBFAHIAcgApACAAewANAAoAIAAgACAAIAAgACAAIAAgACMAVwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAkAGcAZQB0AEYAaQBsAGUARQByAHIADQAKACAAIAAgACAAIAAgACAAIAAkAGcAZQB0AEYAaQBsAGUARQByAHIAQwBvAHUAbgB0ACAAPQAgACQAZwBlAHQARgBpAGwAZQBFAHIAcgAuAGMAbwB1AG4AdAANAAoAIAAgACAAIAAgACAAIAAgACQAZwBlAHQARgBpAGwAZQBFAHIAcgAgAHwAIABPAHUAdAAtAEYAaQBsAGUAIABDADoAXABUAGUAbQBwAFwAZwBlAHQAUwBjAGEAbgBFAHIAcgBvAHIALgB0AHgAdAANAAoAIAAgACAAIAB9AA0ACgAgACAAIAAgAGkAZgAgACgAJABjAGgAZQBjAGsARgBpAGwAZQBFAHIAcgApACAAewANAAoAIAAgACAAIAAgACAAIAAgACMAVwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAkAGMAaABlAGMAawBGAGkAbABlAEUAcgByAA0ACgAgACAAIAAgACAAIAAgACAAJABjAGgAZQBjAGsARgBpAGwAZQBFAHIAcgBDAG8AdQBuAHQAIAA9ACAAJABjAGgAZQBjAGsARgBpAGwAZQBFAHIAcgAuAGMAbwB1AG4AdAANAAoAIAAgACAAIAAgACAAIAAgACQAYwBoAGUAYwBrAEYAaQBsAGUARQByAHIAIAB8ACAATwB1AHQALQBGAGkAbABlACAAQwA6AFwAVABlAG0AcABcAGMAaABlAGMAawBTAGMAYQBuAEUAcgByAG8AcgAuAHQAeAB0AA0ACgAgACAAIAAgAH0ADQAKAH0ADQAKAGUAbABzAGUAIAB7AA0ACgAgACAAIAAgACQAcwB0AGEAdAB1AHMAIAA9ACAAIgBOAG8AIABJAG4AcwB0AGEAbgBjAGUAcwAgAEYAbwB1AG4AZAAiAA0ACgB9AA==">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="status" ArgType="string" DisplayName="Results Status" Name="status">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_status]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="checkFileErrCount" ArgType="string" DisplayName="Scan Error Count" Name="checkFileErrCount">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_checkFileErrCount]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="FolderExists_Conditional" />
+        <Variable x:TypeArguments="x:Double" Name="FolderExists_Result" />
+        <Variable x:TypeArguments="x:String" Name="FolderExists_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_status" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_checkFileErrCount" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

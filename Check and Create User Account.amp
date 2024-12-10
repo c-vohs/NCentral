@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="51fc6280-fff0-4d13-941d-aa2d39bec23d" Name="Check and Create User Account" Description="Q2hlY2sgYW5kIENyZWF0ZSBVc2VyIEFjY291bnQ=" Version="2.16.0.1" MinRequiredVersion="2.16.0.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{a78b2092-a738-4f70-b71f-66a4d5f23a82}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;username&quot; Label=&quot;Username&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;password&quot; Label=&quot;Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;admin&quot; Label=&quot;Make local admin? Yes/No&quot; ParameterType=&quot;string&quot; Value=&quot;No&quot; /&gt;&lt;/Parameters&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;userString&quot; Label=&quot;User List&quot; ParameterType=&quot;string&quot; Value=&quot;Run Policy.List of Users&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>c956e7fd-6e96-4aca-b98a-b2e7936cefd1.userString</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>userString</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.60.0.3" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>574,2277</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="574,2277" MinRequiredVersion="2.16.0.1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:LocalUserExists User_Item="{x:Null}" User_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" Conditional="[LocalUserExists_Conditional]" DisplayName="Local User Exists" sap:VirtualizedContainerService.HintSize="538,88" MinRequiredVersion="2.10.0.19" Moniker="84269685-2c23-41d8-9061-bb36c75807f9" Result="[LocalUserExists_Result]" ResultString="[LocalUserExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="LocalUserExists" User="[username]" User_DisplayArg="Input Parameters.Username" m_bTextLinkChange="False">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:LocalUserExists>
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="equals" Condition_DisplayArg="equals" DisplayName="If" sap:VirtualizedContainerService.HintSize="538,1568" MinRequiredVersion="2.16.0.1" Moniker="6b4898f0-8dee-471c-9a37-a3a2d9742393" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="False" Value_Type="x:String" Variable="[LocalUserExists_Conditional]" Variable_DisplayArg="Local User Exists.Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="506,1295" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" MinRequiredVersion="2.10.0.19" Moniker="d4cf544b-8581-43d3-a351-75a659a73a58" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="c0736d89-ee69-4605-9a59-b1e319f34d7c" m_bTextLinkChange="False" script="TgBlAHcALQBMAG8AYwBhAGwAVQBzAGUAcgAgACQAdQBzAGUAcgBuAGEAbQBlACAALQBQAGEAcwBzAHcAbwByAGQAIAAoAEMAbwBuAHYAZQByAHQAVABvAC0AUwBlAGMAdQByAGUAUwB0AHIAaQBuAGcAIAAtAEEAcwBQAGwAYQBpAG4AVABlAHgAdAAgAC0ARgBvAHIAYwBlACAAIgBUAGUAbQBwADEAMgAzACEAIgApACAALQBQAGEAcwBzAHcAbwByAGQATgBlAHYAZQByAEUAeABwAGkAcgBlAHMA">
+                  <p:RunPowerShellScript.InArgs>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="username" ArgType="string" DisplayArg="Input Parameters.Username" DisplayName="Username" Name="username" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:Object">[username]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                  </p:RunPowerShellScript.InArgs>
+                  <p:RunPowerShellScript.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPowerShellScript.OutArgs>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </p:RunPowerShellScript>
+                <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="contains" Condition_DisplayArg="contains" DisplayName="If" sap:VirtualizedContainerService.HintSize="468,583" MinRequiredVersion="2.16.0.1" Moniker="897b1205-36b7-46df-9345-2f9e455241e7" Result="[IfObject_Result_1]" ResultString="[IfObject_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="Yes" Value_Type="x:String" Variable="[admin]" Variable_DisplayArg="Input Parameters.Make local admin? Yes/No" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+                  <p:IfObject.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="408,310" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:AddUserToLocalGroup Domain="{x:Null}" Domain_DisplayArg="{x:Null}" Domain_Item="{x:Null}" Domain_ItemProp="{x:Null}" GroupName_Item="{x:Null}" GroupName_ItemProp="{x:Null}" UserName_Item="{x:Null}" UserName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Add User To Local Group" GroupName="Administrators" GroupName_DisplayArg="Administrators" sap:VirtualizedContainerService.HintSize="370,160" MinRequiredVersion="2.10.0.19" Moniker="155782e1-f3d4-4a91-bfec-877537df62d5" Result="[AddUserToLocalGroup_Result]" ResultString="[AddUserToLocalGroup_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="AddUserToLocalGroup" UserName="[username]" UserName_DisplayArg="Input Parameters.Username" m_bTextLinkChange="False">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </p:AddUserToLocalGroup>
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="AddUserToLocalGroup_ResultString" />
+                        <Variable x:TypeArguments="x:Double" Name="AddUserToLocalGroup_Result" />
+                      </p:SequenceActivity.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </p:SequenceActivity>
+                  </p:IfObject.IfOption>
+                  <p:IfObject.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="Yes" />
+                    </InArgument>
+                  </p:IfObject.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </p:IfObject>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+                <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+                <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+                <Variable x:TypeArguments="x:Double" Name="IfObject_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="IfObject_ResultString_1" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="False" />
+            </InArgument>
+          </p:IfObject.Value>
+        </p:IfObject>
+        <p:SetLocalUserPassword Password_Item="{x:Null}" Password_ItemProp="{x:Null}" UserName_Item="{x:Null}" UserName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Set Password Local User" sap:VirtualizedContainerService.HintSize="538,124" MinRequiredVersion="2.10.0.19" Moniker="ee7a263d-4eeb-4d95-a72f-78795dc89eb4" Password="[password]" Password_DisplayArg="Input Parameters.Password" Result="[SetLocalUserPassword_Result]" ResultString="[SetLocalUserPassword_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="SetLocalUserPassword" UserName="[username]" UserName_DisplayArg="Input Parameters.Username" m_bTextLinkChange="False">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:SetLocalUserPassword>
+        <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="538,154" IsUpdated="True" MinRequiredVersion="2.10.0.19" Moniker="c956e7fd-6e96-4aca-b98a-b2e7936cefd1" Result="[RunPolicy_Result]" ResultString="[RunPolicy_ResultString]" RunAsCurrentLoggedOnUser="False" RunPolicyId="c33724c6-74c7-4916-a35e-eb8ff5742dc1" RunPolicyName_DisplayArg="Get-LocalUsers" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="726341b0-bcce-4056-86a6-9fa65db3a77b" m_bTextLinkChange="False">
+          <p:RunPolicy.GlobalVars>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPolicy.GlobalVars>
+          <p:RunPolicy.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPolicy.InArgs>
+          <p:RunPolicy.OutArgs>
+            <p:OutArg x:Key="userString" ArgType="string" DisplayName="List of Users" Name="userString">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPolicy_userString]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPolicy.OutArgs>
+        </p:RunPolicy>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="LocalUserExists_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="LocalUserExists_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="LocalUserExists_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+        <Variable x:TypeArguments="x:String" Name="username" />
+        <Variable x:TypeArguments="x:String" Name="admin" />
+        <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPolicy_userString" />
+        <Variable x:TypeArguments="p:Password" Name="password" />
+        <Variable x:TypeArguments="x:Double" Name="SetLocalUserPassword_Result" />
+        <Variable x:TypeArguments="x:String" Name="SetLocalUserPassword_ResultString" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="b76897fa-cc0a-4931-9031-781b5cbb3934" Name="CustMB - Prompt Reboot" Description="QXNrcyBjdXJyZW50IGxvZ2dlZCBvbiB1c2VyIHRvIHJlYm9vdCBub3cgb3IgZGVsYXkuIENyZWF0ZXMgc2NoZWR1bGVkIHRhc2sgYW5kIGNvbnRpbnVlcyB0byBwcm9tcHQgdW50aWwgdXNlciByZWJvb3RzLg==" Version="2.30.0.0" MinRequiredVersion="2.30.0.0" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{c8f1b5b6-9e75-4509-87f6-0dfb4befc31f}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;ftpPassword&quot; Label=&quot;FTP Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.50.0.3" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>1703,3853</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="1703,3853" MinRequiredVersion="2.30.0.0" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:FileExists File_Item="{x:Null}" File_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" Conditional="[FileExists_Conditional_2]" DisplayName="FE - custmb" File="C:\Paxis\custmb.exe" File_DisplayArg="C:\Paxis\custmb.exe" sap:VirtualizedContainerService.HintSize="1667,88" MinRequiredVersion="2.30.0.0" Moniker="0c329f3a-c705-4239-9655-840a89f38733" OutPut_64="[FileExists_OutPut_64_2]" Result="[FileExists_Result_2]" ResultString="[FileExists_ResultString_2]" Results_x64="[FileExists_Results_x64_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="Execute64bit" TypeName="FileExists" m_bTextLinkChange="False" />
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="does not equal" Condition_DisplayArg="does not equal" DisplayName="If" sap:VirtualizedContainerService.HintSize="1667,577" MinRequiredVersion="2.19.0.1" Moniker="fa0393ba-484d-44ef-a6aa-8b166523c082" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="True" Value_Type="x:String" Variable="[FileExists_Conditional_2]" Variable_DisplayArg="FE - custmb.Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="501,304" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="463,154" IsUpdated="True" MinRequiredVersion="2.19.0.1" Moniker="f281bae7-3ae0-4066-8bb7-3c1b96128319" Result="[RunPolicy_Result]" ResultString="[RunPolicy_ResultString]" RunAsCurrentLoggedOnUser="False" RunPolicyId="28671ef2-31cf-40cf-ba4e-6e3096cc6382" RunPolicyName_DisplayArg="FtpDownload" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="6c6659b0-2051-40a0-9d99-f9588b6bb467" m_bTextLinkChange="False">
+                  <p:RunPolicy.GlobalVars>
+                    <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                  </p:RunPolicy.GlobalVars>
+                  <p:RunPolicy.InArgs>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpURL" ArgType="string" DisplayArg="ftp://pandora.paxistech.com/" DisplayName="FTP URL" Name="ftpURL" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">ftp://pandora.paxistech.com/</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpUsername" ArgType="string" DisplayArg="NCentral" DisplayName="FTP Username" Name="ftpUsername" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">NCentral</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpPassword" ArgType="password" DisplayArg="Input Parameters.FTP Password" DisplayName="FTP Password" Name="ftpPassword" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="p:Password">[ftpPassword]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpFile" ArgType="string" DisplayArg="custmb.exe" DisplayName="FTP Target File" Name="ftpFile" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">custmb.exe</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="targetFolder" ArgType="string" DisplayArg="C:\Paxis" DisplayName="Local Target Folder" Name="targetFolder" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">C:\Paxis</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                  </p:RunPolicy.InArgs>
+                  <p:RunPolicy.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPolicy.OutArgs>
+                </p:RunPolicy>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfObject.Value>
+        </p:IfObject>
+        <p:FileExists File_Item="{x:Null}" File_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" Conditional="[FileExists_Conditional]" DisplayName="FE - Icon" File="C:\Paxis\pax_icon_yellow.ico" File_DisplayArg="C:\Paxis\pax_icon_yellow.ico" sap:VirtualizedContainerService.HintSize="1667,88" MinRequiredVersion="2.30.0.0" Moniker="0f98291b-41cc-4b51-9498-478035c7ba5b" OutPut_64="[FileExists_OutPut_64]" Result="[FileExists_Result]" ResultString="[FileExists_ResultString]" Results_x64="[FileExists_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="Execute64bit" TypeName="FileExists" m_bTextLinkChange="False" />
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="does not equal" Condition_DisplayArg="does not equal" DisplayName="If" sap:VirtualizedContainerService.HintSize="1667,577" MinRequiredVersion="2.19.0.1" Moniker="8c1765d4-60e8-4f53-9572-eddb3c44dfdd" Result="[IfObject_Result_1]" ResultString="[IfObject_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="True" Value_Type="x:String" Variable="[FileExists_Conditional]" Variable_DisplayArg="FE - Icon.Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="501,304" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="463,154" IsUpdated="True" MinRequiredVersion="2.19.0.1" Moniker="53622654-0e35-46d0-a9b2-8a0169b728fe" Result="[RunPolicy_Result_1]" ResultString="[RunPolicy_ResultString_1]" RunAsCurrentLoggedOnUser="False" RunPolicyId="28671ef2-31cf-40cf-ba4e-6e3096cc6382" RunPolicyName_DisplayArg="FtpDownload" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="43d15253-9a80-4a5f-a2a2-d58e1120d159" m_bTextLinkChange="False">
+                  <p:RunPolicy.GlobalVars>
+                    <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                  </p:RunPolicy.GlobalVars>
+                  <p:RunPolicy.InArgs>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpURL" ArgType="string" DisplayArg="ftp://pandora.paxistech.com/" DisplayName="FTP URL" Name="ftpURL" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">ftp://pandora.paxistech.com/</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpUsername" ArgType="string" DisplayArg="NCentral" DisplayName="FTP Username" Name="ftpUsername" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">NCentral</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpPassword" ArgType="password" DisplayArg="Input Parameters.FTP Password" DisplayName="FTP Password" Name="ftpPassword" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="p:Password">[ftpPassword]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpFile" ArgType="string" DisplayArg="pax_icon_yellow.ico" DisplayName="FTP Target File" Name="ftpFile" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">pax_icon_yellow.ico</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="targetFolder" ArgType="string" DisplayArg="C:\Paxis" DisplayName="Local Target Folder" Name="targetFolder" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">C:\Paxis</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                  </p:RunPolicy.InArgs>
+                  <p:RunPolicy.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPolicy.OutArgs>
+                </p:RunPolicy>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString_1" />
+                <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result_1" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfObject.Value>
+        </p:IfObject>
+        <p:FileExists File_Item="{x:Null}" File_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" Conditional="[FileExists_Conditional_3]" DisplayName="FE - Task" File="C:\Paxis\Task-Reboot_Prompt.ps1" File_DisplayArg="C:\Paxis\Task-Reboot_Prompt.ps1" sap:VirtualizedContainerService.HintSize="1667,88" MinRequiredVersion="2.30.0.0" Moniker="49016548-9227-4cb4-bda7-408f7367e75a" OutPut_64="[FileExists_OutPut_64_3]" Result="[FileExists_Result_3]" ResultString="[FileExists_ResultString_3]" Results_x64="[FileExists_Results_x64_3]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="Execute64bit" TypeName="FileExists" m_bTextLinkChange="False" />
+        <p:IfElse CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="does not equal" Condition_DisplayArg="does not equal" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="1667,1256" MinRequiredVersion="2.19.0.1" Moniker="42c8cb49-4799-4107-92b9-fc8c59b6b96b" Result="[IfElse_Result_1]" ResultString="[IfElse_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="True" Value_Type="x:String" Variable="[FileExists_Conditional_3]" Variable_DisplayArg="FE - Task.Conditional" Variable_Type="x:String" m_bTextLinkChange="False">
+          <p:IfElse.ElseOption>
+            <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="1122,1019" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:CalculateFileSHA512 FileName_Item="{x:Null}" FileName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Hash - Task" FileName="C:\Paxis\Task-Reboot_Prompt.ps1" FileName_DisplayArg="C:\Paxis\Task-Reboot_Prompt.ps1" Hash="[CalculateFileSHA512_Hash_1]" sap:VirtualizedContainerService.HintSize="1084,88" MinRequiredVersion="2.16.1.1" Moniker="ac7e685e-8427-4ed5-a5a0-5107361c6351" Result="[CalculateFileSHA512_Result_1]" ResultString="[CalculateFileSHA512_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CalculateFileSHA512" m_bTextLinkChange="False" />
+                <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="does not equal" Condition_DisplayArg="does not equal" DisplayName="If" sap:VirtualizedContainerService.HintSize="1084,741" MinRequiredVersion="2.19.0.1" Moniker="f03e68e8-45d0-4990-8af7-3a9fed1f60b7" Result="[IfObject_Result_3]" ResultString="[IfObject_ResultString_3]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="A0AC86D76F172C017E07A8D7AC2A62574C0D64FECA10E7104F7ABC4C8E86E5C7F336EE9BADFD0F05FA7006936AE2642B4200C2D3ADDA9A61F03C5130BE2D0990" Value_Type="x:String" Variable="[CalculateFileSHA512_Hash_1]" Variable_DisplayArg="Hash - Task.Hash" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+                  <p:IfObject.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="501,468" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:DeleteFile FileName_Item="{x:Null}" FileName_ItemProp="{x:Null}" Recurse_Item="{x:Null}" Recurse_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Delete File" FileName="C:\Paxis\Task-Reboot_Prompt.ps1" FileName_DisplayArg="C:\Paxis\Task-Reboot_Prompt.ps1" sap:VirtualizedContainerService.HintSize="463,124" MinRequiredVersion="2.10.0.19" Moniker="f56ea143-94e2-47b6-bed2-e396595220e3" Recurse="False" Recurse_DisplayArg="" Result="[DeleteFile_Result_1]" ResultString="[DeleteFile_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="DeleteFile" m_bTextLinkChange="False" />
+                        <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="463,154" IsUpdated="True" MinRequiredVersion="2.19.0.1" Moniker="3be9d01d-06c0-4c2a-8dd3-9f49fff270fa" Result="[RunPolicy_Result_5]" ResultString="[RunPolicy_ResultString_5]" RunAsCurrentLoggedOnUser="False" RunPolicyId="28671ef2-31cf-40cf-ba4e-6e3096cc6382" RunPolicyName_DisplayArg="FtpDownload" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="c7859518-9b0b-4863-8ce0-01f4d37d145e" m_bTextLinkChange="False">
+                          <p:RunPolicy.GlobalVars>
+                            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                          </p:RunPolicy.GlobalVars>
+                          <p:RunPolicy.InArgs>
+                            <p:InArg ItemProp="{x:Null}" x:Key="ftpURL" ArgType="string" DisplayArg="ftp://pandora.paxistech.com/" DisplayName="FTP URL" Name="ftpURL" isRequired="True">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:String">ftp://pandora.paxistech.com/</InArgument>
+                              </p:InArg.Arg>
+                              <p:InArg.Item>
+                                <InArgument x:TypeArguments="x:Object" />
+                              </p:InArg.Item>
+                            </p:InArg>
+                            <p:InArg ItemProp="{x:Null}" x:Key="ftpUsername" ArgType="string" DisplayArg="NCentral" DisplayName="FTP Username" Name="ftpUsername" isRequired="True">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:String">NCentral</InArgument>
+                              </p:InArg.Arg>
+                              <p:InArg.Item>
+                                <InArgument x:TypeArguments="x:Object" />
+                              </p:InArg.Item>
+                            </p:InArg>
+                            <p:InArg ItemProp="{x:Null}" x:Key="ftpPassword" ArgType="password" DisplayArg="Input Parameters.FTP Password" DisplayName="FTP Password" Name="ftpPassword" isRequired="True">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="p:Password">[ftpPassword]</InArgument>
+                              </p:InArg.Arg>
+                              <p:InArg.Item>
+                                <InArgument x:TypeArguments="x:Object" />
+                              </p:InArg.Item>
+                            </p:InArg>
+                            <p:InArg ItemProp="{x:Null}" x:Key="ftpFile" ArgType="string" DisplayArg="Task-Reboot_Prompt.ps1" DisplayName="FTP Target File" Name="ftpFile" isRequired="True">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:String">Task-Reboot_Prompt.ps1</InArgument>
+                              </p:InArg.Arg>
+                              <p:InArg.Item>
+                                <InArgument x:TypeArguments="x:Object" />
+                              </p:InArg.Item>
+                            </p:InArg>
+                            <p:InArg ItemProp="{x:Null}" x:Key="targetFolder" ArgType="string" DisplayArg="C:\Paxis" DisplayName="Local Target Folder" Name="targetFolder" isRequired="True">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:String">C:\Paxis</InArgument>
+                              </p:InArg.Arg>
+                              <p:InArg.Item>
+                                <InArgument x:TypeArguments="x:Object" />
+                              </p:InArg.Item>
+                            </p:InArg>
+                          </p:RunPolicy.InArgs>
+                          <p:RunPolicy.OutArgs>
+                            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                          </p:RunPolicy.OutArgs>
+                        </p:RunPolicy>
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="DeleteFile_ResultString_1" />
+                        <Variable x:TypeArguments="x:Double" Name="DeleteFile_Result_1" />
+                        <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString_5" />
+                        <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result_5" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfObject.IfOption>
+                  <p:IfObject.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="A0AC86D76F172C017E07A8D7AC2A62574C0D64FECA10E7104F7ABC4C8E86E5C7F336EE9BADFD0F05FA7006936AE2642B4200C2D3ADDA9A61F03C5130BE2D0990" />
+                    </InArgument>
+                  </p:IfObject.Value>
+                </p:IfObject>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="CalculateFileSHA512_Hash_1" />
+                <Variable x:TypeArguments="x:String" Name="CalculateFileSHA512_ResultString_1" />
+                <Variable x:TypeArguments="x:Double" Name="CalculateFileSHA512_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="IfObject_ResultString_3" />
+                <Variable x:TypeArguments="x:Double" Name="IfObject_Result_3" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.ElseOption>
+          <p:IfElse.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="501,304" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="463,154" IsUpdated="True" MinRequiredVersion="2.19.0.1" Moniker="1768cd36-64b1-43b1-ab8d-8ffb59a93475" Result="[RunPolicy_Result_4]" ResultString="[RunPolicy_ResultString_4]" RunAsCurrentLoggedOnUser="False" RunPolicyId="28671ef2-31cf-40cf-ba4e-6e3096cc6382" RunPolicyName_DisplayArg="FtpDownload" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="9d922d53-cd82-4567-95fe-1952407e51d4" m_bTextLinkChange="False">
+                  <p:RunPolicy.GlobalVars>
+                    <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                  </p:RunPolicy.GlobalVars>
+                  <p:RunPolicy.InArgs>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpURL" ArgType="string" DisplayArg="ftp://pandora.paxistech.com/" DisplayName="FTP URL" Name="ftpURL" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">ftp://pandora.paxistech.com/</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpUsername" ArgType="string" DisplayArg="NCentral" DisplayName="FTP Username" Name="ftpUsername" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">NCentral</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpPassword" ArgType="password" DisplayArg="Input Parameters.FTP Password" DisplayName="FTP Password" Name="ftpPassword" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="p:Password">[ftpPassword]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpFile" ArgType="string" DisplayArg="Task-Reboot_Prompt.ps1" DisplayName="FTP Target File" Name="ftpFile" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">Task-Reboot_Prompt.ps1</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="targetFolder" ArgType="string" DisplayArg="C:\Paxis" DisplayName="Local Target Folder" Name="targetFolder" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">C:\Paxis</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                  </p:RunPolicy.InArgs>
+                  <p:RunPolicy.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPolicy.OutArgs>
+                </p:RunPolicy>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString_4" />
+                <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result_4" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.IfOption>
+          <p:IfElse.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfElse.Value>
+        </p:IfElse>
+        <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="1667,154" IsUpdated="True" MinRequiredVersion="2.10.0.19" Moniker="390738a9-c6d5-443c-bc0f-9c73f510a227" Result="[RunPolicy_Result_6]" ResultString="[RunPolicy_ResultString_6]" RunAsCurrentLoggedOnUser="False" RunPolicyId="d1e969ef-16db-4bbd-85d6-004a07548f93" RunPolicyName_DisplayArg="Install - RunAsUser Module" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="a23ac109-a80b-4c56-bf59-9f415e02d966" m_bTextLinkChange="False">
+          <p:RunPolicy.GlobalVars>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPolicy.GlobalVars>
+          <p:RunPolicy.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPolicy.InArgs>
+          <p:RunPolicy.OutArgs>
+            <p:OutArg x:Key="installStatus" ArgType="string" DisplayName="Install Status" Name="installStatus">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPolicy_installStatus]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPolicy.OutArgs>
+        </p:RunPolicy>
+        <p:RunPowerShellScript genArgEvent="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="1667,522" MinRequiredVersion="2.10.0.19" Moniker="bd88cd96-e498-460c-8bf6-30735b584874" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" m_bTextLinkChange="False" script="UwBlAHQALQBFAHgAZQBjAHUAdABpAG8AbgBQAG8AbABpAGMAeQAgAEIAeQBwAGEAcwBzACAALQBTAGMAbwBwAGUAIABQAHIAbwBjAGUAcwBzAA0ACgANAAoAZgB1AG4AYwB0AGkAbwBuACAATgBlAHcALQBDAHUAcwB0AG0AYgBSAGUAYgBvAG8AdABQAHIAbwBtAHAAdABUAGEAcwBrACAAewANAAoAIAAgACAAIAAkAGEAYwB0AGkAbwBuACAAPQAgAE4AZQB3AC0AUwBjAGgAZQBkAHUAbABlAGQAVABhAHMAawBBAGMAdABpAG8AbgAgAC0ARQB4AGUAYwB1AHQAZQAgACcAUABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACcAIAAtAEEAcgBnAHUAbQBlAG4AdAAgACcALQBlAHgAZQBjAHUAdABpAG8AbgBwAG8AbABpAGMAeQAgAGIAeQBwAGEAcwBzACAALQBOAG8AUAByAG8AZgBpAGwAZQAgAC0AVwBpAG4AZABvAHcAUwB0AHkAbABlACAASABpAGQAZABlAG4AIAAtAGMAbwBtAG0AYQBuAGQAIAAiACYAIAB7AEMAOgBcAFAAYQB4AGkAcwBcAFQAYQBzAGsALQBSAGUAYgBvAG8AdABfAFAAcgBvAG0AcAB0AC4AcABzADEAfQAiACcADQAKACAAIAAgACAAJAB0AHIAaQBnAGcAZQByACAAPQAgAE4AZQB3AC0AUwBjAGgAZQBkAHUAbABlAGQAVABhAHMAawBUAHIAaQBnAGcAZQByACAALQBPAG4AYwBlACAALQBBAHQAIAAiADAAMAA6ADAAMAAiAA0ACgAgACAAIAAgACQAVQBzAGUAcgAgAD0AIAAiAE4AVAAgAEEAVQBUAEgATwBSAEkAVABZAFwAUwBZAFMAVABFAE0AIgANAAoAIAAgACAAIAAkAFMAZQB0AHQAaQBuAGcAcwAgAD0AIABOAGUAdwAtAFMAYwBoAGUAZAB1AGwAZQBkAFQAYQBzAGsAUwBlAHQAdABpAG4AZwBzAFMAZQB0ACAALQBIAGkAZABkAGUAbgAgAC0AUwB0AGEAcgB0AFcAaABlAG4AQQB2AGEAaQBsAGEAYgBsAGUADQAKAA0ACgAgACAAIAAgAFIAZQBnAGkAcwB0AGUAcgAtAFMAYwBoAGUAZAB1AGwAZQBkAFQAYQBzAGsAIAAtAEEAYwB0AGkAbwBuACAAJABhAGMAdABpAG8AbgAgAC0AVAByAGkAZwBnAGUAcgAgACQAdAByAGkAZwBnAGUAcgAgAC0AVQBzAGUAcgAgACQAVQBzAGUAcgAgAC0AUwBlAHQAdABpAG4AZwBzACAAJABTAGUAdAB0AGkAbgBnAHMAIAAtAFIAdQBuAEwAZQB2AGUAbAAgAEgAaQBnAGgAZQBzAHQAIAAtAFQAYQBzAGsATgBhAG0AZQAgACIAYwB1AHMAdABtAGIALQBSAGUAYgBvAG8AdABQAHIAbwBtAHAAdAAiACAALQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AIAAiAFAAcgBvAG0AcAB0AHMAIAB1AHMAZQByACAAdABvACAAcgBlAGIAbwBvAHQAIgAgAA0ACgB9AA0ACgANAAoAZgB1AG4AYwB0AGkAbwBuACAAUwBlAHQALQBDAHUAcwB0AG0AYgBSAGUAYgBvAG8AdABQAHIAbwBtAHAAdABUAGEAcwBrACAAewANAAoAIAAgACAAIABwAGEAcgBhAG0AIAAoAA0ACgAgACAAIAAgACAAIAAgACAAWwBwAGEAcgBhAG0AZQB0AGUAcgAoAE0AYQBuAGQAYQB0AG8AcgB5ACAAPQAgACQAdAByAHUAZQApAF0ADQAKACAAIAAgACAAIAAgACAAIABbAFYAYQBsAGkAZABhAHQAZQBOAG8AdABOAHUAbABsAE8AcgBFAG0AcAB0AHkAKAApAF0AJABkAGUAbABhAHkADQAKACAAIAAgACAAKQANAAoADQAKACAAIAAgACAAJABjAHUAcgByAGUAbgB0AFQAaQBtAGUAIAA9ACAARwBlAHQALQBkAGEAdABlAA0ACgAgACAAIAAgACQAbgBlAHcAVABpAG0AZQAgAD0AIABzAHcAaQB0AGMAaAAgACgAJABkAGUAbABhAHkAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAnAEUAeABpAHQAZQBkACcAIAB7ACQAYwB1AHIAcgBlAG4AdABUAGkAbQBlAC4AQQBkAGQASABvAHUAcgBzACgAMgApAH0ADQAKACAAIAAgACAAIAAgACAAIAAnADMAMABtAF8AZABlAGwAYQB5ACcAIAB7ACQAYwB1AHIAcgBlAG4AdABUAGkAbQBlAC4AQQBkAGQATQBpAG4AdQB0AGUAcwAoADMAMAApAH0ADQAKACAAIAAgACAAIAAgACAAIAAnADIAaABfAGQAZQBsAGEAeQAnACAAewAkAGMAdQByAHIAZQBuAHQAVABpAG0AZQAuAEEAZABkAEgAbwB1AHIAcwAoADIAKQB9AA0ACgAgACAAIAAgACAAIAAgACAAJwAyADQAaABfAGQAZQBsAGEAeQAnACAAewAkAGMAdQByAHIAZQBuAHQAVABpAG0AZQAuAEEAZABkAEQAYQB5AHMAKAAxACkAfQANAAoAIAAgACAAIAB9AA0ACgAgACAAIAAgACQAdAByAGkAZwBnAGUAcgAgAD0AIABOAGUAdwAtAFMAYwBoAGUAZAB1AGwAZQBkAFQAYQBzAGsAVAByAGkAZwBnAGUAcgAgAC0AbwBuAGMAZQAgAC0AYQB0ACAAJABuAGUAdwBUAGkAbQBlAA0ACgANAAoAIAAgACAAIABTAGUAdAAtAFMAYwBoAGUAZAB1AGwAZQBkAFQAYQBzAGsAIAAtAFQAYQBzAGsATgBhAG0AZQAgACIAYwB1AHMAdABtAGIALQBSAGUAYgBvAG8AdABQAHIAbwBtAHAAdAAiACAALQBUAHIAaQBnAGcAZQByACAAJAB0AHIAaQBnAGcAZQByAA0ACgANAAoAfQANAAoADQAKACQAcgBlAHMAcABvAG4AcwBlAFAAYQB0AGgAIAA9ACAAIgBDADoAXABQAGEAeABpAHMAXABSAGUAYgBvAG8AdABSAGUAcwBwAG8AbgBzAGUALgB0AHgAdAAiAA0ACgAkAHMAYwByAGkAcAB0AGIAbABvAGMAawAgAD0AIAB7ACAAQwA6AFwAUABhAHgAaQBzAFwAYwB1AHMAdABtAGIALgBlAHgAZQAgAGgAZQBhAGQAZQByAD0AIgBQAGEAeABpAHMAIABNAGEAaQBuAHQAZQBuAGEAbgBjAGUAIgAgAFAAbwBzAGkAdABpAG8AbgA9AGMAZQBuAHQAZQByACAAVABoAGUAbQBlAD0AdwBpAG4AMQAwACAAaQBjAG8AbgA9ACIAQwA6AFwAUABhAHgAaQBzAFwAcABhAHgAXwBpAGMAbwBuAF8AeQBlAGwAbABvAHcALgBpAGMAbwAiACAAbQBlAHMAcwBhAGcAZQA9ACIAWQBvAHUAcgAgAG0AYQBjAGgAaQBuAGUAIABpAHMAIABjAHUAcgByAGUAbgB0AGwAeQAgAHAAZQBuAGQAaQBuAGcAIABhACAAcgBlAGIAbwBvAHQALgAgAFkAbwB1ACAAbQBhAHkAIABkAGUAbABhAHkAIAB0AGgAaQBzACAAbwByACAAcgBlAGIAbwBvAHQAIABuAG8AdwAuAFwAcgBcAG4ATQBhAGMAaABpAG4AZQAgAHcAaQBsAGwAIABhAHUAdABvAG0AYQB0AGkAYwBhAGwAbAB5ACAAcgBlAGIAbwBvAHQAIABpAG4AIAAxADUAIABtAGkAbgB1AHQAZQBzACAAaQBmACAAbgBvACAAcgBlAHMAcABvAG4AcwBlACAAYwBoAG8AcwBlAG4ALgBcAHIAXABuAFAAbABlAGEAcwBlACAAYwBvAG4AdABhAGMAdAAgAHUAcwAgAGEAdAAgADgANgA1AC0ANQA4ADgALQA5ADgAMgAzACAAdwBpAHQAaAAgAHEAdQBlAHMAdABpAG8AbgBzACAAbwByACAAYwBvAG4AYwBlAHIAbgBzAC4AIgAgAE8AbgBUAG8AcAA9ADEAIABiAHUAdAB0AG8AbgA9ACIAUgBlAG0AaQBuAGQAIABNAGUAIAAyADQAaAB8ADIANABoAF8AZABlAGwAYQB5ACIAIABiAHUAdAB0AG8AbgA9ACIAUgBlAG0AaQBuAGQAIABNAGUAIAAyAGgAfAAyAGgAXwBkAGUAbABhAHkAIgAgAGIAdQB0AHQAbwBuAD0AIgBSAGUAbQBpAG4AZAAgAE0AZQAgADMAMABtAHwAMwAwAG0AXwBkAGUAbABhAHkAIgAgAGIAdQB0AHQAbwBuAD0AIgBSAGUAYgBvAG8AdAAgAE4AbwB3AHwAcgBlAGIAbwBvAHQAfAA5ADAAMAAiACAAfAAgAG8AdQB0AC0AZgBpAGwAZQAgACIAQwA6AFwAUABhAHgAaQBzAFwAUgBlAGIAbwBvAHQAUgBlAHMAcABvAG4AcwBlAC4AdAB4AHQAIgAgAH0ADQAKAA0ACgBJAG4AdgBvAGsAZQAtAEEAcwBDAHUAcgByAGUAbgB0AFUAcwBlAHIAIAAtAFMAYwByAGkAcAB0AEIAbABvAGMAawAgACQAcwBjAHIAaQBwAHQAYgBsAG8AYwBrACAALQBVAHMAZQBXAGkAbgBkAG8AdwBzAFAAbwB3AGUAcgBTAGgAZQBsAGwADQAKAA0ACgBpAGYAIAAoAFQAZQBzAHQALQBQAGEAdABoACAALQBQAGEAdABoACAAJAByAGUAcwBwAG8AbgBzAGUAUABhAHQAaAApACAAewANAAoAIAAgACAAIAAkAHIAZQBiAG8AbwB0AFIAZQBzAHAAbwBuAHMAZQAgAD0AIABnAGUAdAAtAGMAbwBuAHQAZQBuAHQAIAAkAHIAZQBzAHAAbwBuAHMAZQBQAGEAdABoACAALQBFAHIAcgBvAHIAQQBjAHQAaQBvAG4AIABTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlAA0ACgB9ACAAZQBsAHMAZQAgAHsADQAKACAAIAAgACAAJAByAGUAYgBvAG8AdABSAGUAcwBwAG8AbgBzAGUAIAA9ACAAIgAyAGgAIgANAAoAfQANAAoADQAKAGkAZgAgACgAJABuAHUAbABsACAALQBuAGUAIAAkAHIAZQBiAG8AbwB0AFIAZQBzAHAAbwBuAHMAZQApACAAewANAAoAIAAgACAAIAB3AHIAaQB0AGUALQBoAG8AcwB0ACAAJAByAGUAYgBvAG8AdABSAGUAcwBwAG8AbgBzAGUADQAKACAAIAAgACAADQAKACAAIAAgACAAaQBmACAAKAAkAHIAZQBiAG8AbwB0AFIAZQBzAHAAbwBuAHMAZQAgAC0AZQBxACAAIgByAGUAYgBvAG8AdAAiACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAcgBlAG0AbwB2AGUALQBpAHQAZQBtACAALQBQAGEAdABoACAAJAByAGUAcwBwAG8AbgBzAGUAUABhAHQAaAANAAoAIAAgACAAIAAgACAAIAAgAFMAdABhAHIAdAAtAFAAcgBvAGMAZQBzAHMAIABzAGgAdQB0AGQAbwB3AG4ALgBlAHgAZQAgAC0AYQByAGcAdQBtAGUAbgB0AGwAaQBzAHQAIAAiAC0AcgAgAC0AZgAgAC0AdAAgADMAMAAiAA0ACgAgACAAIAAgAH0AIABlAGwAcwBlACAAewANAAoAIAAgACAAIAAgACAAIAAgAHIAZQBtAG8AdgBlAC0AaQB0AGUAbQAgAC0AUABhAHQAaAAgACQAcgBlAHMAcABvAG4AcwBlAFAAYQB0AGgADQAKAA0ACgAgACAAIAAgACAAIAAgACAAaQBmACAAKAAhACgARwBlAHQALQBTAGMAaABlAGQAdQBsAGUAZABUAGEAcwBrACAAfAAgAD8AIABUAGEAcwBrAE4AYQBtAGUAIAAtAGUAcQAgACIAYwB1AHMAdABtAGIALQBSAGUAYgBvAG8AdABQAHIAbwBtAHAAdAAiACkAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgAFcAcgBpAHQAZQAtAE8AdQB0AHAAdQB0ACAAIgBUAGEAcwBrACAAbgBvAHQAIABmAG8AdQBuAGQAIgANAAoADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgAE4AZQB3AC0AQwB1AHMAdABtAGIAUgBlAGIAbwBvAHQAUAByAG8AbQBwAHQAVABhAHMAawANAAoAIAAgACAAIAAgACAAIAAgAH0ADQAKAA0ACgAgACAAIAAgACAAIAAgACAAUwBlAHQALQBDAHUAcwB0AG0AYgBSAGUAYgBvAG8AdABQAHIAbwBtAHAAdABUAGEAcwBrACAAJAByAGUAYgBvAG8AdABSAGUAcwBwAG8AbgBzAGUADQAKACAAIAAgACAAfQANAAoAfQANAAoA">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="FileExists_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_OutPut_64" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="FileExists_Results_x64" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="FileExists_Result" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_Conditional_2" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_OutPut_64_2" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="FileExists_Results_x64_2" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_ResultString_2" />
+        <Variable x:TypeArguments="x:Double" Name="FileExists_Result_2" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_Conditional_3" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_OutPut_64_3" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="FileExists_Results_x64_3" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_ResultString_3" />
+        <Variable x:TypeArguments="x:Double" Name="FileExists_Result_3" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+        <Variable x:TypeArguments="p:Password" Name="ftpPassword" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="IfElse_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="IfElse_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString_6" />
+        <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result_6" />
+        <Variable x:TypeArguments="x:String" Name="RunPolicy_installStatus" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="a757f9f8-ad17-4b56-bc00-372a1789357d" Name="Uninstall Kaseya - From EXE" Description="VW5pbnN0YWxsIEthc2V5YQ==" Version="2.16.0.1" MinRequiredVersion="2.16.0.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{88feface-700f-4cba-a45e-38d3aa3ae225}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;KASetupFile&quot; Label=&quot;KASetup File&quot; ParameterType=&quot;string&quot; Value=&quot;C:\Program Files (x86)\Kaseya\PXSTCH20956964835350\KASetup.exe&quot; /&gt;&lt;Parameter ParameterName=&quot;KASetupDownload&quot; Label=&quot;KASetup Download Location&quot; ParameterType=&quot;string&quot; Value=&quot;https://www.googleapis.com/drive/v3/files/1W13DNPuGaAz0n55wDJkAEjDboKmo95X4?alt=media&amp;amp;key=AIzaSyBSA9tRE9veiQz-3fFgQAZUduABBrKlWrU&quot; /&gt;&lt;Parameter ParameterName=&quot;FileName&quot; Label=&quot;File Name&quot; ParameterType=&quot;string&quot; Value=&quot;KASetup.exe&quot; /&gt;&lt;Parameter ParameterName=&quot;DestFolder&quot; Label=&quot;Destination Folder&quot; ParameterType=&quot;string&quot; Value=&quot;C:\Paxis&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.3.1" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>1064,2585</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="1064,2585" MinRequiredVersion="2.16.0.1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:FileExists File_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" Conditional="[FileExists_Conditional]" DisplayName="File Exists" File="[KASetupFile]" File_DisplayArg="Input Parameters.KASetup File" File_Item="{x:Null}" sap:VirtualizedContainerService.HintSize="1028,88" MinRequiredVersion="2.10.0.19" Moniker="30a4c28b-d485-45c6-a6bb-adaf874608ee" Result="[FileExists_Result]" ResultString="[FileExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="FileExists" m_bTextLinkChange="False" />
+        <p:IsServiceRunning Service_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" Conditional="[IsServiceRunning_Conditional]" DisplayName="Is Service Running" sap:VirtualizedContainerService.HintSize="1028,88" MinRequiredVersion="2.16.0.1" Moniker="e99e6b41-e226-45ef-9a14-077742244d16" Result="[IsServiceRunning_Result]" ResultString="[IsServiceRunning_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Service="Kaseya Agent Endpoint" Service_DisplayArg="Kaseya Agent Endpoint" Service_Item="{x:Null}" TypeName="IsServiceRunning" m_bTextLinkChange="False" />
+        <p:IfElse CaseSensitive_ItemProp="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" CaseSensitive_Item="{x:Null}" Condition="equals" Condition_DisplayArg="equals" Condition_Item="{x:Null}" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="1028,2106" MinRequiredVersion="2.16.0.1" Moniker="af0d38e1-f773-4c2b-bea9-a9d144283c39" Result="[IfElse_Result]" ResultString="[IfElse_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="True" Value_Type="x:String" Variable="[FileExists_Conditional]" Variable_DisplayArg="File Exists.Conditional" Variable_Item="{x:Null}" Variable_Type="x:String" m_bTextLinkChange="False">
+          <p:IfElse.ElseOption>
+            <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="492,1869" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:FolderExists Folder_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" Conditional="[FolderExists_Conditional]" DisplayName="Folder Exists" Folder="[DestFolder]" Folder_DisplayArg="Input Parameters.Destination Folder" Folder_Item="{x:Null}" sap:VirtualizedContainerService.HintSize="454,88" MinRequiredVersion="2.10.0.19" Moniker="e89e5f6e-98c8-4907-a865-f5e4ba4d71c8" Result="[FolderExists_Result]" ResultString="[FolderExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="FolderExists" m_bTextLinkChange="False" />
+                <p:IfObject CaseSensitive_ItemProp="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" CaseSensitive_Item="{x:Null}" Condition="equals" Condition_DisplayArg="equals" Condition_Item="{x:Null}" DisplayName="If" sap:VirtualizedContainerService.HintSize="454,511" MinRequiredVersion="2.16.0.1" Moniker="123097a4-3b90-492f-aeac-d0ecd547e59f" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="False" Value_Type="x:String" Variable="[FolderExists_Conditional]" Variable_DisplayArg="Folder Exists.Conditional" Variable_Item="{x:Null}" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" VerboseOutput_Item="{x:Null}" m_bTextLinkChange="False">
+                  <p:IfObject.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="373,238" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:CreateFolder Folder_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Create Folder" Folder="[DestFolder]" FolderInfo="[CreateFolder_FolderInfo]" Folder_DisplayArg="Input Parameters.Destination Folder" Folder_Item="{x:Null}" sap:VirtualizedContainerService.HintSize="335,88" MinRequiredVersion="2.10.0.19" Moniker="c0161818-97a8-4a0f-9759-43f8e4284719" Result="[CreateFolder_Result]" ResultString="[CreateFolder_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CreateFolder" m_bTextLinkChange="False" />
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="CreateFolder_FolderInfo" />
+                        <Variable x:TypeArguments="x:String" Name="CreateFolder_ResultString" />
+                        <Variable x:TypeArguments="x:Double" Name="CreateFolder_Result" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfObject.IfOption>
+                  <p:IfObject.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="False" />
+                    </InArgument>
+                  </p:IfObject.Value>
+                </p:IfObject>
+                <p:FormatString Input0_ItemProp="{x:Null}" Input1_ItemProp="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Format String" FormattedString="[FormatString_FormattedString]" sap:VirtualizedContainerService.HintSize="454,160" Input0="[DestFolder]" Input0_DisplayArg="Input Parameters.Destination Folder" Input0_Item="{x:Null}" Input1="[FileName]" Input1_DisplayArg="Input Parameters.File Name" Input1_Item="{x:Null}" MinRequiredVersion="2.10.0.19" Moniker="3c4c009b-8d0e-48ce-8260-86416c4270d4" Result="[FormatString_Result]" ResultString="[FormatString_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Text="{}{0}\{1}" Text_DisplayArg="{}{0}\{1}" Text_Item="{x:Null}" TypeName="FormatString" m_bTextLinkChange="False" />
+                <p:DownloadFileFromURL OverwriteExistingFile_ItemProp="{x:Null}" RemoteFileURL_Item="{x:Null}" RemoteFileURL_ItemProp="{x:Null}" SaveAsFileName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" DisplayName="Download File From URL" sap:VirtualizedContainerService.HintSize="454,160" MinRequiredVersion="2.18.0.1" Moniker="c3942254-6513-4a8b-941a-27a2d24630d6" OverwriteExistingFile="True" OverwriteExistingFile_DisplayArg="true" OverwriteExistingFile_Item="{x:Null}" RemoteFileURL="[KASetupDownload]" RemoteFileURL_DisplayArg="Input Parameters.KASetup Download Location" Result="[DownloadFileFromURL_Result]" ResultString="[DownloadFileFromURL_ResultString]" RunAsCurrentLoggedOnUser="False" SaveAsFileName="[FormatString_FormattedString]" SaveAsFileName_DisplayArg="Format String.FormattedString" SaveAsFileName_Item="{x:Null}" ScriptExecutionMethod="None" TypeName="DownloadFileFromURL" m_bTextLinkChange="False" />
+                <p:Wait WaitTime_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Wait" sap:VirtualizedContainerService.HintSize="454,88" MinRequiredVersion="2.10.0.19" Moniker="a9625a1d-2c03-4d0d-ac17-a9cbd18849a3" Result="[Wait_Result]" ResultString="[Wait_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="Wait" WaitTime="10" WaitTime_DisplayArg="10" WaitTime_Item="{x:Null}" m_bTextLinkChange="False" />
+                <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="454,348" MinRequiredVersion="2.10.0.19" Moniker="796a3303-1ee7-4a68-8b84-ff79c7e654ce" OutPut_64="[RunPowerShellScript_OutPut_64_1]" Result="[RunPowerShellScript_Result_1]" ResultString="[RunPowerShellScript_ResultString_1]" Results_x64="[RunPowerShellScript_Results_x64_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="478fbc6d-eeaa-447a-b10f-c8a9a55e2d41" m_bTextLinkChange="False" script="JABjAG0AZAAgAD0AIAAnAEMAOgBcAFAAYQB4AGkAcwBcAEsAQQBTAGUAdAB1AHAALgBlAHgAZQAnAA0ACgAkAEEAbABsAEEAcgBnAHMAIAA9ACAAQAAoACcALQBzACcALAAgACcALQByACcALAAgACcALQBnACAAUABYAFMAVABDAEgAMgAwADkANQA2ADkANgA0ADgAMwA1ADMANQAwACcALAAgACcALQBsACAAJQBUAEUATQBQACUAXABrAGEAcwBlAHQAdQBwAC4AbABvAGcAJwApAA0ACgANAAoAaQBmACAAKAAkAFMAZQByAHYAaQBjAGUAUgB1AG4AbgBpAG4AZwAgAC0AZQBxACAAIgBUAHIAdQBlACIAKQAgAHsADQAKACAAIAAgACAARwBlAHQALQBTAGUAcgB2AGkAYwBlACAALQBEAGkAcwBwAGwAYQB5AE4AYQBtAGUAIAAiAEsAYQBzAGUAeQBhACAAQQBnAGUAbgB0ACAARQBuAGQAcABvAGkAbgB0ACIAIAB8ACAAUwB0AG8AcAAtAFMAZQByAHYAaQBjAGUAIAAtAEYAbwByAGMAZQANAAoAfQANAAoADQAKAFMAdABhAHIAdAAtAFAAcgBvAGMAZQBzAHMAIAAgACQAYwBtAGQAIAAtAEEAcgBnAHUAbQBlAG4AdABMAGkAcwB0ACAAJABBAGwAbABBAHIAZwBzACAALQBOAG8ATgBlAHcAVwBpAG4AZABvAHcAIAAtAFcAYQBpAHQA">
+                  <p:RunPowerShellScript.InArgs>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="ServiceRunning" ArgType="string" DisplayArg="Is Service Running.Conditional" DisplayName="Service Running" Name="ServiceRunning" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:Object">[IsServiceRunning_Conditional]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="PathAndFileName" ArgType="string" DisplayArg="Format String.FormattedString" DisplayName="Path and File Name" Name="PathAndFileName" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:Object">[FormatString_FormattedString]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                  </p:RunPowerShellScript.InArgs>
+                  <p:RunPowerShellScript.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPowerShellScript.OutArgs>
+                </p:RunPowerShellScript>
+                <p:DeleteFile FileName_Item="{x:Null}" FileName_ItemProp="{x:Null}" Recurse_Item="{x:Null}" Recurse_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Delete File" FileName="[FormatString_FormattedString]" FileName_DisplayArg="Format String.FormattedString" sap:VirtualizedContainerService.HintSize="454,124" MinRequiredVersion="2.10.0.19" Moniker="6720de8e-56fa-45d0-94cc-cbd26a8ccefc" Recurse="False" Recurse_DisplayArg="" Result="[DeleteFile_Result]" ResultString="[DeleteFile_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="DeleteFile" m_bTextLinkChange="False" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64_1" />
+                <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString_1" />
+                <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64_1" />
+                <Variable x:TypeArguments="x:String" Name="DownloadFileFromURL_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="DownloadFileFromURL_Result" />
+                <Variable x:TypeArguments="x:String" Name="FolderExists_Conditional" />
+                <Variable x:TypeArguments="x:String" Name="FolderExists_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="FolderExists_Result" />
+                <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+                <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString" />
+                <Variable x:TypeArguments="x:Double" Name="FormatString_Result" />
+                <Variable x:TypeArguments="x:String" Name="FormatString_ResultString" />
+                <Variable x:TypeArguments="x:String" Name="Wait_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="Wait_Result" />
+                <Variable x:TypeArguments="x:String" Name="DeleteFile_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="DeleteFile_Result" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.ElseOption>
+          <p:IfElse.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="492,498" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.18.1.8, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="454,348" MinRequiredVersion="2.10.0.19" Moniker="3dc774b7-dc63-44c4-92ba-e2b37af34abb" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="0885c72a-283f-4b25-a094-17aab0167e69" m_bTextLinkChange="False" script="JABjAG0AZAAgAD0AIAAnAEMAOgBcAFAAcgBvAGcAcgBhAG0AIABGAGkAbABlAHMAIAAoAHgAOAA2ACkAXABLAGEAcwBlAHkAYQBcAFAAWABTAFQAQwBIADIAMAA5ADUANgA5ADYANAA4ADMANQAzADUAMABcAEsAQQBTAGUAdAB1AHAALgBlAHgAZQAnAA0ACgAkAEEAbABsAEEAcgBnAHMAIAA9ACAAQAAoACcALQBzACcALAAgACcALQByACcALAAgACcALQBnACAAUABYAFMAVABDAEgAMgAwADkANQA2ADkANgA0ADgAMwA1ADMANQAwACcALAAgACcALQBsACAAJQBUAEUATQBQACUAXABrAGEAcwBlAHQAdQBwAC4AbABvAGcAJwApAA0ACgANAAoAaQBmACAAKAAkAFMAZQByAHYAaQBjAGUAUgB1AG4AbgBpAG4AZwAgAC0AZQBxACAAIgBUAHIAdQBlACIAKQAgAHsADQAKACAAIAAgACAARwBlAHQALQBTAGUAcgB2AGkAYwBlACAALQBEAGkAcwBwAGwAYQB5AE4AYQBtAGUAIAAiAEsAYQBzAGUAeQBhACAAQQBnAGUAbgB0ACAARQBuAGQAcABvAGkAbgB0ACIAIAB8ACAAUwB0AG8AcAAtAFMAZQByAHYAaQBjAGUAIAAtAEYAbwByAGMAZQANAAoAfQANAAoADQAKAFMAdABhAHIAdAAtAFAAcgBvAGMAZQBzAHMAIAAgACQAYwBtAGQAIAAtAEEAcgBnAHUAbQBlAG4AdABMAGkAcwB0ACAAJABBAGwAbABBAHIAZwBzACAALQBOAG8ATgBlAHcAVwBpAG4AZABvAHcAIAAtAFcAYQBpAHQA">
+                  <p:RunPowerShellScript.InArgs>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="ServiceRunning" ArgType="string" DisplayArg="Is Service Running.Conditional" DisplayName="Service Running" Name="ServiceRunning" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:Object">[IsServiceRunning_Conditional]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                  </p:RunPowerShellScript.InArgs>
+                  <p:RunPowerShellScript.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPowerShellScript.OutArgs>
+                </p:RunPowerShellScript>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+                <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+                <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.IfOption>
+          <p:IfElse.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfElse.Value>
+        </p:IfElse>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="IsServiceRunning_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="IsServiceRunning_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IsServiceRunning_Result" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="FileExists_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfElse_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfElse_Result" />
+        <Variable x:TypeArguments="x:String" Default="C:\Program Files (x86)\Kaseya\PXSTCH20956964835350\KASetup.exe" Name="KASetupFile" />
+        <Variable x:TypeArguments="x:String" Default="https://drive.google.com/uc?export=download&amp;id=1W13DNPuGaAz0n55wDJkAEjDboKmo95X4" Name="KASetupDownload" />
+        <Variable x:TypeArguments="x:String" Default="KASetup.exe" Name="FileName" />
+        <Variable x:TypeArguments="x:String" Default="C:\Paxis" Name="DestFolder" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

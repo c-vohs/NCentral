@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="4a702d6f-8f8b-4a5a-a922-6114baa9712a" Name="Workstation Maintenance" Description="d2tzIG1haW50ZW5hbmNl" Version="2.30.0.0" MinRequiredVersion="2.30.0.0" RemoteCategory="0" ExecutionType="CurrentLoggedOnUser" MinimumPSVersionRequired="3.0">
+  <Object ID="{a8091a09-00f0-4408-9cbf-249e85e23f15}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;iDisableRDP&quot; Label=&quot;Disable RDP (Yes/No)&quot; ParameterType=&quot;string&quot; Value=&quot;No&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.40.1.3" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>1216,8134</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="1216,8134" MinRequiredVersion="2.30.0.0" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:EnableUAC AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Enable UAC" sap:VirtualizedContainerService.HintSize="1180,81" MinRequiredVersion="2.10.0.19" Moniker="804e5006-8a8b-4fd1-a213-8910dae76cea" Result="[EnableUAC_Result]" ResultString="[EnableUAC_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="EnableUAC" m_bTextLinkChange="False" />
+        <p:FlushDNS AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Flush DNS" sap:VirtualizedContainerService.HintSize="1180,81" MinRequiredVersion="2.10.0.19" Moniker="9bd542aa-afc5-48c2-929b-0f3229740d03" Result="[FlushDNS_Result]" ResultString="[FlushDNS_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="FlushDNS" m_bTextLinkChange="False" />
+        <p:RunPowerShellScript genArgEvent="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script - Set Powershell to RemoteSigned" sap:VirtualizedContainerService.HintSize="1180,522" MinRequiredVersion="2.10.0.19" Moniker="caa139a5-942a-40b1-96c2-b5e4f44998e3" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" m_bTextLinkChange="False" script="IAAgACAAUwBlAHQALQBFAHgAZQBjAHUAdABpAG8AbgBQAG8AbABpAGMAeQAgAFIAZQBtAG8AdABlAFMAaQBnAG4AZQBkACAALQBTAGMAbwBwAGUAIABDAHUAcgByAGUAbgB0AFUAcwBlAHIAIAAtAEYAbwByAGMAZQAgAA0ACgBTAGUAdAAtAEUAeABlAGMAdQB0AGkAbwBuAFAAbwBsAGkAYwB5ACAAUgBlAG0AbwB0AGUAUwBpAGcAbgBlAGQAIAAtAFMAYwBvAHAAZQAgAEwAbwBjAGEAbABNAGEAYwBoAGkAbgBlACAALQBGAG8AcgBjAGUAIAA=">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+          </p:RunPowerShellScript.OutArgs>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:RunPowerShellScript>
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="True" CaseSensitive_DisplayArg="true" Condition="equals" Condition_DisplayArg="equals" DisplayName="If - Disable RDP " sap:VirtualizedContainerService.HintSize="1180,1242" MinRequiredVersion="2.19.0.1" Moniker="81a2b20c-52c9-4d8a-ad33-b4d7588d5b9e" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="Yes" Value_Type="x:String" Variable="[iDisableRDP]" Variable_DisplayArg="Input Parameters.Disable RDP (Yes/No)" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="1096,969" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:RegistryValueExists BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" Property_Item="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" Conditional="[RegistryValueExists_Conditional]" DisplayName="Registry Value Exists - RDP" sap:VirtualizedContainerService.HintSize="1058,160" Key="System\CurrentControlSet\Control\Terminal Server" Key_DisplayArg="System\CurrentControlSet\Control\Terminal Server" MinRequiredVersion="2.10.0.19" Moniker="b74afbeb-99b4-4343-a8a1-9283d8247a93" Property="fDenyTSConnections" Property_DisplayArg="fDenyTSConnections" Result="[RegistryValueExists_Result]" ResultString="[RegistryValueExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryValueExists" m_bTextLinkChange="False" />
+                <p:IfElse CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="True" CaseSensitive_DisplayArg="true" Condition="equals" Condition_DisplayArg="equals" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="1058,619" MinRequiredVersion="2.19.0.1" Moniker="db68b447-55a5-40d6-8180-719c94ead30d" Result="[IfElse_Result]" ResultString="[IfElse_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="True" Value_Type="x:String" Variable="[RegistryValueExists_Conditional]" Variable_DisplayArg="Registry Value Exists - RDP.Conditional" Variable_Type="x:String" m_bTextLinkChange="False">
+                  <p:IfElse.ElseOption>
+                    <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="507,382" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:CreateRegistryKey BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" NewKey_Item="{x:Null}" NewKey_ItemProp="{x:Null}" PropType_Item="{x:Null}" PropType_ItemProp="{x:Null}" PropertyName_Item="{x:Null}" PropertyName_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" DisplayName="Create Registry Key" sap:VirtualizedContainerService.HintSize="469,232" MinRequiredVersion="2.10.0.19" Moniker="93a4299a-40b0-43a6-a222-c69e0643466b" NewKey="System\CurrentControlSet\Control\Terminal Server" NewKey_DisplayArg="System\CurrentControlSet\Control\Terminal Server" PropType="DWord" PropType_DisplayArg="DWord" PropertyName="fDenyTSConnections" PropertyName_DisplayArg="fDenyTSConnections" Result="[CreateRegistryKey_Result]" ResultString="[CreateRegistryKey_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CreateRegistryKey" Value="1" Value_DisplayArg="1" m_bTextLinkChange="False" />
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="CreateRegistryKey_ResultString" />
+                        <Variable x:TypeArguments="x:Double" Name="CreateRegistryKey_Result" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfElse.ElseOption>
+                  <p:IfElse.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="507,382" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:SetRegistryValue BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" PropertyName_Item="{x:Null}" PropertyName_ItemProp="{x:Null}" PropertyType_Item="{x:Null}" PropertyType_ItemProp="{x:Null}" PropertyValue_Item="{x:Null}" PropertyValue_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" DisplayName="Set Registry Value" sap:VirtualizedContainerService.HintSize="469,232" Key="System\CurrentControlSet\Control\Terminal Server" Key_DisplayArg="System\CurrentControlSet\Control\Terminal Server" MinRequiredVersion="2.18.0.1" Moniker="13c3bc83-0d16-43a4-838a-7add1d888f3c" PropertyName="fDenyTSConnections" PropertyName_DisplayArg="fDenyTSConnections" PropertyType="DWord" PropertyType_DisplayArg="DWord" PropertyValue="1" PropertyValue_DisplayArg="1" Result="[SetRegistryValue_Result]" ResultString="[SetRegistryValue_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="SetRegistryValue" m_bTextLinkChange="False" />
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="SetRegistryValue_ResultString" />
+                        <Variable x:TypeArguments="x:Double" Name="SetRegistryValue_Result" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfElse.IfOption>
+                  <p:IfElse.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="True" />
+                    </InArgument>
+                  </p:IfElse.Value>
+                </p:IfElse>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="IfElse_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="IfElse_Result" />
+                <Variable x:TypeArguments="x:String" Name="RegistryValueExists_Conditional" />
+                <Variable x:TypeArguments="x:String" Name="RegistryValueExists_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="RegistryValueExists_Result" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="Yes" />
+            </InArgument>
+          </p:IfObject.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:IfObject>
+        <p:RegistryValueExists BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" Property_Item="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" Conditional="[RegistryValueExists_Conditional_1]" DisplayName="Registry Value Exists - Autorun" sap:VirtualizedContainerService.HintSize="1180,160" Key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" Key_DisplayArg="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" MinRequiredVersion="2.10.0.19" Moniker="33ede623-3472-4fa4-9ab3-d0ee6bc8684f" Property="NoDriveTypeAutoRun" Property_DisplayArg="NoDriveTypeAutoRun" Result="[RegistryValueExists_Result_1]" ResultString="[RegistryValueExists_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryValueExists" m_bTextLinkChange="False">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:RegistryValueExists>
+        <p:IfElse CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="True" CaseSensitive_DisplayArg="true" Condition="equals" Condition_DisplayArg="equals" DisplayName="If/Else - Disable Autorun" sap:VirtualizedContainerService.HintSize="1180,891" MinRequiredVersion="2.19.0.1" Moniker="17f74370-5825-4cb8-b872-49cb580892ab" Result="[IfElse_Result_1]" ResultString="[IfElse_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="True" Value_Type="x:String" Variable="[RegistryValueExists_Conditional_1]" Variable_DisplayArg="Registry Value Exists - Autorun.Conditional" Variable_Type="x:String" m_bTextLinkChange="False">
+          <p:IfElse.ElseOption>
+            <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="568,654" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:CreateRegistryKey BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" NewKey_Item="{x:Null}" NewKey_ItemProp="{x:Null}" PropType_Item="{x:Null}" PropType_ItemProp="{x:Null}" PropertyName_Item="{x:Null}" PropertyName_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" DisplayName="Create Registry Key" sap:VirtualizedContainerService.HintSize="530,232" MinRequiredVersion="2.10.0.19" Moniker="3d79606c-4792-4dfa-979e-d05f069a16eb" NewKey="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" NewKey_DisplayArg="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" PropType="DWord" PropType_DisplayArg="DWord" PropertyName="NoDriveTypeAutoRun" PropertyName_DisplayArg="NoDriveTypeAutoRun" Result="[CreateRegistryKey_Result_2]" ResultString="[CreateRegistryKey_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CreateRegistryKey" Value="255" Value_DisplayArg="255" m_bTextLinkChange="False" />
+                <p:CreateRegistryKey BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" NewKey_Item="{x:Null}" NewKey_ItemProp="{x:Null}" PropType_Item="{x:Null}" PropType_ItemProp="{x:Null}" PropertyName_Item="{x:Null}" PropertyName_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" DisplayName="Create Registry Key" sap:VirtualizedContainerService.HintSize="530,232" MinRequiredVersion="2.10.0.19" Moniker="4c58d80f-dd58-460f-81a3-b90b560d6c7d" NewKey="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" NewKey_DisplayArg="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" PropType="DWord" PropType_DisplayArg="DWord" PropertyName="NoAutorun" PropertyName_DisplayArg="NoAutorun" Result="[CreateRegistryKey_Result_1]" ResultString="[CreateRegistryKey_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CreateRegistryKey" Value="1" Value_DisplayArg="1" m_bTextLinkChange="False" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="CreateRegistryKey_ResultString_1" />
+                <Variable x:TypeArguments="x:Double" Name="CreateRegistryKey_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="CreateRegistryKey_ResultString_2" />
+                <Variable x:TypeArguments="x:Double" Name="CreateRegistryKey_Result_2" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.ElseOption>
+          <p:IfElse.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="568,654" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:SetRegistryValue BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" PropertyName_Item="{x:Null}" PropertyName_ItemProp="{x:Null}" PropertyType_Item="{x:Null}" PropertyType_ItemProp="{x:Null}" PropertyValue_Item="{x:Null}" PropertyValue_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" DisplayName="Set Registry Value" sap:VirtualizedContainerService.HintSize="530,232" Key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" Key_DisplayArg="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" MinRequiredVersion="2.18.0.1" Moniker="d1c85240-6aea-4cdf-9f0a-e528e5d7453b" PropertyName="NoDriveTypeAutoRun" PropertyName_DisplayArg="NoDriveTypeAutoRun" PropertyType="DWord" PropertyType_DisplayArg="DWord" PropertyValue="255" PropertyValue_DisplayArg="255" Result="[SetRegistryValue_Result_2]" ResultString="[SetRegistryValue_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="SetRegistryValue" m_bTextLinkChange="False" />
+                <p:SetRegistryValue BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" PropertyName_Item="{x:Null}" PropertyName_ItemProp="{x:Null}" PropertyType_Item="{x:Null}" PropertyType_ItemProp="{x:Null}" PropertyValue_Item="{x:Null}" PropertyValue_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" DisplayName="Set Registry Value" sap:VirtualizedContainerService.HintSize="530,232" Key="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" Key_DisplayArg="Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" MinRequiredVersion="2.18.0.1" Moniker="b66c082d-5c5d-4c7d-bc47-86be89d39b7b" PropertyName="NoAutorun" PropertyName_DisplayArg="NoAutorun" PropertyType="DWord" PropertyType_DisplayArg="DWord" PropertyValue="1" PropertyValue_DisplayArg="1" Result="[SetRegistryValue_Result_1]" ResultString="[SetRegistryValue_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="SetRegistryValue" m_bTextLinkChange="False" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="SetRegistryValue_ResultString_1" />
+                <Variable x:TypeArguments="x:Double" Name="SetRegistryValue_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="SetRegistryValue_ResultString_2" />
+                <Variable x:TypeArguments="x:Double" Name="SetRegistryValue_Result_2" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.IfOption>
+          <p:IfElse.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfElse.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:IfElse>
+        <p:RunProgram Arguments_Item="{x:Null}" Arguments_ItemProp="{x:Null}" Program_Item="{x:Null}" Program_ItemProp="{x:Null}" RunAsType_Item="{x:Null}" RunAsType_ItemProp="{x:Null}" WaitForCompletion_Item="{x:Null}" WaitForCompletion_ItemProp="{x:Null}" WindowType_Item="{x:Null}" WindowType_ItemProp="{x:Null}" WorkingDirectory="{x:Null}" WorkingDirectory_DisplayArg="{x:Null}" WorkingDirectory_Item="{x:Null}" WorkingDirectory_ItemProp="{x:Null}" Arguments="-x -standby-timeout-ac 0" Arguments_DisplayArg="-x -standby-timeout-ac 0" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run Program  - Disable sleeping on AC power plugged in" sap:VirtualizedContainerService.HintSize="1180,336" MinRequiredVersion="2.10.0.19" Moniker="f2b850fe-fe80-496c-9951-f4ddaa267cea" ProcessID="[RunProgram_ProcessID]" Program="C:\Windows\System32\powercfg.exe" Program_DisplayArg="C:\Windows\System32\powercfg.exe" Result="[RunProgram_Result]" ResultString="[RunProgram_ResultString]" RunAsCurrentLoggedOnUser="True" RunAsType="LocalSystem" RunAsType_DisplayArg="LocalSystem" ScriptExecutionMethod="None" TypeName="RunProgram" WaitForCompletion="False" WaitForCompletion_DisplayArg="" WindowType="Hidden" WindowType_DisplayArg="Hidden" m_bTextLinkChange="False">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:RunProgram>
+        <p:RunProgram Arguments_Item="{x:Null}" Arguments_ItemProp="{x:Null}" Program_Item="{x:Null}" Program_ItemProp="{x:Null}" RunAsType_Item="{x:Null}" RunAsType_ItemProp="{x:Null}" WaitForCompletion_Item="{x:Null}" WaitForCompletion_ItemProp="{x:Null}" WindowType_Item="{x:Null}" WindowType_ItemProp="{x:Null}" WorkingDirectory="{x:Null}" WorkingDirectory_DisplayArg="{x:Null}" WorkingDirectory_Item="{x:Null}" WorkingDirectory_ItemProp="{x:Null}" Arguments="-x -hibernate-timeout-ac 0" Arguments_DisplayArg="-x -hibernate-timeout-ac 0" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run Program - Disable hibernation on AC power plugged in" sap:VirtualizedContainerService.HintSize="1180,336" MinRequiredVersion="2.10.0.19" Moniker="63be402d-d1dd-48d5-93d8-e230eb08df1e" ProcessID="[RunProgram_ProcessID_1]" Program="C:\Windows\System32\powercfg.exe" Program_DisplayArg="C:\Windows\System32\powercfg.exe" Result="[RunProgram_Result_1]" ResultString="[RunProgram_ResultString_1]" RunAsCurrentLoggedOnUser="True" RunAsType="LocalSystem" RunAsType_DisplayArg="LocalSystem" ScriptExecutionMethod="None" TypeName="RunProgram" WaitForCompletion="False" WaitForCompletion_DisplayArg="" WindowType="Hidden" WindowType_DisplayArg="Hidden" m_bTextLinkChange="False">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:RunProgram>
+        <p:IsServiceRunning Service_Item="{x:Null}" Service_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" Conditional="[IsServiceRunning_Conditional]" DisplayName="Is Service Running - Windows update Service" sap:VirtualizedContainerService.HintSize="1180,88" MinRequiredVersion="2.16.0.1" Moniker="f8723590-8140-409a-a204-973ba71e994f" Result="[IsServiceRunning_Result]" ResultString="[IsServiceRunning_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Service="wuauserv" Service_DisplayArg="wuauserv" TypeName="IsServiceRunning" m_bTextLinkChange="False">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:IsServiceRunning>
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="True" CaseSensitive_DisplayArg="true" Condition="equals" Condition_DisplayArg="equals" DisplayName="If - Windows update Service" sap:VirtualizedContainerService.HintSize="1180,583" MinRequiredVersion="2.19.0.1" Moniker="d97ad869-acfb-486a-b84c-e611ae6272c6" Result="[IfObject_Result_1]" ResultString="[IfObject_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="False" Value_Type="x:String" Variable="[IsServiceRunning_Conditional]" Variable_DisplayArg="Is Service Running - Windows update Service.Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="414,310" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:StartService Disabled_Item="{x:Null}" Disabled_ItemProp="{x:Null}" Service_Item="{x:Null}" Service_ItemProp="{x:Null}" StartupType_Item="{x:Null}" StartupType_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" Disabled="True" Disabled_DisplayArg="" DisplayName="Start Service" sap:VirtualizedContainerService.HintSize="376,160" MinRequiredVersion="2.10.0.19" Moniker="24759d66-b127-4f00-81c5-6ea27730e34b" Result="[StartService_Result]" ResultString="[StartService_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Service="wuauserv" Service_DisplayArg="wuauserv" StartupType="Automatic" StartupType_DisplayArg="Automatic" TypeName="StartService" m_bTextLinkChange="False">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </p:StartService>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="StartService_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="StartService_Result" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="False" />
+            </InArgument>
+          </p:IfObject.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:IfObject>
+        <p:RegistryValueExists BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" Property_Item="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" Conditional="[RegistryValueExists_Conditional_2]" DisplayName="Registry Value Exists - Windows SmartScreen" sap:VirtualizedContainerService.HintSize="1180,160" Key="SOFTWARE\Policies\Microsoft\Windows\System" Key_DisplayArg="SOFTWARE\Policies\Microsoft\Windows\System" MinRequiredVersion="2.10.0.19" Moniker="fcd513c3-ac6f-4f46-8099-1200987f3cf5" Property="EnableSmartScreen" Property_DisplayArg="EnableSmartScreen" Result="[RegistryValueExists_Result_2]" ResultString="[RegistryValueExists_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryValueExists" m_bTextLinkChange="False">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:RegistryValueExists>
+        <p:IfElse CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="True" CaseSensitive_DisplayArg="true" Condition="equals" Condition_DisplayArg="equals" DisplayName="If/Else - Windows SmartScreen" sap:VirtualizedContainerService.HintSize="1180,619" MinRequiredVersion="2.19.0.1" Moniker="5a991266-36d8-4f33-b054-1279cf4c97dc" Result="[IfElse_Result_2]" ResultString="[IfElse_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="True" Value_Type="x:String" Variable="[RegistryValueExists_Conditional_2]" Variable_DisplayArg="Registry Value Exists - Windows SmartScreen.Conditional" Variable_Type="x:String" m_bTextLinkChange="False">
+          <p:IfElse.ElseOption>
+            <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="485,382" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:CreateRegistryKey BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" NewKey_Item="{x:Null}" NewKey_ItemProp="{x:Null}" PropType_Item="{x:Null}" PropType_ItemProp="{x:Null}" PropertyName_Item="{x:Null}" PropertyName_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" DisplayName="Create Registry Key" sap:VirtualizedContainerService.HintSize="447,232" MinRequiredVersion="2.10.0.19" Moniker="7fb289ff-8d93-455d-88dc-56c1b02a203e" NewKey="SOFTWARE\Policies\Microsoft\Windows\System" NewKey_DisplayArg="SOFTWARE\Policies\Microsoft\Windows\System" PropType="DWord" PropType_DisplayArg="DWord" PropertyName="EnableSmartScreen" PropertyName_DisplayArg="EnableSmartScreen" Result="[CreateRegistryKey_Result_3]" ResultString="[CreateRegistryKey_ResultString_3]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CreateRegistryKey" Value="1" Value_DisplayArg="1" m_bTextLinkChange="False" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="CreateRegistryKey_ResultString_3" />
+                <Variable x:TypeArguments="x:Double" Name="CreateRegistryKey_Result_3" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.ElseOption>
+          <p:IfElse.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="485,382" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:SetRegistryValue BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" PropertyName_Item="{x:Null}" PropertyName_ItemProp="{x:Null}" PropertyType_Item="{x:Null}" PropertyType_ItemProp="{x:Null}" PropertyValue_Item="{x:Null}" PropertyValue_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" DisplayName="Set Registry Value" sap:VirtualizedContainerService.HintSize="447,232" Key="SOFTWARE\Policies\Microsoft\Windows\System" Key_DisplayArg="SOFTWARE\Policies\Microsoft\Windows\System" MinRequiredVersion="2.18.0.1" Moniker="89e1cb10-b4ec-424f-9547-391f5a4e7539" PropertyName="EnableSmartScreen" PropertyName_DisplayArg="EnableSmartScreen" PropertyType="DWord" PropertyType_DisplayArg="DWord" PropertyValue="1" PropertyValue_DisplayArg="1" Result="[SetRegistryValue_Result_3]" ResultString="[SetRegistryValue_ResultString_3]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="SetRegistryValue" m_bTextLinkChange="False" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="SetRegistryValue_ResultString_3" />
+                <Variable x:TypeArguments="x:Double" Name="SetRegistryValue_Result_3" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.IfOption>
+          <p:IfElse.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfElse.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:IfElse>
+        <p:RegistryValueExists BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" Property_Item="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" Conditional="[RegistryValueExists_Conditional_3]" DisplayName="Registry Value Exists - Fast Start (Quick boot) disable" sap:VirtualizedContainerService.HintSize="1180,160" Key="SYSTEM\CurrentControlSet\Control\Session Manager\Power" Key_DisplayArg="SYSTEM\CurrentControlSet\Control\Session Manager\Power" MinRequiredVersion="2.10.0.19" Moniker="92e02f72-9d81-4442-a9b6-d45343e6669c" Property="HiberbootEnabled" Property_DisplayArg="HiberbootEnabled" Result="[RegistryValueExists_Result_3]" ResultString="[RegistryValueExists_ResultString_3]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryValueExists" m_bTextLinkChange="False">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:RegistryValueExists>
+        <p:IfElse CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="True" CaseSensitive_DisplayArg="true" Condition="equals" Condition_DisplayArg="equals" DisplayName="If/Else - Fast Start (Quickboot) disable" sap:VirtualizedContainerService.HintSize="1180,619" MinRequiredVersion="2.19.0.1" Moniker="76a2096e-e8c7-446e-a23b-a46606c3f1a6" Result="[IfElse_Result_3]" ResultString="[IfElse_ResultString_3]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="True" Value_Type="x:String" Variable="[RegistryValueExists_Conditional_3]" Variable_DisplayArg="Registry Value Exists - Fast Start (Quick boot) disable.Conditional" Variable_Type="x:String" m_bTextLinkChange="False">
+          <p:IfElse.ElseOption>
+            <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="558,382" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:CreateRegistryKey BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" NewKey_Item="{x:Null}" NewKey_ItemProp="{x:Null}" PropType_Item="{x:Null}" PropType_ItemProp="{x:Null}" PropertyName_Item="{x:Null}" PropertyName_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" DisplayName="Create Registry Key" sap:VirtualizedContainerService.HintSize="520,232" MinRequiredVersion="2.10.0.19" Moniker="580bd46f-ad97-451f-9096-81337df9eb26" NewKey="SYSTEM\CurrentControlSet\Control\Session Manager\Power" NewKey_DisplayArg="SYSTEM\CurrentControlSet\Control\Session Manager\Power" PropType="DWord" PropType_DisplayArg="DWord" PropertyName="HiberbootEnabled" PropertyName_DisplayArg="HiberbootEnabled" Result="[CreateRegistryKey_Result_4]" ResultString="[CreateRegistryKey_ResultString_4]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CreateRegistryKey" Value="0" Value_DisplayArg="0" m_bTextLinkChange="False" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="CreateRegistryKey_ResultString_4" />
+                <Variable x:TypeArguments="x:Double" Name="CreateRegistryKey_Result_4" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.ElseOption>
+          <p:IfElse.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="558,382" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:SetRegistryValue BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" PropertyName_Item="{x:Null}" PropertyName_ItemProp="{x:Null}" PropertyType_Item="{x:Null}" PropertyType_ItemProp="{x:Null}" PropertyValue_Item="{x:Null}" PropertyValue_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" DisplayName="Set Registry Value" sap:VirtualizedContainerService.HintSize="520,232" Key="SYSTEM\CurrentControlSet\Control\Session Manager\Power" Key_DisplayArg="SYSTEM\CurrentControlSet\Control\Session Manager\Power" MinRequiredVersion="2.18.0.1" Moniker="862fb123-f31c-425d-b290-3a7def6a9306" PropertyName="HiberbootEnabled" PropertyName_DisplayArg="HiberbootEnabled" PropertyType="DWord" PropertyType_DisplayArg="DWord" PropertyValue="0" PropertyValue_DisplayArg="0" Result="[SetRegistryValue_Result_4]" ResultString="[SetRegistryValue_ResultString_4]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="SetRegistryValue" m_bTextLinkChange="False" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="SetRegistryValue_ResultString_4" />
+                <Variable x:TypeArguments="x:Double" Name="SetRegistryValue_Result_4" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.IfOption>
+          <p:IfElse.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfElse.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:IfElse>
+        <p:DeleteTemporaryFiles DeleteCookies_Item="{x:Null}" DeleteCookies_ItemProp="{x:Null}" DeleteTempFiles_Item="{x:Null}" DeleteTempFiles_ItemProp="{x:Null}" DeleteTempInternetFiles_Item="{x:Null}" DeleteTempInternetFiles_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" DeleteCookies="True" DeleteCookies_DisplayArg="true" DeleteTempFiles="True" DeleteTempFiles_DisplayArg="true" DeleteTempInternetFiles="True" DeleteTempInternetFiles_DisplayArg="true" DisplayName="Delete Temporary Files" sap:VirtualizedContainerService.HintSize="1180,160" MinRequiredVersion="2.30.0.0" Moniker="1ac62f96-ce95-4267-82a8-b541eba65be7" Result="[DeleteTemporaryFiles_Result]" ResultString="[DeleteTemporaryFiles_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="DeleteTemporaryFiles" m_bTextLinkChange="False">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:DeleteTemporaryFiles>
+        <p:IsServiceRunning Service_Item="{x:Null}" Service_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" Conditional="[IsServiceRunning_Conditional_1]" DisplayName="Is Service Running - Start windows time" sap:VirtualizedContainerService.HintSize="1180,88" MinRequiredVersion="2.16.0.1" Moniker="d86022a6-3a8e-4369-a7f2-d04957cfa251" Result="[IsServiceRunning_Result_1]" ResultString="[IsServiceRunning_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Service="W32Time" Service_DisplayArg="W32Time" TypeName="IsServiceRunning" m_bTextLinkChange="False">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:IsServiceRunning>
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="True" CaseSensitive_DisplayArg="true" Condition="equals" Condition_DisplayArg="equals" DisplayName="If - start windows time" sap:VirtualizedContainerService.HintSize="1180,583" MinRequiredVersion="2.19.0.1" Moniker="2f87445a-eefd-4837-bcd2-0c5377b022e4" Result="[IfObject_Result_2]" ResultString="[IfObject_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="False" Value_Type="x:String" Variable="[IsServiceRunning_Conditional_1]" Variable_DisplayArg="Is Service Running - Start windows time.Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="414,310" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:StartService Disabled_Item="{x:Null}" Disabled_ItemProp="{x:Null}" Service_Item="{x:Null}" Service_ItemProp="{x:Null}" StartupType_Item="{x:Null}" StartupType_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" Disabled="True" Disabled_DisplayArg="" DisplayName="Start Service" sap:VirtualizedContainerService.HintSize="376,160" MinRequiredVersion="2.10.0.19" Moniker="a784e6e3-bd9b-4e15-a647-39f80039f04a" Result="[StartService_Result_1]" ResultString="[StartService_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Service="W32Time" Service_DisplayArg="W32Time" StartupType="Automatic" StartupType_DisplayArg="Automatic" TypeName="StartService" m_bTextLinkChange="False" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:Double" Name="StartService_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="StartService_ResultString_1" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="False" />
+            </InArgument>
+          </p:IfObject.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:IfObject>
+        <p:RunPowerShellScript genArgEvent="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.9.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script - set time sync to DC or NTP automatically" sap:VirtualizedContainerService.HintSize="1180,522" MinRequiredVersion="2.10.0.19" Moniker="4956797c-581d-4eb8-a214-a1aca1592dc4" OutPut_64="[RunPowerShellScript_OutPut_64_1]" Result="[RunPowerShellScript_Result_1]" ResultString="[RunPowerShellScript_ResultString_1]" Results_x64="[RunPowerShellScript_Results_x64_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" m_bTextLinkChange="False" script="bgBlAHQAIAB0AGkAbQBlACAALwBzAGUAdAAgAC8AeQBlAHMA">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+          </p:RunPowerShellScript.OutArgs>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="FlushDNS_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="FlushDNS_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+        <Variable x:TypeArguments="x:String" Name="EnableUAC_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="EnableUAC_Result" />
+        <Variable x:TypeArguments="x:String" Name="RegistryValueExists_Conditional_1" />
+        <Variable x:TypeArguments="x:String" Name="RegistryValueExists_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="RegistryValueExists_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="IfElse_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="IfElse_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="RunProgram_ProcessID" />
+        <Variable x:TypeArguments="x:String" Name="RunProgram_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="RunProgram_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunProgram_ProcessID_1" />
+        <Variable x:TypeArguments="x:String" Name="RunProgram_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="RunProgram_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="IsServiceRunning_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="IsServiceRunning_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IsServiceRunning_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="RegistryValueExists_Conditional_2" />
+        <Variable x:TypeArguments="x:String" Name="RegistryValueExists_ResultString_2" />
+        <Variable x:TypeArguments="x:Double" Name="RegistryValueExists_Result_2" />
+        <Variable x:TypeArguments="x:String" Name="IfElse_ResultString_2" />
+        <Variable x:TypeArguments="x:Double" Name="IfElse_Result_2" />
+        <Variable x:TypeArguments="x:String" Name="RegistryValueExists_Conditional_3" />
+        <Variable x:TypeArguments="x:String" Name="RegistryValueExists_ResultString_3" />
+        <Variable x:TypeArguments="x:Double" Name="RegistryValueExists_Result_3" />
+        <Variable x:TypeArguments="x:String" Name="IfElse_ResultString_3" />
+        <Variable x:TypeArguments="x:Double" Name="IfElse_Result_3" />
+        <Variable x:TypeArguments="x:String" Name="DeleteTemporaryFiles_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="DeleteTemporaryFiles_Result" />
+        <Variable x:TypeArguments="x:String" Name="IsServiceRunning_Conditional_1" />
+        <Variable x:TypeArguments="x:Double" Name="IsServiceRunning_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="IsServiceRunning_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result_2" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString_2" />
+        <Variable x:TypeArguments="x:String" Name="iDisableRDP" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64_1" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString_1" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64_1" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

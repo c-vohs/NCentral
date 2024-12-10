@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="700b7e60-b145-43d7-bcfd-006bc2b93211" Name="Invoke-AsCurrentUser" Description="SW52b2tlLUFzQ3VycmVudFVzZXIgdGVzdA==" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{9a0dba62-38c9-4ed0-9590-f95148ecc6f7}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml /&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.50.0.3" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,745</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,745" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript genArgEvent="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" Moniker="8d4d2c84-4fbf-4af5-80c6-76ad1c0906be" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" m_bTextLinkChange="False" script="IwBpAG0AcABvAHIAdAAtAG0AbwBkAHUAbABlACAAUgB1AG4AQQBzAFUAcwBlAHIADQAKAA0ACgBHAGUAdAAtAE0AbwBkAHUAbABlACAAUgB1AG4AQQBzAFUAcwBlAHIAIAB8ACAAbwB1AHQALQBmAGkAbABlACAAIgBDADoAXABQAGEAeABpAHMAXABSAHUAbgBBAHMAVQBzAGUAcgAuAHQAeAB0ACIADQAKAA0ACgAkAHMAYwByAGkAcAB0AGIAbABvAGMAawAgAD0AIAB7ACAAQwA6AFwAUABhAHgAaQBzAFwAYwB1AHMAdABtAGIALgBlAHgAZQAgAGgAZQBhAGQAZQByAD0AIgBQAGEAeABpAHMAIABNAGEAaQBuAHQAZQBuAGEAbgBjAGUAIgAgAFAAbwBzAGkAdABpAG8AbgA9AGMAZQBuAHQAZQByACAAVABoAGUAbQBlAD0AdwBpAG4AMQAwACAAaQBjAG8AbgA9ACIAQwA6AFwAUABhAHgAaQBzAFwAcABhAHgAXwBpAGMAbwBuAF8AeQBlAGwAbABvAHcALgBpAGMAbwAiACAAbQBlAHMAcwBhAGcAZQA9ACIAWQBvAHUAcgAgAG0AYQBjAGgAaQBuAGUAIABpAHMAIABjAHUAcgByAGUAbgB0AGwAeQAgAHAAZQBuAGQAaQBuAGcAIABhACAAcgBlAGIAbwBvAHQALgAgAFkAbwB1ACAAbQBhAHkAIABkAGUAbABhAHkAIAB0AGgAaQBzACAAbwByACAAcgBlAGIAbwBvAHQAIABuAG8AdwAuAFwAcgBcAG4ATQBhAGMAaABpAG4AZQAgAHcAaQBsAGwAIABhAHUAdABvAG0AYQB0AGkAYwBhAGwAbAB5ACAAcgBlAGIAbwBvAHQAIABpAG4AIAAxADUAIABtAGkAbgB1AHQAZQBzACAAaQBmACAAbgBvACAAcgBlAHMAcABvAG4AcwBlACAAYwBoAG8AcwBlAG4ALgBcAHIAXABuAFAAbABlAGEAcwBlACAAYwBvAG4AdABhAGMAdAAgAHUAcwAgAGEAdAAgADgANgA1AC0ANQA4ADgALQA5ADgAMgAzACAAdwBpAHQAaAAgAHEAdQBlAHMAdABpAG8AbgBzACAAbwByACAAYwBvAG4AYwBlAHIAbgBzAC4AIgAgAE8AbgBUAG8AcAA9ADEAIABiAHUAdAB0AG8AbgA9ACIAUgBlAG0AaQBuAGQAIABNAGUAIAAyADQAaAB8ADIANABoAF8AZABlAGwAYQB5ACIAIABiAHUAdAB0AG8AbgA9ACIAUgBlAG0AaQBuAGQAIABNAGUAIAAyAGgAfAAyAGgAXwBkAGUAbABhAHkAIgAgAGIAdQB0AHQAbwBuAD0AIgBSAGUAbQBpAG4AZAAgAE0AZQAgADMAMABtAHwAMwAwAG0AXwBkAGUAbABhAHkAIgAgAGIAdQB0AHQAbwBuAD0AIgBSAGUAYgBvAG8AdAAgAE4AbwB3AHwAcgBlAGIAbwBvAHQAfAA5ADAAMAAiACAAfAAgAG8AdQB0AC0AZgBpAGwAZQAgACIAQwA6AFwAUABhAHgAaQBzAFwAUgBlAGIAbwBvAHQAUgBlAHMAcABvAG4AcwBlAC4AdAB4AHQAIgAgAH0ADQAKAA0ACgAkAHMAYwByAGkAcAB0AGIAbABvAGMAawAyACAAPQAgAHsAIAB3AGgAbwBhAG0AaQAgAHwAIABvAHUAdAAtAGYAaQBsAGUAIAAiAEMAOgBcAFAAYQB4AGkAcwBcAHcAaABvAGEAbQBpAC4AdAB4AHQAIgAgAH0ADQAKAEkAbgB2AG8AawBlAC0AQQBzAEMAdQByAHIAZQBuAHQAVQBzAGUAcgAgAC0AUwBjAHIAaQBwAHQAQgBsAG8AYwBrACAAJABzAGMAcgBpAHAAdABiAGwAbwBjAGsAMgAgAC0AVQBzAGUAVwBpAG4AZABvAHcAcwBQAG8AdwBlAHIAUwBoAGUAbABsACAAfAAgAG8AdQB0AC0AZgBpAGwAZQAgACIAQwA6AFwAUABhAHgAaQBzAFwAbwB1AHQAcAB1AHQALgB0AHgAdAAiAA0ACgANAAoARwBlAHQALQBNAG8AZAB1AGwAZQAgAFIAdQBuAEEAcwBVAHMAZQByACAAfAAgAG8AdQB0AC0AZgBpAGwAZQAgACIAQwA6AFwAUABhAHgAaQBzAFwAUgB1AG4AQQBzAFUAcwBlAHIAMgAuAHQAeAB0ACIADQAKAA0ACgAjAHcAaABvAGEAbQBpACAAfAAgAG8AdQB0AC0AZgBpAGwAZQAgACIAQwA6AFwAUABhAHgAaQBzAFwAdwBoAG8AYQBtAGkAMgAuAHQAeAB0ACIADQAKAA0ACgBJAG4AdgBvAGsAZQAtAEEAcwBDAHUAcgByAGUAbgB0AFUAcwBlAHIAIAAtAFMAYwByAGkAcAB0AEIAbABvAGMAawAgACQAcwBjAHIAaQBwAHQAYgBsAG8AYwBrACAALQBVAHMAZQBXAGkAbgBkAG8AdwBzAFAAbwB3AGUAcgBTAGgAZQBsAGwA">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="4345df51-c636-4247-9773-b1b91cc2af1a" Name="Rename Computer - Time Dependent" Description="UmVuYW1lcyB0aGUgY29tcHV0ZXIgYW5kIGZvcmNlcyBhIHJlc3RhcnQgaWYgaXQgaXMgYmV0d2VlbiAyIHRpbWVzIHdoZW4gdGhlIHNjcmlwdCBydW5zLCBvdGhlcndpc2UgaXQgcmVuYW1lcyBhbmQgZG9lcyBub3QgcmVib290Lg==" Version="2.19.0.1" MinRequiredVersion="2.19.0.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{59d18d81-ed28-479f-a97b-f06d02f62435}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;beginTime&quot; Label=&quot;Beginning Time&quot; ParameterType=&quot;string&quot; Value=&quot;00:00&quot; /&gt;&lt;Parameter ParameterName=&quot;endTime&quot; Label=&quot;End Time&quot; ParameterType=&quot;string&quot; Value=&quot;23:59&quot; /&gt;&lt;Parameter ParameterName=&quot;newName&quot; Label=&quot;New Computer Name&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;username&quot; Label=&quot;Username&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;password&quot; Label=&quot;Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;ftpPassword&quot; Label=&quot;FTP Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.40.1.3" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>1082,958</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="1082,958" MinRequiredVersion="2.19.0.1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.40.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="1046,154" IsUpdated="True" MinRequiredVersion="2.10.0.19" Moniker="5f818907-0be9-4d47-8db1-d067a4c8f4a4" Result="[RunPolicy_Result]" ResultString="[RunPolicy_ResultString]" RunAsCurrentLoggedOnUser="False" RunPolicyId="b174633b-02e8-4677-b92d-ee2d1a21d76f" RunPolicyName_DisplayArg="Check Online Between Time" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="caa0f9f8-74f2-4840-8249-987a641a6b21" m_bTextLinkChange="False">
+          <p:RunPolicy.GlobalVars>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPolicy.GlobalVars>
+          <p:RunPolicy.InArgs>
+            <p:InArg ItemProp="{x:Null}" x:Key="beginTime" ArgType="string" DisplayArg="Input Parameters.Beginning Time" DisplayName="Begin Time" Name="beginTime" isRequired="True">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:String">[beginTime]</InArgument>
+              </p:InArg.Arg>
+              <p:InArg.Item>
+                <InArgument x:TypeArguments="x:Object" />
+              </p:InArg.Item>
+            </p:InArg>
+            <p:InArg ItemProp="{x:Null}" x:Key="endTime" ArgType="string" DisplayArg="Input Parameters.End Time" DisplayName="End Time" Name="endTime" isRequired="True">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:String">[endTime]</InArgument>
+              </p:InArg.Arg>
+              <p:InArg.Item>
+                <InArgument x:TypeArguments="x:Object" />
+              </p:InArg.Item>
+            </p:InArg>
+          </p:RunPolicy.InArgs>
+          <p:RunPolicy.OutArgs>
+            <p:OutArg x:Key="online" ArgType="string" DisplayName="Online" Name="online">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPolicy_online]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPolicy.OutArgs>
+        </p:RunPolicy>
+        <p:IfElse CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.40.1.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="equals" Condition_DisplayArg="equals" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="1046,541" MinRequiredVersion="2.19.0.1" Moniker="da52c6d1-9901-4850-a770-1c7b73a47d81" Result="[IfElse_Result]" ResultString="[IfElse_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="Yes" Value_Type="x:String" Variable="[RunPolicy_online]" Variable_DisplayArg="Run Policy.Online" Variable_Type="x:String" m_bTextLinkChange="False">
+          <p:IfElse.ElseOption>
+            <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="501,304" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.40.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="463,154" IsUpdated="True" MinRequiredVersion="2.19.0.1" Moniker="521cb511-0c3a-4da3-8c7e-a94b737da154" Result="[RunPolicy_Result_2]" ResultString="[RunPolicy_ResultString_2]" RunAsCurrentLoggedOnUser="False" RunPolicyId="7d0004eb-bc36-4497-a130-49bc3b3d5c7e" RunPolicyName_DisplayArg="Rename Domain Computer" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="123f8a25-7bf7-4765-af97-05e6dce87d2c" m_bTextLinkChange="False">
+                  <p:RunPolicy.GlobalVars>
+                    <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                  </p:RunPolicy.GlobalVars>
+                  <p:RunPolicy.InArgs>
+                    <p:InArg ItemProp="{x:Null}" x:Key="newName" ArgType="string" DisplayArg="Input Parameters.New Computer Name" DisplayName="New Computer Name" Name="newName" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">[newName]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="username" ArgType="string" DisplayArg="Input Parameters.Username" DisplayName="Username" Name="username" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">[username]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="passwd" ArgType="password" DisplayArg="Input Parameters.Password" DisplayName="Password" Name="passwd" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="p:Password">[password]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="restart" ArgType="string" DisplayArg="No" DisplayName="Force Restart?" Name="restart" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">No</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                  </p:RunPolicy.InArgs>
+                  <p:RunPolicy.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPolicy.OutArgs>
+                </p:RunPolicy>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString_2" />
+                <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result_2" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.ElseOption>
+          <p:IfElse.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="501,304" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.40.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="463,154" IsUpdated="True" MinRequiredVersion="2.19.0.1" Moniker="b151e9df-fd7c-4f58-8605-fa7a79d05b55" Result="[RunPolicy_Result_1]" ResultString="[RunPolicy_ResultString_1]" RunAsCurrentLoggedOnUser="False" RunPolicyId="7d0004eb-bc36-4497-a130-49bc3b3d5c7e" RunPolicyName_DisplayArg="Rename Domain Computer" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="18c49eb2-2c3c-4be9-8105-2abfb45657f0" m_bTextLinkChange="False">
+                  <p:RunPolicy.GlobalVars>
+                    <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                  </p:RunPolicy.GlobalVars>
+                  <p:RunPolicy.InArgs>
+                    <p:InArg ItemProp="{x:Null}" x:Key="newName" ArgType="string" DisplayArg="Input Parameters.New Computer Name" DisplayName="New Computer Name" Name="newName" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">[newName]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="username" ArgType="string" DisplayArg="Input Parameters.Username" DisplayName="Username" Name="username" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">[username]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="passwd" ArgType="password" DisplayArg="Input Parameters.Password" DisplayName="Password" Name="passwd" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="p:Password">[password]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="restart" ArgType="string" DisplayArg="Yes" DisplayName="Force Restart?" Name="restart" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">Yes</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                  </p:RunPolicy.InArgs>
+                  <p:RunPolicy.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPolicy.OutArgs>
+                </p:RunPolicy>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString_1" />
+                <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result_1" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.IfOption>
+          <p:IfElse.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="Yes" />
+            </InArgument>
+          </p:IfElse.Value>
+        </p:IfElse>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Default="00:00" Name="beginTime" />
+        <Variable x:TypeArguments="x:String" Default="23:59" Name="endTime" />
+        <Variable x:TypeArguments="x:String" Name="newName" />
+        <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPolicy_online" />
+        <Variable x:TypeArguments="x:String" Name="IfElse_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfElse_Result" />
+        <Variable x:TypeArguments="x:String" Name="username" />
+        <Variable x:TypeArguments="p:Password" Name="password" />
+        <Variable x:TypeArguments="p:Password" Name="ftpPassword" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

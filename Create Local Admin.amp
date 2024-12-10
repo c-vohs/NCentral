@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="2bd7af6c-5998-40af-a7de-7de1e413bb0b" Name="Create Local Admin" Description="Q3JlYXRlIExvY2FsIEFkbWlu" Version="2.16.0.1" MinRequiredVersion="2.16.0.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{6776496a-9051-4120-9380-47466fc66ade}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;inLocalUser&quot; Label=&quot;User to be created&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;inPass&quot; Label=&quot;Input Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.3.1" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>574,1696</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="574,1696" MinRequiredVersion="2.16.0.1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:LocalUserExists User_Item="{x:Null}" User_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" Conditional="[LocalUserExists_Conditional]" DisplayName="Local User Exists" sap:VirtualizedContainerService.HintSize="538,88" MinRequiredVersion="2.10.0.19" Moniker="df4c5b59-e3ce-4682-83b1-74bad2d43e6c" Result="[LocalUserExists_Result]" ResultString="[LocalUserExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="LocalUserExists" User="[inLocalUser]" User_DisplayArg="Input Parameters.User to be created" m_bTextLinkChange="False" />
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="equals" Condition_DisplayArg="equals" DisplayName="If" sap:VirtualizedContainerService.HintSize="538,1345" MinRequiredVersion="2.16.0.1" Moniker="0b91f7d5-fadc-4577-9c07-84043ad6b3db" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="False" Value_Type="x:String" Variable="[LocalUserExists_Conditional]" Variable_DisplayArg="Local User Exists.Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="506,1072" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:CreateLocalUser Description_Item="{x:Null}" Description_ItemProp="{x:Null}" Password_Item="{x:Null}" Password_ItemProp="{x:Null}" UserName_Item="{x:Null}" UserName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" Description="Local Admin" Description_DisplayArg="Local Admin" DisplayName="Create Local User" sap:VirtualizedContainerService.HintSize="468,160" MinRequiredVersion="2.10.0.19" Moniker="1d761099-8633-4631-ab3c-7a703a689a71" Password="[inPass]" Password_DisplayArg="Input Parameters.Input Password" Result="[CreateLocalUser_Result]" ResultString="[CreateLocalUser_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CreateLocalUser" UserName="[inLocalUser]" UserName_DisplayArg="Input Parameters.User to be created" m_bTextLinkChange="False" />
+                <p:AddUserToLocalGroup Domain="{x:Null}" Domain_DisplayArg="{x:Null}" Domain_Item="{x:Null}" Domain_ItemProp="{x:Null}" GroupName_Item="{x:Null}" GroupName_ItemProp="{x:Null}" UserName_Item="{x:Null}" UserName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Add User To Local Group" GroupName="Administrators" GroupName_DisplayArg="Administrators" sap:VirtualizedContainerService.HintSize="468,160" MinRequiredVersion="2.10.0.19" Moniker="823c8d5e-1b12-4857-85c6-1e6394a14876" Result="[AddUserToLocalGroup_Result]" ResultString="[AddUserToLocalGroup_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="AddUserToLocalGroup" UserName="[inLocalUser]" UserName_DisplayArg="Input Parameters.User to be created" m_bTextLinkChange="False" />
+                <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" MinRequiredVersion="2.10.0.19" Moniker="966eced1-e348-4b76-9382-313713178620" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="431b0013-ee80-4b76-a979-7d0a70a5caae" m_bTextLinkChange="False" script="UwBlAHQALQBBAEQAVQBzAGUAcgAgAC0ASQBkAGUAbgB0AGkAdAB5ACAAJAB1AHMAZQByAG4AYQBtAGUAIAAtAFAAYQBzAHMAdwBvAHIAZABOAGUAdgBlAHIARQB4AHAAaQByAGUAcwAgACQAdAByAHUAZQA=">
+                  <p:RunPowerShellScript.InArgs>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="username" ArgType="string" DisplayArg="Input Parameters.User to be created" DisplayName="Username" Name="username" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:Object">[inLocalUser]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                  </p:RunPowerShellScript.InArgs>
+                  <p:RunPowerShellScript.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPowerShellScript.OutArgs>
+                </p:RunPowerShellScript>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="CreateLocalUser_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="CreateLocalUser_Result" />
+                <Variable x:TypeArguments="x:String" Name="AddUserToLocalGroup_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="AddUserToLocalGroup_Result" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+                <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+                <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="False" />
+            </InArgument>
+          </p:IfObject.Value>
+        </p:IfObject>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="inLocalUser" />
+        <Variable x:TypeArguments="p:Password" Name="inPass" />
+        <Variable x:TypeArguments="x:String" Name="LocalUserExists_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="LocalUserExists_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="LocalUserExists_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

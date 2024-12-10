@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="8f62be17-fdfe-4f3d-abb5-e82f59b94285" Name="File Check and Transfer" Description="TG9naWMgZm9yIGNoZWNraW5nIGlmIGEgZmlsZSBleGlzdHMgb24gYSBtYWNoaW5lIGFuZCBzZW5kaW5nIGl0IHZpYSBGVFAgaWYgaXQgZG9lcyBub3QuIFVzZXMgRlRQIHBvbGljeSBpbnNpZGUgaXQu" Version="2.30.0.0" MinRequiredVersion="2.30.0.0" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{37b28399-df00-422a-b0c1-306650960021}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;ftpURL&quot; Label=&quot;FTP URL&quot; ParameterType=&quot;string&quot; Value=&quot;ftp://pandora.paxistech.com&quot; /&gt;&lt;Parameter ParameterName=&quot;ftpUsername&quot; Label=&quot;FTP Username&quot; ParameterType=&quot;string&quot; Value=&quot;NCentral&quot; /&gt;&lt;Parameter ParameterName=&quot;ftpPassword&quot; Label=&quot;FTP Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;ftpFile&quot; Label=&quot;FTP Target File&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;targetFolder&quot; Label=&quot;Local Target Folder&quot; ParameterType=&quot;string&quot; Value=&quot;C:\Paxis&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.60.0.3" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:acu="clr-namespace:AutomationManager.Common.Utils;assembly=AutomationManager.Common" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>1152,1715</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="1152,1715" MinRequiredVersion="2.30.0.0" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:FormatString Input0_Item="{x:Null}" Input0_ItemProp="{x:Null}" Input1_Item="{x:Null}" Input1_ItemProp="{x:Null}" Text_Item="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Target File Full Path" FormattedString="[FormatString_FormattedString]" sap:VirtualizedContainerService.HintSize="1116,160" Input0="[targetFolder]" Input0_DisplayArg="Input Parameters.Local Target Folder" Input1="[ftpFile]" Input1_DisplayArg="Input Parameters.FTP Target File" MinRequiredVersion="2.10.0.19" Moniker="0394441c-992e-469f-beca-2b4f38de0deb" Result="[FormatString_Result]" ResultString="[FormatString_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Text="{}{0}\{1}" Text_DisplayArg="{}{0}\{1}" TypeName="FormatString" m_bTextLinkChange="False" />
+        <p:FileExists File_Item="{x:Null}" File_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" Conditional="[FileExists_Conditional]" DisplayName="File Exists" File="[FormatString_FormattedString]" File_DisplayArg="Target File Full Path.FormattedString" sap:VirtualizedContainerService.HintSize="1116,88" MinRequiredVersion="2.30.0.0" Moniker="7290f20c-3c7f-44ef-b978-0efb831624fa" OutPut_64="[FileExists_OutPut_64]" Result="[FileExists_Result]" ResultString="[FileExists_ResultString]" Results_x64="[FileExists_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="Execute64bit" TypeName="FileExists" m_bTextLinkChange="False" />
+        <p:IfElse CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="equals" Condition_DisplayArg="equals" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="1116,1164" MinRequiredVersion="2.19.0.1" Moniker="2a7c75f2-1ee3-4dcb-9331-e1d82d8f4616" Result="[IfElse_Result]" ResultString="[IfElse_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="True" Value_Type="x:String" Variable="[FileExists_Conditional]" Variable_DisplayArg="File Exists.Conditional" Variable_Type="x:String" m_bTextLinkChange="False">
+          <p:IfElse.ElseOption>
+            <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="501,304" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Policy - FTP File Did Not Exist" sap:VirtualizedContainerService.HintSize="463,154" IsUpdated="True" MinRequiredVersion="2.19.0.1" Moniker="7a203716-fda9-4943-b232-1d7b91a154b8" Result="[RunPolicy_Result]" ResultString="[RunPolicy_ResultString]" RunAsCurrentLoggedOnUser="False" RunPolicyId="28671ef2-31cf-40cf-ba4e-6e3096cc6382" RunPolicyName_DisplayArg="FtpDownload" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="525eafb2-2f90-4f86-8004-89554c6006c9" m_bTextLinkChange="False">
+                  <p:RunPolicy.GlobalVars>
+                    <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                  </p:RunPolicy.GlobalVars>
+                  <p:RunPolicy.InArgs>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpURL" ArgType="string" DisplayArg="ftp://pandora.paxistech.com/" DisplayName="FTP URL" Name="ftpURL" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">ftp://pandora.paxistech.com/</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpUsername" ArgType="string" DisplayArg="NCentral" DisplayName="FTP Username" Name="ftpUsername" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">NCentral</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpPassword" ArgType="password" DisplayArg="Input Parameters.FTP Password" DisplayName="FTP Password" Name="ftpPassword" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="p:Password">[ftpPassword]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpFile" ArgType="string" DisplayArg="Input Parameters.FTP Target File" DisplayName="FTP Target File" Name="ftpFile" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">[ftpFile]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="targetFolder" ArgType="string" DisplayArg="Input Parameters.Local Target Folder" DisplayName="Local Target Folder" Name="targetFolder" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">[targetFolder]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                  </p:RunPolicy.InArgs>
+                  <p:RunPolicy.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPolicy.OutArgs>
+                </p:RunPolicy>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result" />
+                <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.ElseOption>
+          <p:IfElse.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="571,927" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:FolderSize Folder_Item="{x:Null}" Folder_ItemProp="{x:Null}" Hidden_Item="{x:Null}" Hidden_ItemProp="{x:Null}" Recurse_Item="{x:Null}" Recurse_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="File/Folder Size" FileCount="[FolderSize_FileCount]" Folder="[FormatString_FormattedString]" Folder_DisplayArg="Target File Full Path.FormattedString" Hidden="True" Hidden_DisplayArg="true" sap:VirtualizedContainerService.HintSize="533,160" MinRequiredVersion="2.10.0.19" Moniker="41689b69-27c3-4803-85ed-81eb908d7e00" Recurse="False" Recurse_DisplayArg="true" Result="[FolderSize_Result]" ResultString="[FolderSize_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" SizeInfo="[FolderSize_SizeInfo]" TypeName="FolderSize" m_bTextLinkChange="False" />
+                <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="less than" Condition_DisplayArg="less than" DisplayName="If" sap:VirtualizedContainerService.HintSize="533,577" MinRequiredVersion="2.19.0.1" Moniker="143535ca-82d6-46b9-a175-565e87d8f94f" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="200" Value_Type="x:Double" Variable="[FolderSize_SizeInfo]" Variable_DisplayArg="File/Folder Size.FolderSize" Variable_Type="x:Double" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+                  <p:IfObject.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="501,304" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Policy - FTP File Exists but Less than 200 B" sap:VirtualizedContainerService.HintSize="463,154" IsUpdated="True" MinRequiredVersion="2.19.0.1" Moniker="b76900be-771d-440a-be73-15a6595f9dbd" Result="[RunPolicy_Result_1]" ResultString="[RunPolicy_ResultString_1]" RunAsCurrentLoggedOnUser="False" RunPolicyId="28671ef2-31cf-40cf-ba4e-6e3096cc6382" RunPolicyName_DisplayArg="FtpDownload" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="47ec98fd-aec6-4931-81f8-7c352652ed13" m_bTextLinkChange="False">
+                          <p:RunPolicy.GlobalVars>
+                            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                          </p:RunPolicy.GlobalVars>
+                          <p:RunPolicy.InArgs>
+                            <p:InArg ItemProp="{x:Null}" x:Key="ftpURL" ArgType="string" DisplayArg="ftp://pandora.paxistech.com/" DisplayName="FTP URL" Name="ftpURL" isRequired="True">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:String">ftp://pandora.paxistech.com/</InArgument>
+                              </p:InArg.Arg>
+                              <p:InArg.Item>
+                                <InArgument x:TypeArguments="x:Object" />
+                              </p:InArg.Item>
+                            </p:InArg>
+                            <p:InArg ItemProp="{x:Null}" x:Key="ftpUsername" ArgType="string" DisplayArg="NCentral" DisplayName="FTP Username" Name="ftpUsername" isRequired="True">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:String">NCentral</InArgument>
+                              </p:InArg.Arg>
+                              <p:InArg.Item>
+                                <InArgument x:TypeArguments="x:Object" />
+                              </p:InArg.Item>
+                            </p:InArg>
+                            <p:InArg ItemProp="{x:Null}" x:Key="ftpPassword" ArgType="password" DisplayArg="Input Parameters.FTP Password" DisplayName="FTP Password" Name="ftpPassword" isRequired="True">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="p:Password">[ftpPassword]</InArgument>
+                              </p:InArg.Arg>
+                              <p:InArg.Item>
+                                <InArgument x:TypeArguments="x:Object" />
+                              </p:InArg.Item>
+                            </p:InArg>
+                            <p:InArg ItemProp="{x:Null}" x:Key="ftpFile" ArgType="string" DisplayArg="Input Parameters.FTP Target File" DisplayName="FTP Target File" Name="ftpFile" isRequired="True">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:String">[ftpFile]</InArgument>
+                              </p:InArg.Arg>
+                              <p:InArg.Item>
+                                <InArgument x:TypeArguments="x:Object" />
+                              </p:InArg.Item>
+                            </p:InArg>
+                            <p:InArg ItemProp="{x:Null}" x:Key="targetFolder" ArgType="string" DisplayArg="Input Parameters.Local Target Folder" DisplayName="Local Target Folder" Name="targetFolder" isRequired="True">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:String">[targetFolder]</InArgument>
+                              </p:InArg.Arg>
+                              <p:InArg.Item>
+                                <InArgument x:TypeArguments="x:Object" />
+                              </p:InArg.Item>
+                            </p:InArg>
+                          </p:RunPolicy.InArgs>
+                          <p:RunPolicy.OutArgs>
+                            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                          </p:RunPolicy.OutArgs>
+                        </p:RunPolicy>
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result_1" />
+                        <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString_1" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfObject.IfOption>
+                  <p:IfObject.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral>
+                        <p:ObjectLiteral.Value>
+                          <x:Double>200</x:Double>
+                        </p:ObjectLiteral.Value>
+                      </p:ObjectLiteral>
+                    </InArgument>
+                  </p:IfObject.Value>
+                </p:IfObject>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:Double" Name="FolderSize_FileCount" />
+                <Variable x:TypeArguments="x:Double" Name="FolderSize_Result" />
+                <Variable x:TypeArguments="x:String" Name="FolderSize_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="FolderSize_SizeInfo" />
+                <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+                <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.IfOption>
+          <p:IfElse.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfElse.Value>
+        </p:IfElse>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Default="ftp://pandora.paxistech.com" Name="ftpURL" />
+        <Variable x:TypeArguments="x:String" Default="NCentral" Name="ftpUsername" />
+        <Variable x:TypeArguments="p:Password" Name="ftpPassword" />
+        <Variable x:TypeArguments="x:String" Name="ftpFile" />
+        <Variable x:TypeArguments="x:String" Default="C:\Paxis" Name="targetFolder" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_OutPut_64" />
+        <Variable x:TypeArguments="x:Double" Name="FileExists_Result" />
+        <Variable x:TypeArguments="x:String" Name="FileExists_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="FileExists_Results_x64" />
+        <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString" />
+        <Variable x:TypeArguments="x:Double" Name="FormatString_Result" />
+        <Variable x:TypeArguments="x:String" Name="FormatString_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfElse_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfElse_ResultString" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

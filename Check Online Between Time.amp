@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="b174633b-02e8-4677-b92d-ee2d1a21d76f" Name="Check Online Between Time" Description="Q2hlY2sgd2hldGhlciBpdCBpcyBiZXR3ZWVuIGJlZ2lubmluZyBhbmQgZW5kIHRpbWUgd2hlbiBzY3JpcHQgcnVucy4=" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{48127e7d-9138-479f-99e2-bbfd2b86fde3}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;beginTime&quot; Label=&quot;Begin Time&quot; ParameterType=&quot;string&quot; Value=&quot;00:00&quot; /&gt;&lt;Parameter ParameterName=&quot;endTime&quot; Label=&quot;End Time&quot; ParameterType=&quot;string&quot; Value=&quot;23:59&quot; /&gt;&lt;/Parameters&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;online&quot; Label=&quot;Online&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Online&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>bd0b37e0-a6cd-47f0-a70d-5332a239b718.online</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>online</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.40.1.3" />
+  <Activity mc:Ignorable="sap sads" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,745</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,745" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.40.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" Moniker="bd0b37e0-a6cd-47f0-a70d-5332a239b718" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="4be773a1-40c5-4dfc-847e-9bc66a159f2f" m_bTextLinkChange="False" script="JABvAG4AbABpAG4AZQAgAD0AIAAiAE4AbwAiAA0ACgANAAoAJABtAGkAbgAgAD0AIABnAGUAdAAtAGQAYQB0AGUAIAAkAGIAZQBnAGkAbgBUAGkAbQBlAA0ACgAkAG0AYQB4ACAAPQAgAGcAZQB0AC0AZABhAHQAZQAgACQAZQBuAGQAVABpAG0AZQANAAoADQAKACQAbgBvAHcAIAA9ACAARwBlAHQALQBEAGEAdABlAA0ACgANAAoAaQBmACAAKAAkAG0AaQBuAC4AVABpAG0AZQBPAGYARABhAHkAIAAtAGwAZQAgACQAbgBvAHcALgBUAGkAbQBlAE8AZgBEAGEAeQAgAC0AYQBuAGQAIAAkAG0AYQB4AC4AVABpAG0AZQBPAGYARABhAHkAIAAtAGcAZQAgACQAbgBvAHcALgBUAGkAbQBlAE8AZgBEAGEAeQApACAAewANAAoAIAAgACAAIAAkAG8AbgBsAGkAbgBlACAAPQAgACIAWQBlAHMAIgANAAoAfQANAAoADQAKAFcAcgBpAHQAZQAtAE8AdQB0AHAAdQB0ACAAJABvAG4AbABpAG4AZQA=">
+          <p:RunPowerShellScript.InArgs>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="beginTime" ArgType="string" DisplayArg="Input Parameters.Begin Time" DisplayName="Begin Time" Name="beginTime" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:Object">[beginTime]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="endTime" ArgType="string" DisplayArg="Input Parameters.End Time" DisplayName="End Time" Name="endTime" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:Object">[endTime]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="online" ArgType="string" DisplayName="Online" Name="online">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_online]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_online" />
+        <Variable x:TypeArguments="x:String" Default="00:00" Name="beginTime" />
+        <Variable x:TypeArguments="x:String" Default="23:59" Name="endTime" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="d1e969ef-16db-4bbd-85d6-004a07548f93" Name="Install - RunAsUser Module" Description="Q2hlY2tzIGFuZCBpbnN0YWxscyB0aGUgUnVuQXNVc2VyIG1vZHVsZSBhbmQgcmV0dXJucyB5ZXMsIG5vLCBvciBmYWlsZWQgdG8gdGhlICRpbnN0YWxsU3RhdHVzIHZhcmlhYmxlIHdoZXRoZXIgaXQgc3VjY2VlZGVkIG9yIGZhaWxlZC4=" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{40f0280e-fa1d-4510-9e4a-c4ba8bcad2ce}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;installStatus&quot; Label=&quot;Install Status&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Install Status&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>de98bc6f-11df-4c8e-aced-0ac890c71718.installStatus</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>installStatus</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.40.1.3" />
+  <Activity mc:Ignorable="sap sads" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,745</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,745" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.40.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" Moniker="de98bc6f-11df-4c8e-aced-0ac890c71718" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="5a67674b-cc5a-4d11-b8d4-9749995d11b6" m_bTextLinkChange="False" script="JABpAG4AcwB0AGEAbABsAFMAdABhAHQAdQBzACAAPQAgACIATgBvACIADQAKAGkAZgAgACgAIQAoAGcAZQB0AC0AbQBvAGQAdQBsAGUAIAAtAEwAaQBzAHQAQQB2AGEAaQBsAGEAYgBsAGUAIAB8ACAAPwAgAE4AYQBtAGUAIAAtAGUAcQAgACIAUgB1AG4AQQBzAFUAcwBlAHIAIgApACkAIAB7AA0ACgAgACAAIAAgAHcAcgBpAHQAZQAtAGgAbwBzAHQAIAAiAE0AbwBkAHUAbABlACAAbgBvAHQAIABpAG4AcwB0AGEAbABsAGUAZAAiAA0ACgANAAoAIAAgACAAIABpAGYAIAAoACEAKABHAGUAdAAtAFAAYQBjAGsAYQBnAGUAUAByAG8AdgBpAGQAZQByACAAfAAgAD8AIABOAGEAbQBlACAALQBlAHEAIABOAHUARwBlAHQAKQApACAAewANAAoAIAAgACAAIAAgACAAIAAgAHcAcgBpAHQAZQAtAGgAbwBzAHQAIAAiAEkAbgBzAHQAYQBsAGwAaQBuAGcAIABOAHUARwBlAHQAIABQAGEAYwBrAGEAZwBlACAAUAByAG8AdgBpAGQAZQByACIADQAKACAAIAAgACAAIAAgACAAIABJAG4AcwB0AGEAbABsAC0AUABhAGMAawBhAGcAZQBQAHIAbwB2AGkAZABlAHIAIABOAHUARwBlAHQAIAAtAEYAbwByAGMAZQANAAoAIAAgACAAIAB9AA0ACgANAAoAIAAgACAAIABpAGYAIAAoACgARwBlAHQALQBQAFMAUgBlAHAAbwBzAGkAdABvAHIAeQAgAHwAIAA/ACAATgBhAG0AZQAgAC0ARQBRACAAUABTAEcAYQBsAGwAZQByAHkAKQAuAEkAbgBzAHQAYQBsAGwAYQB0AGkAbwBuAFAAbwBsAGkAYwB5ACAALQBuAGUAIAAiAFQAcgB1AHMAdABlAGQAIgApACAAewANAAoAIAAgACAAIAAgACAAIAAgAFcAcgBpAHQAZQAtAEgAbwBzAHQAIAAiAFMAZQB0AHQAaQBuAGcAIABQAFMARwBhAGwAbABlAHIAeQAgAGEAcwAgAHQAcgB1AHMAdABlAGQAIgANAAoAIAAgACAAIAAgACAAIAAgAFMAZQB0AC0AUABTAFIAZQBwAG8AcwBpAHQAbwByAHkAIABQAFMARwBhAGwAbABlAHIAeQAgAC0ASQBuAHMAdABhAGwAbABhAHQAaQBvAG4AUABvAGwAaQBjAHkAIABUAHIAdQBzAHQAZQBkAA0ACgAgACAAIAAgAH0ADQAKAA0ACgAgACAAIAAgAGkAZgAgACgAZgBpAG4AZAAtAG0AbwBkAHUAbABlACAALQBuAGEAbQBlACAAIgBSAHUAbgBBAHMAVQBzAGUAcgAiACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAdwByAGkAdABlAC0AaABvAHMAdAAgACIATQBvAGQAdQBsAGUAIABmAG8AdQBuAGQALAAgAGkAbgBzAHQAYQBsAGwAaQBuAGcAIgANAAoAIAAgACAAIAAgACAAIAAgAGkAbgBzAHQAYQBsAGwALQBtAG8AZAB1AGwAZQAgACIAUgB1AG4AQQBzAFUAcwBlAHIAIgAgAC0AUgBlAHAAbwBzAGkAdABvAHIAeQAgAFAAUwBHAGEAbABsAGUAcgB5AA0ACgAgACAAIAAgAH0ADQAKAA0ACgAgACAAIAAgAGkAZgAgACgAIQAoAGcAZQB0AC0AbQBvAGQAdQBsAGUAIAAtAG4AYQBtAGUAIAAiAFIAdQBuAEEAcwBVAHMAZQByACIAKQApACAAewANAAoAIAAgACAAIAAgACAAIAAgAHcAcgBpAHQAZQAtAGgAbwBzAHQAIAAiAE0AbwBkAHUAbABlACAAZgBhAGkAbABlAGQAIAB0AG8AIABpAG4AcwB0AGEAbABsACIADQAKACAAIAAgACAAIAAgACAAIAAkAGkAbgBzAHQAYQBsAGwAUwB0AGEAdAB1AHMAIAA9ACAAIgBGAGEAaQBsAGUAZAAiAA0ACgAgACAAIAAgAH0AIABlAGwAcwBlACAAewANAAoAIAAgACAAIAAgACAAIAAgACQAaQBuAHMAdABhAGwAbABTAHQAYQB0AHUAcwAgAD0AIAAiAFkAZQBzACIADQAKACAAIAAgACAAfQANAAoAfQAgAGUAbABzAGUAIAB7AA0ACgAgACAAIAAgACQAaQBuAHMAdABhAGwAbABTAHQAYQB0AHUAcwAgAD0AIAAiAFkAZQBzACIADQAKAH0A">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="installStatus" ArgType="string" DisplayName="Install Status" Name="installStatus">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_installStatus]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_installStatus" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

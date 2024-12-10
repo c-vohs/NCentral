@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="8d70c04d-402f-463a-bc16-ad2bc4a6f5db" Name="Bounce Viewpoint and SQL Services" Description="Qm91bmNlIFZpZXdwb2ludCBhbmQgU1FMIFNlcnZpY2Vz" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{22603fbb-f4a2-4ffa-a718-ad566c2b1715}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml /&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.40.0.10" />
+  <Activity mc:Ignorable="sap sads" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>412,1383</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="412,1383" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:StopService Disable_Item="{x:Null}" Disable_ItemProp="{x:Null}" Force_Item="{x:Null}" Force_ItemProp="{x:Null}" Service_Item="{x:Null}" Service_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.40.0.10, Culture=neutral, PublicKeyToken=null" Disable="False" Disable_DisplayArg="false" DisplayName="Stop Service" Force="True" Force_DisplayArg="false" sap:VirtualizedContainerService.HintSize="376,160" Moniker="2c4de745-36eb-4779-9ae9-b3eb6fc618e8" Result="[StopService_Result]" ResultString="[StopService_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Service="Viewpoint Service" Service_DisplayArg="Viewpoint Service" TypeName="StopService" m_bTextLinkChange="False" />
+        <p:StopService Disable_Item="{x:Null}" Disable_ItemProp="{x:Null}" Force_Item="{x:Null}" Force_ItemProp="{x:Null}" Service_Item="{x:Null}" Service_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.40.0.10, Culture=neutral, PublicKeyToken=null" Disable="False" Disable_DisplayArg="false" DisplayName="Stop Service" Force="True" Force_DisplayArg="false" sap:VirtualizedContainerService.HintSize="376,160" Moniker="4faedeb3-c8fe-4292-a00b-eaa290a82e42" Result="[StopService_Result_1]" ResultString="[StopService_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Service="MSSQLSERVER" Service_DisplayArg="MSSQLSERVER" TypeName="StopService" m_bTextLinkChange="False" />
+        <p:StopService Disable_Item="{x:Null}" Disable_ItemProp="{x:Null}" Force_Item="{x:Null}" Force_ItemProp="{x:Null}" Service_Item="{x:Null}" Service_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.40.0.10, Culture=neutral, PublicKeyToken=null" Disable="False" Disable_DisplayArg="false" DisplayName="Stop Service" Force="True" Force_DisplayArg="false" sap:VirtualizedContainerService.HintSize="376,160" Moniker="78ca4e2d-6eeb-4998-b8a3-ab52ee02ebc2" Result="[StopService_Result_2]" ResultString="[StopService_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Service="SQLSERVERAGENT" Service_DisplayArg="SQLSERVERAGENT" TypeName="StopService" m_bTextLinkChange="False" />
+        <p:StartService Disabled_Item="{x:Null}" Disabled_ItemProp="{x:Null}" Service_Item="{x:Null}" Service_ItemProp="{x:Null}" StartupType="{x:Null}" StartupType_DisplayArg="{x:Null}" StartupType_Item="{x:Null}" StartupType_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.40.0.10, Culture=neutral, PublicKeyToken=null" Disabled="False" Disabled_DisplayArg="" DisplayName="Start Service" sap:VirtualizedContainerService.HintSize="376,160" Moniker="24ff6c38-2c17-4da8-a17b-727003abad4a" Result="[StartService_Result]" ResultString="[StartService_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Service="Viewpoint Service" Service_DisplayArg="Viewpoint Service" TypeName="StartService" m_bTextLinkChange="False" />
+        <p:StartService Disabled_Item="{x:Null}" Disabled_ItemProp="{x:Null}" Service_Item="{x:Null}" Service_ItemProp="{x:Null}" StartupType="{x:Null}" StartupType_DisplayArg="{x:Null}" StartupType_Item="{x:Null}" StartupType_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.40.0.10, Culture=neutral, PublicKeyToken=null" Disabled="False" Disabled_DisplayArg="" DisplayName="Start Service" sap:VirtualizedContainerService.HintSize="376,160" Moniker="151b0550-cb33-430a-9d8d-67edbc940bfd" Result="[StartService_Result_1]" ResultString="[StartService_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Service="MSSQLSERVER" Service_DisplayArg="MSSQLSERVER" TypeName="StartService" m_bTextLinkChange="False" />
+        <p:StartService Disabled_Item="{x:Null}" Disabled_ItemProp="{x:Null}" Service_Item="{x:Null}" Service_ItemProp="{x:Null}" StartupType="{x:Null}" StartupType_DisplayArg="{x:Null}" StartupType_Item="{x:Null}" StartupType_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.40.0.10, Culture=neutral, PublicKeyToken=null" Disabled="False" Disabled_DisplayArg="" DisplayName="Start Service" sap:VirtualizedContainerService.HintSize="376,160" Moniker="9018846e-05b9-4082-8c97-ac2042ba1df2" Result="[StartService_Result_2]" ResultString="[StartService_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Service="SQLSERVERAGENT" Service_DisplayArg="SQLSERVERAGENT" TypeName="StartService" m_bTextLinkChange="False" />
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="StopService_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="StopService_Result" />
+        <Variable x:TypeArguments="x:String" Name="StopService_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="StopService_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="StopService_ResultString_2" />
+        <Variable x:TypeArguments="x:Double" Name="StopService_Result_2" />
+        <Variable x:TypeArguments="x:String" Name="StartService_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="StartService_Result" />
+        <Variable x:TypeArguments="x:String" Name="StartService_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="StartService_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="StartService_ResultString_2" />
+        <Variable x:TypeArguments="x:Double" Name="StartService_Result_2" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

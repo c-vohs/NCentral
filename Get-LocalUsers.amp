@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="c33724c6-74c7-4916-a35e-eb8ff5742dc1" Name="Get-LocalUsers" Description="R2V0cyBhIGxpc3Qgb2YgbG9jYWwgdXNlcnM=" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{34db1210-4ae5-4ac8-b300-f7ddd5a1c406}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;userString&quot; Label=&quot;List of Users&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.List of Users&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>e3c1184c-d669-408e-8fb2-79d58f1db213.userString</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>userString</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.40.0.10" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:acu="clr-namespace:AutomationManager.Common.Utils;assembly=AutomationManager.Common" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,745</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,745" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" Moniker="e3c1184c-d669-408e-8fb2-79d58f1db213" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="ff6dfbc2-b89d-4fd3-9d57-d80563b2a02c" m_bTextLinkChange="False" script="JABsAG8AYwBhAGwAVQBzAGUAcgBzACAAPQAgAEcAZQB0AC0ATABvAGMAYQBsAFUAcwBlAHIADQAKACQAbABhAHMAdABJAHQAZQBtACAAPQAgACQAbABvAGMAYQBsAFUAcwBlAHIAcwBbAC0AMQBdAA0ACgAkAHUAcwBlAHIAUwB0AHIAaQBuAGcAIAA9ACAAJwAnAA0ACgANAAoAaQBmACAAKAAkAG4AdQBsAGwAIAAtAGUAcQAgACQAbABvAGMAYQBsAFUAcwBlAHIAcwBbADAAXQApACAAewAgACAADQAKACAAIAAgACAAIAAgACAAIAAkAHUAcwBlAHIALgBSAGUAbQBvAHYAZQAoACQAbABvAGMAYQBsAFUAcwBlAHIAcwBbADAAXQApAA0ACgB9AA0ACgANAAoAZgBvAHIAZQBhAGMAaAAgACgAJAB1AHMAZQByACAAaQBuACAAJABsAG8AYwBhAGwAVQBzAGUAcgBzACkAIAB7AA0ACgAgACAAIAAgACQAdQBzAGUAcgBTAHQAcgBpAG4AZwAgACsAPQAgACQAdQBzAGUAcgANAAoADQAKACAAIAAgACAAaQBmACAAKAAkAGwAYQBzAHQASQB0AGUAbQAgAC0AZQBxACAAJAB1AHMAZQByACkAewANAAoAIAAgACAAIAAgACAAIAAgAGkAZgAgACgAJwBUAHIAdQBlACcAIAAtAGUAcQAgACQAdQBzAGUAcgAuAEUAbgBhAGIAbABlAGQAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACQAdQBzAGUAcgBTAHQAcgBpAG4AZwAgACsAPQAgACIAKABFAG4AYQBiAGwAZQBkACkAIgANAAoAIAAgACAAIAAgACAAIAAgAH0ADQAKACAAIAAgACAAIAAgACAAIABpAGYAIAAoACcARgBhAGwAcwBlACcAIAAtAGUAcQAgACQAdQBzAGUAcgAuAEUAbgBhAGIAbABlAGQAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACQAdQBzAGUAcgBTAHQAcgBpAG4AZwAgACsAPQAgACIAKABEAGkAcwBhAGIAbABlAGQAKQAiAA0ACgAgACAAIAAgACAAIAAgACAAfQANAAoAIAAgACAAIAB9AA0ACgAgACAAIAAgAGUAbABzAGUAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAaQBmACAAKAAnAFQAcgB1AGUAJwAgAC0AZQBxACAAJAB1AHMAZQByAC4ARQBuAGEAYgBsAGUAZAApACAAewANAAoAIAAgACAAIAAgACAAIAAgACAAIAAgACAAJAB1AHMAZQByAFMAdAByAGkAbgBnACAAKwA9ACAAIgAoAEUAbgBhAGIAbABlAGQAKQAsACAAIgANAAoAIAAgACAAIAAgACAAIAAgAH0ADQAKACAAIAAgACAAIAAgACAAIABpAGYAIAAoACcARgBhAGwAcwBlACcAIAAtAGUAcQAgACQAdQBzAGUAcgAuAEUAbgBhAGIAbABlAGQAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAgACAAIAAgACQAdQBzAGUAcgBTAHQAcgBpAG4AZwAgACsAPQAgACIAKABEAGkAcwBhAGIAbABlAGQAKQAsACAAIgANAAoAIAAgACAAIAAgACAAIAAgAH0ADQAKACAAIAAgACAAfQANAAoAfQA=">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="userString" ArgType="string" DisplayName="List of Users" Name="userString">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_userString]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_userString" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

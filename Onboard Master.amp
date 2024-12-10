@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="5fa25c2d-1017-4c73-8dbd-ebf697c17eff" Name="Onboard Procedure - Master" Description="TWFzdGVyIG9uYm9hcmQgcHJvY2VkdXJl" Version="2.16.0.1" MinRequiredVersion="2.16.0.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{da7ac5e5-6da0-41dd-ba02-3788fea3b9c1}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;iLocalUserToCreate&quot; Label=&quot;User Name To create&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;iLocalUserPwd&quot; Label=&quot;Password for the Local User&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;iDomainName&quot; Label=&quot;Domain name to join&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;iDUser&quot; Label=&quot;Domain user name (admin)&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;iDomainPWD&quot; Label=&quot;Domain user password (admin)&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;iOUtoJoin&quot; Label=&quot;OU to join in the domain&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.3.1" />
+  <Activity mc:Ignorable="sap sads" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>499,959</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="499,959" MinRequiredVersion="2.16.0.1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="463,348" IsUpdated="True" MinRequiredVersion="2.16.0.1" Moniker="a28ee893-a1d6-425b-99e1-68fd6064bfcd" Result="[RunPolicy_Result]" ResultString="[RunPolicy_ResultString]" RunAsCurrentLoggedOnUser="False" RunPolicyId="2bd7af6c-5998-40af-a7de-7de1e413bb0b" RunPolicyName_DisplayArg="Create Local Admin" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="a97d2b59-7321-4b46-bd0c-f4f460b00fa2" m_bTextLinkChange="False">
+          <p:RunPolicy.GlobalVars>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPolicy.GlobalVars>
+          <p:RunPolicy.InArgs>
+            <p:InArg ItemProp="{x:Null}" x:Key="inLocalUser" ArgType="string" DisplayArg="Input Parameters.User Name To create" DisplayName="User to be created" Name="inLocalUser" isRequired="True">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:String">[iLocalUserToCreate]</InArgument>
+              </p:InArg.Arg>
+              <p:InArg.Item>
+                <InArgument x:TypeArguments="x:Object" />
+              </p:InArg.Item>
+            </p:InArg>
+            <p:InArg ItemProp="{x:Null}" x:Key="inPass" ArgType="password" DisplayArg="Input Parameters.Password for the Local User" DisplayName="Input Password" Name="inPass" isRequired="True">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="p:Password">[iLocalUserPwd]</InArgument>
+              </p:InArg.Arg>
+              <p:InArg.Item>
+                <InArgument x:TypeArguments="x:Object" />
+              </p:InArg.Item>
+            </p:InArg>
+          </p:RunPolicy.InArgs>
+          <p:RunPolicy.OutArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+          </p:RunPolicy.OutArgs>
+        </p:RunPolicy>
+        <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="463,348" IsUpdated="True" MinRequiredVersion="2.16.0.1" Moniker="14ddac30-c00a-4e0d-993d-65478bd6c94d" Result="[RunPolicy_Result_1]" ResultString="[RunPolicy_ResultString_1]" RunAsCurrentLoggedOnUser="False" RunPolicyId="d7d3045b-0074-4e00-b33a-3981f433b178" RunPolicyName_DisplayArg="Join PC to Domain" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="580ac645-384d-46b2-be76-d117508a3d47" m_bTextLinkChange="False">
+          <p:RunPolicy.GlobalVars>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPolicy.GlobalVars>
+          <p:RunPolicy.InArgs>
+            <p:InArg ItemProp="{x:Null}" x:Key="inDomainName" ArgType="string" DisplayArg="Input Parameters.Domain name to join" DisplayName="Domain Name" Name="inDomainName" isRequired="True">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:String">[iDomainName]</InArgument>
+              </p:InArg.Arg>
+              <p:InArg.Item>
+                <InArgument x:TypeArguments="x:Object" />
+              </p:InArg.Item>
+            </p:InArg>
+            <p:InArg ItemProp="{x:Null}" x:Key="inDomainUser" ArgType="string" DisplayArg="Input Parameters.Domain user name (admin)" DisplayName="Domain User Name" Name="inDomainUser" isRequired="True">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:String">[iDUser]</InArgument>
+              </p:InArg.Arg>
+              <p:InArg.Item>
+                <InArgument x:TypeArguments="x:Object" />
+              </p:InArg.Item>
+            </p:InArg>
+            <p:InArg ItemProp="{x:Null}" x:Key="inPass" ArgType="password" DisplayArg="Input Parameters.Domain user password (admin)" DisplayName="Domain Password" Name="inPass" isRequired="True">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="p:Password">[iDomainPWD]</InArgument>
+              </p:InArg.Arg>
+              <p:InArg.Item>
+                <InArgument x:TypeArguments="x:Object" />
+              </p:InArg.Item>
+            </p:InArg>
+            <p:InArg ItemProp="{x:Null}" x:Key="inJoinToOU" ArgType="string" DisplayArg="Input Parameters.OU to join in the domain" DisplayName="OU to Join" Name="inJoinToOU" isRequired="True">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:String">[iOUtoJoin]</InArgument>
+              </p:InArg.Arg>
+              <p:InArg.Item>
+                <InArgument x:TypeArguments="x:Object" />
+              </p:InArg.Item>
+            </p:InArg>
+          </p:RunPolicy.InArgs>
+          <p:RunPolicy.OutArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+          </p:RunPolicy.OutArgs>
+        </p:RunPolicy>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="iLocalUserToCreate" />
+        <Variable x:TypeArguments="p:Password" Name="iLocalUserPwd" />
+        <Variable x:TypeArguments="x:String" Name="iDomainName" />
+        <Variable x:TypeArguments="x:String" Name="iDUser" />
+        <Variable x:TypeArguments="p:Password" Name="iDomainPWD" />
+        <Variable x:TypeArguments="x:String" Name="iOUtoJoin" />
+        <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString_1" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

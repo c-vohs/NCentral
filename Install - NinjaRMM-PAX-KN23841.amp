@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="ed2a1744-0a1b-471a-a95d-526efda6dcd9" Name="Install - NinjaRMM" Description="SW5zdGFsbHMgTmluamEgQWdlbnQ=" Version="2.30.0.0" MinRequiredVersion="2.30.0.0" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="3.0">
+  <Object ID="{3ec618ce-1a46-4d36-a49e-339c67212654}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;downloadURL&quot; Label=&quot;Download URL&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.60.0.3" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>504,1606</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="504,1606" MinRequiredVersion="2.30.0.0" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:FormatString Input0_Item="{x:Null}" Input0_ItemProp="{x:Null}" Input1_Item="{x:Null}" Input1_ItemProp="{x:Null}" Text_Item="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Format - Install File" FormattedString="[FormatString_FormattedString]" sap:VirtualizedContainerService.HintSize="468,160" Input0="C:\Paxis\" Input0_DisplayArg="C:\Paxis\" Input1="ninjaRMM_installer.msi" Input1_DisplayArg="ninjaRMM_installer.msi" MinRequiredVersion="2.10.0.19" Moniker="cfd4099a-e125-4441-a0ff-b503e4ae606b" Result="[FormatString_Result]" ResultString="[FormatString_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Text="{}{0}{1}" Text_DisplayArg="{}{0}{1}" TypeName="FormatString" m_bTextLinkChange="False" />
+        <p:FolderExists Folder_Item="{x:Null}" Folder_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" Conditional="[FolderExists_Conditional]" DisplayName="Folder Exists - Paxis" Folder="C:\Paxis" Folder_DisplayArg="C:\Paxis" sap:VirtualizedContainerService.HintSize="468,88" MinRequiredVersion="2.10.0.19" Moniker="0299a820-30ad-4818-b2b8-bb8e06247c75" Result="[FolderExists_Result]" ResultString="[FolderExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="FolderExists" m_bTextLinkChange="False" />
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="equals" Condition_DisplayArg="equals" DisplayName="If" sap:VirtualizedContainerService.HintSize="468,511" MinRequiredVersion="2.19.0.1" Moniker="0f74c096-8b38-497d-a07b-b53482690c8f" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="False" Value_Type="x:String" Variable="[FolderExists_Conditional]" Variable_DisplayArg="Folder Exists - Paxis.Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="371,238" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:CreateFolder Folder_Item="{x:Null}" Folder_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Create Folder" Folder="C:\Paxis" FolderInfo="[CreateFolder_FolderInfo]" Folder_DisplayArg="C:\Paxis" sap:VirtualizedContainerService.HintSize="333,88" MinRequiredVersion="2.10.0.19" Moniker="b9eaff98-51b3-4468-a5b0-61988336bb06" Result="[CreateFolder_Result]" ResultString="[CreateFolder_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CreateFolder" m_bTextLinkChange="False" />
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="CreateFolder_FolderInfo" />
+                <Variable x:TypeArguments="x:Double" Name="CreateFolder_Result" />
+                <Variable x:TypeArguments="x:String" Name="CreateFolder_ResultString" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="False" />
+            </InArgument>
+          </p:IfObject.Value>
+        </p:IfObject>
+        <p:DownloadFileFromURL OverwriteExistingFile_Item="{x:Null}" OverwriteExistingFile_ItemProp="{x:Null}" RemoteFileURL_Item="{x:Null}" RemoteFileURL_ItemProp="{x:Null}" SaveAsFileName_Item="{x:Null}" SaveAsFileName_ItemProp="{x:Null}" UserAgent="{x:Null}" UserAgent_DisplayArg="{x:Null}" UserAgent_Item="{x:Null}" UserAgent_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Download File From URL" sap:VirtualizedContainerService.HintSize="468,196" MinRequiredVersion="2.30.0.0" Moniker="f01affeb-4e9c-41e7-ba7c-42a802e174e2" OverwriteExistingFile="True" OverwriteExistingFile_DisplayArg="true" RemoteFileURL="[downloadURL]" RemoteFileURL_DisplayArg="Input Parameters.Download URL" Result="[DownloadFileFromURL_Result]" ResultString="[DownloadFileFromURL_ResultString]" RunAsCurrentLoggedOnUser="False" SaveAsFileName="[FormatString_FormattedString]" SaveAsFileName_DisplayArg="Format - Install File.FormattedString" ScriptExecutionMethod="None" TypeName="DownloadFileFromURL" m_bTextLinkChange="False" />
+        <p:WindowsInstaller ActionType_Item="{x:Null}" ActionType_ItemProp="{x:Null}" CommandLineArguments="{x:Null}" CommandLineArguments_DisplayArg="{x:Null}" CommandLineArguments_Item="{x:Null}" CommandLineArguments_ItemProp="{x:Null}" LogFilePath="{x:Null}" LogFilePath_DisplayArg="{x:Null}" LogFilePath_Item="{x:Null}" LogFilePath_ItemProp="{x:Null}" Mode_Item="{x:Null}" Mode_ItemProp="{x:Null}" MsiPath_Item="{x:Null}" MsiPath_ItemProp="{x:Null}" Restart_Item="{x:Null}" Restart_ItemProp="{x:Null}" ActionType="Install" ActionType_DisplayArg="Install" AssemblyName="PolicyExecutionEngine, Version=2.50.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Windows Installer" sap:VirtualizedContainerService.HintSize="468,268" MinRequiredVersion="2.10.0.19" Mode="UnattendedMode" Mode_DisplayArg="Unattended Mode" Moniker="78e17e5c-b5c6-4a65-b571-af69b6408c65" MsiPath="[FormatString_FormattedString]" MsiPath_DisplayArg="Format - Install File.FormattedString" Restart="NoRestart" Restart_DisplayArg="No Restart" Result="[WindowsInstaller_Result]" ResultString="[WindowsInstaller_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="WindowsInstaller" m_bTextLinkChange="False" />
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString" />
+        <Variable x:TypeArguments="x:String" Name="FormatString_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="FormatString_Result" />
+        <Variable x:TypeArguments="x:String" Name="WindowsInstaller_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="WindowsInstaller_Result" />
+        <Variable x:TypeArguments="x:String" Name="downloadURL" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+        <Variable x:TypeArguments="x:String" Name="FolderExists_Conditional" />
+        <Variable x:TypeArguments="x:Double" Name="FolderExists_Result" />
+        <Variable x:TypeArguments="x:String" Name="FolderExists_ResultString" />
+        <Variable x:TypeArguments="x:String" Name="DownloadFileFromURL_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="DownloadFileFromURL_Result" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

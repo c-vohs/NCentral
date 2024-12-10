@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="b586b080-ec41-4766-9d4f-58c41e7b868f" Name="Software Removal - Bitdefender - Local Download" Description="U29mdHdhcmUgUmVtb3ZhbCAtIEJpdGRlZmVuZGVyIC0gTG9jYWwgRG93bmxvYWQ=" Version="2.19.0.1" MinRequiredVersion="2.19.0.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{85f3e848-db62-48eb-9611-3df4186bc7aa}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;uninstallPassword&quot; Label=&quot;Uninstall Password&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;ftpURL&quot; Label=&quot;FTP URL&quot; ParameterType=&quot;string&quot; Value=&quot;ftp://pandora.paxistech.com/&quot; /&gt;&lt;Parameter ParameterName=&quot;ftpUsername&quot; Label=&quot;FTP Username&quot; ParameterType=&quot;string&quot; Value=&quot;NCentral&quot; /&gt;&lt;Parameter ParameterName=&quot;ftpPassword&quot; Label=&quot;FTP Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;ftpFile&quot; Label=&quot;FTP Target File&quot; ParameterType=&quot;string&quot; Value=&quot;BEST_uninstallTool.exe&quot; /&gt;&lt;Parameter ParameterName=&quot;targetFolder&quot; Label=&quot;Local Target Folder&quot; ParameterType=&quot;string&quot; Value=&quot;C:\Temp\ftp&quot; /&gt;&lt;Parameter ParameterName=&quot;custID&quot; Label=&quot;Trend Customer ID&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;trendContract&quot; Label=&quot;Trend Contract Status&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;localUNCTrend&quot; Label=&quot;UNC For Trend&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;localUNCBitdefender&quot; Label=&quot;UNC For Bitdefender&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;localUN&quot; Label=&quot;Local Username&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;localPW&quot; Label=&quot;Local Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.19.1.3" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>1166,4169</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="1166,4169" MinRequiredVersion="2.19.0.1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:IsAppInstalled ApplicationName_Item="{x:Null}" ApplicationName_ItemProp="{x:Null}" ApplicationName="Bitdefender Endpoint Security Tools" ApplicationName_DisplayArg="Bitdefender Endpoint Security Tools" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" Conditional="[IsAppInstalled_Conditional]" DisplayName="Is Application Installed - Bitdefender" sap:VirtualizedContainerService.HintSize="1130,88" MinRequiredVersion="2.10.0.19" Moniker="4cd39009-6107-425c-bbfc-9dc8ce5138d9" Result="[IsAppInstalled_Result]" ResultString="[IsAppInstalled_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IsAppInstalled" m_bTextLinkChange="False" />
+        <p:IsAppInstalled ApplicationName_Item="{x:Null}" ApplicationName_ItemProp="{x:Null}" ApplicationName="Trend Micro Security Agent" ApplicationName_DisplayArg="Trend Micro Security Agent" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" Conditional="[IsAppInstalled_Conditional_1]" DisplayName="Is Application Installed - Trend" sap:VirtualizedContainerService.HintSize="1130,88" MinRequiredVersion="2.10.0.19" Moniker="3ec05265-7bd5-477a-acb4-a90a416b87b0" Result="[IsAppInstalled_Result_1]" ResultString="[IsAppInstalled_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IsAppInstalled" m_bTextLinkChange="False" />
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition_DisplayArg="equals" DisplayName="If" sap:VirtualizedContainerService.HintSize="1130,3073" MinRequiredVersion="2.19.0.1" Moniker="7b0de6a6-c1af-485e-95c1-4c5745d248dd" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="True" Value_Type="x:String" Variable="[IsAppInstalled_Conditional]" Variable_DisplayArg="Is Application Installed - Bitdefender.Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="1098,2800" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:FormatString Input0_Item="{x:Null}" Input0_ItemProp="{x:Null}" Input1_Item="{x:Null}" Input1_ItemProp="{x:Null}" Text_Item="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.0.10, Culture=neutral, PublicKeyToken=null" DisplayName="Format String - FTP UNC" FormattedString="[FormatString_FormattedString]" sap:VirtualizedContainerService.HintSize="1060,160" Input0="[targetFolder]" Input0_DisplayArg="Input Parameters.Local Target Folder" Input1="[ftpFile]" Input1_DisplayArg="Input Parameters.FTP Target File" MinRequiredVersion="2.10.0.19" Moniker="92a41582-47bd-45dd-813e-22077ce436f3" Result="[FormatString_Result]" ResultString="[FormatString_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Text="{}{0}\{1}" Text_DisplayArg="{}{0}\{1}" TypeName="FormatString" m_bTextLinkChange="False" />
+                <p:FileExists File_Item="{x:Null}" File_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" Conditional="[FileExists_Conditional]" DisplayName="File Exists - Local File" File="[FormatString_FormattedString]" File_DisplayArg="Format String - FTP UNC.FormattedString" sap:VirtualizedContainerService.HintSize="1060,88" MinRequiredVersion="2.10.0.19" Moniker="665a48cf-5242-4954-907b-d8931272b4d2" Result="[FileExists_Result]" ResultString="[FileExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="FileExists" m_bTextLinkChange="False" />
+                <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition_DisplayArg="equals" DisplayName="If" sap:VirtualizedContainerService.HintSize="1060,1134" MinRequiredVersion="2.19.0.1" Moniker="cd01debe-cd05-47b8-9aa9-94966bc3d285" Result="[IfObject_Result_1]" ResultString="[IfObject_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="False" Value_Type="x:String" Variable="[FileExists_Conditional]" Variable_DisplayArg="File Exists - Local File.Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+                  <p:IfObject.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="1028,861" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:FileExists File_Item="{x:Null}" File_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" Conditional="[FileExists_Conditional_1]" DisplayName="File Exists - UNC Bitdefender" File="[localUNCBitdefender]" File_DisplayArg="Input Parameters.UNC For Bitdefender" sap:VirtualizedContainerService.HintSize="990,88" MinRequiredVersion="2.10.0.19" Moniker="3019100f-74aa-4306-b94b-a4ce191c01e0" Result="[FileExists_Result_1]" ResultString="[FileExists_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="FileExists" m_bTextLinkChange="False" />
+                        <p:IfElse CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition_DisplayArg="equals" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="990,583" MinRequiredVersion="2.19.0.1" Moniker="78ab12b5-d555-4069-bd79-b172d2519a61" Result="[IfElse_Result]" ResultString="[IfElse_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="True" Value_Type="x:String" Variable="[FileExists_Conditional_1]" Variable_DisplayArg="File Exists - UNC Bitdefender.Conditional" Variable_Type="x:String" m_bTextLinkChange="False">
+                          <p:IfElse.ElseOption>
+                            <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="501,304" Name="SequenceActivity">
+                              <p:SequenceActivity.Activities>
+                                <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.0.10, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="463,154" IsUpdated="True" MinRequiredVersion="2.19.0.1" Moniker="f624151a-a5ce-4a88-b5b5-1bcf0263ca62" Result="[RunPolicy_Result]" ResultString="[RunPolicy_ResultString]" RunAsCurrentLoggedOnUser="False" RunPolicyId="28671ef2-31cf-40cf-ba4e-6e3096cc6382" RunPolicyName_DisplayArg="FtpDownload" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="b1c48dd7-464b-4350-a623-699efec5e1d3" m_bTextLinkChange="False">
+                                  <p:RunPolicy.GlobalVars>
+                                    <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                                  </p:RunPolicy.GlobalVars>
+                                  <p:RunPolicy.InArgs>
+                                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="ftpURL" ArgType="string" DisplayArg="Input Parameters.FTP URL" DisplayName="FTP URL" Name="ftpURL" isRequired="True">
+                                      <p:InArg.Arg>
+                                        <InArgument x:TypeArguments="x:String">[ftpURL]</InArgument>
+                                      </p:InArg.Arg>
+                                    </p:InArg>
+                                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="ftpUsername" ArgType="string" DisplayArg="Input Parameters.FTP Username" DisplayName="FTP Username" Name="ftpUsername" isRequired="True">
+                                      <p:InArg.Arg>
+                                        <InArgument x:TypeArguments="x:String">[ftpUsername]</InArgument>
+                                      </p:InArg.Arg>
+                                    </p:InArg>
+                                    <p:InArg ItemProp="{x:Null}" x:Key="ftpPassword" ArgType="password" DisplayArg="Input Parameters.FTP Password" DisplayName="FTP Password" Name="ftpPassword" isRequired="True">
+                                      <p:InArg.Arg>
+                                        <InArgument x:TypeArguments="p:Password">[ftpPassword]</InArgument>
+                                      </p:InArg.Arg>
+                                      <p:InArg.Item>
+                                        <InArgument x:TypeArguments="x:Object" />
+                                      </p:InArg.Item>
+                                    </p:InArg>
+                                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="ftpFile" ArgType="string" DisplayArg="Input Parameters.FTP Target File" DisplayName="FTP Target File" Name="ftpFile" isRequired="True">
+                                      <p:InArg.Arg>
+                                        <InArgument x:TypeArguments="x:String">[ftpFile]</InArgument>
+                                      </p:InArg.Arg>
+                                    </p:InArg>
+                                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="targetFolder" ArgType="string" DisplayArg="Input Parameters.Local Target Folder" DisplayName="Local Target Folder" Name="targetFolder" isRequired="True">
+                                      <p:InArg.Arg>
+                                        <InArgument x:TypeArguments="x:String">[targetFolder]</InArgument>
+                                      </p:InArg.Arg>
+                                    </p:InArg>
+                                  </p:RunPolicy.InArgs>
+                                  <p:RunPolicy.OutArgs>
+                                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                                  </p:RunPolicy.OutArgs>
+                                </p:RunPolicy>
+                              </p:SequenceActivity.Activities>
+                              <p:SequenceActivity.Variables>
+                                <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result" />
+                                <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString" />
+                              </p:SequenceActivity.Variables>
+                            </p:SequenceActivity>
+                          </p:IfElse.ElseOption>
+                          <p:IfElse.IfOption>
+                            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="445,346" Name="SequenceActivity">
+                              <p:SequenceActivity.Activities>
+                                <p:CopyFileFromServer CopyName_Item="{x:Null}" CopyName_ItemProp="{x:Null}" FileName_Item="{x:Null}" FileName_ItemProp="{x:Null}" Password_Item="{x:Null}" Password_ItemProp="{x:Null}" UserName_Item="{x:Null}" UserName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" CopyName="[FormatString_FormattedString]" CopyName_DisplayArg="Format String - FTP UNC.FormattedString" DisplayName="Copy File From Server" FileName="[localUNCBitdefender]" FileName_DisplayArg="Input Parameters.UNC For Bitdefender" sap:VirtualizedContainerService.HintSize="407,196" MinRequiredVersion="2.10.0.19" Moniker="d5acb42b-a8d2-460b-ae91-e379ca28a776" Password="[localPW]" Password_DisplayArg="Input Parameters.Local Password" Result="[CopyFileFromServer_Result]" ResultString="[CopyFileFromServer_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CopyFileFromServer" UserName="[localUN]" UserName_DisplayArg="Input Parameters.Local Username" m_bTextLinkChange="False" />
+                              </p:SequenceActivity.Activities>
+                              <p:SequenceActivity.Variables>
+                                <Variable x:TypeArguments="x:String" Name="CopyFileFromServer_ResultString" />
+                                <Variable x:TypeArguments="x:Double" Name="CopyFileFromServer_Result" />
+                              </p:SequenceActivity.Variables>
+                            </p:SequenceActivity>
+                          </p:IfElse.IfOption>
+                          <p:IfElse.Value>
+                            <InArgument x:TypeArguments="x:Object">
+                              <p:ObjectLiteral Value="True" />
+                            </InArgument>
+                          </p:IfElse.Value>
+                        </p:IfElse>
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="FileExists_Conditional_1" />
+                        <Variable x:TypeArguments="x:Double" Name="FileExists_Result_1" />
+                        <Variable x:TypeArguments="x:String" Name="FileExists_ResultString_1" />
+                        <Variable x:TypeArguments="x:Double" Name="IfElse_Result" />
+                        <Variable x:TypeArguments="x:String" Name="IfElse_ResultString" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfObject.IfOption>
+                  <p:IfObject.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="False" />
+                    </InArgument>
+                  </p:IfObject.Value>
+                </p:IfObject>
+                <p:FormatString Input0_Item="{x:Null}" Input0_ItemProp="{x:Null}" Input1_Item="{x:Null}" Input1_ItemProp="{x:Null}" Text_Item="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="Format String - Script File" FormattedString="[FormatString_FormattedString_2]" sap:VirtualizedContainerService.HintSize="1060,160" Input0=".\" Input0_DisplayArg=".\" Input1="[ftpFile]" Input1_DisplayArg="Input Parameters.FTP Target File" MinRequiredVersion="2.10.0.19" Moniker="ad977094-3979-485a-9ee3-5b04bbf9dacb" Result="[FormatString_Result_2]" ResultString="[FormatString_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Text="{}{0}{1}" Text_DisplayArg="{}{0}{1}" TypeName="FormatString" m_bTextLinkChange="False" />
+                <p:FormatString Input0_Item="{x:Null}" Input0_ItemProp="{x:Null}" Input1_Item="{x:Null}" Input1_ItemProp="{x:Null}" Text_Item="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.0.10, Culture=neutral, PublicKeyToken=null" DisplayName="Format String - Pass" FormattedString="[FormatString_FormattedString_1]" sap:VirtualizedContainerService.HintSize="1060,160" Input0="/bdparams /noWait /password" Input0_DisplayArg="/bdparams /noWait /password" Input1="[uninstallPassword]" Input1_DisplayArg="Input Parameters.Uninstall Password" MinRequiredVersion="2.10.0.19" Moniker="5a0b790b-b888-4631-a4e5-2231f742ad0a" Result="[FormatString_Result_1]" ResultString="[FormatString_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Text="{}{0}'{1}'" Text_DisplayArg="{}{0}'{1}'" TypeName="FormatString" m_bTextLinkChange="False" />
+                <p:FormatString Input0_Item="{x:Null}" Input0_ItemProp="{x:Null}" Input1_Item="{x:Null}" Input1_ItemProp="{x:Null}" Text_Item="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="Format String - Params" FormattedString="[FormatString_FormattedString_4]" sap:VirtualizedContainerService.HintSize="1060,160" Input0="[FormatString_FormattedString_1]" Input0_DisplayArg="Format String - Pass.FormattedString" Input1="/log" Input1_DisplayArg="/log" MinRequiredVersion="2.10.0.19" Moniker="5273d7ca-3f3f-4b4b-a97f-d9725e672bee" Result="[FormatString_Result_4]" ResultString="[FormatString_ResultString_4]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Text="{}{0} {1}" Text_DisplayArg="{}{0} {1}" TypeName="FormatString" m_bTextLinkChange="False" />
+                <p:FormatString Input0_Item="{x:Null}" Input0_ItemProp="{x:Null}" Input1_Item="{x:Null}" Input1_ItemProp="{x:Null}" Text_Item="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="Format String - Full String" FormattedString="[FormatString_FormattedString_3]" sap:VirtualizedContainerService.HintSize="1060,160" Input0="[FormatString_FormattedString_2]" Input0_DisplayArg="Format String - Script File.FormattedString" Input1="[FormatString_FormattedString_4]" Input1_DisplayArg="Format String - Params.FormattedString" MinRequiredVersion="2.10.0.19" Moniker="31f6791e-b028-4c9c-b1cb-e3f9e5d97473" Result="[FormatString_Result_3]" ResultString="[FormatString_ResultString_3]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Text="{}{0} {1}" Text_DisplayArg="{}{0} {1}" TypeName="FormatString" m_bTextLinkChange="False" />
+                <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="1060,348" MinRequiredVersion="2.10.0.19" Moniker="98a132d4-1135-4442-921f-47bc1f040ad5" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="f5438fef-f041-48ab-b50a-9a32df184974" m_bTextLinkChange="False" script="YwBkACAAJABmAG8AbABkAGUAcgBQAGEAdABoAA0ACgAkAGYAdQBsAGwAUABhAHQAaAA=">
+                  <p:RunPowerShellScript.InArgs>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="folderPath" ArgType="string" DisplayArg="Input Parameters.Local Target Folder" DisplayName="Folder Path" Name="folderPath" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:Object">[targetFolder]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="fullPath" ArgType="string" DisplayArg="Format String - Full String.FormattedString" DisplayName="Full Path" Name="fullPath" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:Object">[FormatString_FormattedString_3]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                  </p:RunPowerShellScript.InArgs>
+                  <p:RunPowerShellScript.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPowerShellScript.OutArgs>
+                </p:RunPowerShellScript>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString" />
+                <Variable x:TypeArguments="x:Double" Name="FormatString_Result" />
+                <Variable x:TypeArguments="x:String" Name="FormatString_ResultString" />
+                <Variable x:TypeArguments="x:String" Name="FileExists_Conditional" />
+                <Variable x:TypeArguments="x:Double" Name="FileExists_Result" />
+                <Variable x:TypeArguments="x:String" Name="FileExists_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="IfObject_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="IfObject_ResultString_1" />
+                <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString_2" />
+                <Variable x:TypeArguments="x:Double" Name="FormatString_Result_2" />
+                <Variable x:TypeArguments="x:String" Name="FormatString_ResultString_2" />
+                <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString_1" />
+                <Variable x:TypeArguments="x:Double" Name="FormatString_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="FormatString_ResultString_1" />
+                <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString_3" />
+                <Variable x:TypeArguments="x:Double" Name="FormatString_Result_3" />
+                <Variable x:TypeArguments="x:String" Name="FormatString_ResultString_3" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+                <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+                <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+                <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString_4" />
+                <Variable x:TypeArguments="x:Double" Name="FormatString_Result_4" />
+                <Variable x:TypeArguments="x:String" Name="FormatString_ResultString_4" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfObject.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </p:IfObject>
+        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition_DisplayArg="equals" DisplayName="If" sap:VirtualizedContainerService.HintSize="1130,577" MinRequiredVersion="2.19.0.1" Moniker="3ba16ebe-77a5-4843-bf26-08e02b4f646c" Result="[IfObject_Result_2]" ResultString="[IfObject_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="False" Value_Type="x:String" Variable="[IsAppInstalled_Conditional_1]" Variable_DisplayArg="Is Application Installed - Trend.Conditional" Variable_Type="x:String" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+          <p:IfObject.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="501,304" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:RunPolicy RunPolicyName="{x:Null}" RunPolicyName_Item="{x:Null}" RunPolicyName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run Policy" sap:VirtualizedContainerService.HintSize="463,154" IsUpdated="True" MinRequiredVersion="2.16.0.1" Moniker="1523017a-b337-4d74-b61d-791a469cdda6" Result="[RunPolicy_Result_1]" ResultString="[RunPolicy_ResultString_1]" RunAsCurrentLoggedOnUser="False" RunPolicyId="d9f0c6d1-4aa6-4000-9ba7-28d2f04eac02" RunPolicyName_DisplayArg="Trend Installer - Local UNC" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPolicy" genArgEvent="ef4e8353-d5ab-4603-bfcb-a433a32ad3a6" m_bTextLinkChange="False">
+                  <p:RunPolicy.GlobalVars>
+                    <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+                  </p:RunPolicy.GlobalVars>
+                  <p:RunPolicy.InArgs>
+                    <p:InArg ItemProp="{x:Null}" x:Key="CustomerID" ArgType="string" DisplayArg="Input Parameters.Trend Customer ID" DisplayName="Customer Identifier" Name="CustomerID" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">[custID]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="Trend_Contract" ArgType="string" DisplayArg="Input Parameters.Trend Contract Status" DisplayName="Trend Contract Status" Name="Trend_Contract" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">[trendContract]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpPassword" ArgType="password" DisplayArg="Input Parameters.FTP Password" DisplayName="FTP Password" Name="ftpPassword" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="p:Password">[ftpPassword]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="ftpFile" ArgType="string" DisplayArg="WFBS_Installer.msi" DisplayName="FTP Target File" Name="ftpFile" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">WFBS_Installer.msi</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="trendUNC" ArgType="string" DisplayArg="Input Parameters.UNC For Trend" DisplayName="Local UNC for Trend" Name="trendUNC" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">[localUNCTrend]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="localUN" ArgType="string" DisplayArg="Input Parameters.Local Username" DisplayName="Local Username" Name="localUN" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:String">[localUN]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                    <p:InArg ItemProp="{x:Null}" x:Key="localPW" ArgType="password" DisplayArg="Input Parameters.Local Password" DisplayName="Local Password" Name="localPW" isRequired="True">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="p:Password">[localPW]</InArgument>
+                      </p:InArg.Arg>
+                      <p:InArg.Item>
+                        <InArgument x:TypeArguments="x:Object" />
+                      </p:InArg.Item>
+                    </p:InArg>
+                  </p:RunPolicy.InArgs>
+                  <p:RunPolicy.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPolicy.OutArgs>
+                </p:RunPolicy>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:Double" Name="RunPolicy_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="RunPolicy_ResultString_1" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfObject.IfOption>
+          <p:IfObject.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="False" />
+            </InArgument>
+          </p:IfObject.Value>
+        </p:IfObject>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Default="test" Name="uninstallPassword" />
+        <Variable x:TypeArguments="x:String" Default="ftp://pandora.paxistech.com/" Name="ftpURL" />
+        <Variable x:TypeArguments="x:String" Default="NCentral" Name="ftpUsername" />
+        <Variable x:TypeArguments="p:Password" Name="ftpPassword">
+          <Variable.Default>
+            <Literal x:TypeArguments="p:Password">
+              <Literal.Result>
+                <OutArgument x:TypeArguments="p:Password" />
+              </Literal.Result>
+              <p:Password PasswordValue="w4JhFWPabB//PtA+1UGoIA==" />
+            </Literal>
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="x:String" Default="BEST_uninstallTool.exe" Name="ftpFile" />
+        <Variable x:TypeArguments="x:String" Default="C:\Temp\ftp" Name="targetFolder" />
+        <Variable x:TypeArguments="x:String" Name="IsAppInstalled_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="IsAppInstalled_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IsAppInstalled_Result" />
+        <Variable x:TypeArguments="x:String" Name="IsAppInstalled_Conditional_1" />
+        <Variable x:TypeArguments="x:String" Name="IsAppInstalled_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="IsAppInstalled_Result_1" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfObject_Result_2" />
+        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString_2" />
+        <Variable x:TypeArguments="x:String" Name="custID" />
+        <Variable x:TypeArguments="x:String" Name="trendContract" />
+        <Variable x:TypeArguments="x:String" Name="localUNCTrend" />
+        <Variable x:TypeArguments="x:String" Name="localUNCBitdefender" />
+        <Variable x:TypeArguments="x:String" Name="localUN" />
+        <Variable x:TypeArguments="p:Password" Name="localPW" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

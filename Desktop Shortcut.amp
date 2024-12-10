@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="047750d9-1fd6-4b22-a923-f6bcca82ba3c" Name="Desktop Shortcut" Description="RGVza3RvcCBTaG9ydGN1dA==" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="3.0">
+  <Object ID="{c4ba77c8-aa10-447c-b5a2-ba9437c6c518}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;inFilename&quot; Label=&quot;Shortcut Filename&quot; ParameterType=&quot;string&quot; Value=&quot;Nable Website&quot; /&gt;&lt;Parameter ParameterName=&quot;iurl&quot; Label=&quot;URL of the website to link to&quot; ParameterType=&quot;string&quot; Value=&quot;www.n-able.com&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.3.1" />
+  <Activity mc:Ignorable="sap sads" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>619,2471</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="619,2471" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:GetEnvironmentVariable Type_Item="{x:Null}" Type_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Get Environment Variable" sap:VirtualizedContainerService.HintSize="583,124" Moniker="797d18a0-41ed-4ea9-b7cf-4e1d5383bfd5" Result="[GetEnvironmentVariable_Result]" ResultString="[GetEnvironmentVariable_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Type="None" TypeName="GetEnvironmentVariable" Type_DisplayArg="None" Value="[GetEnvironmentVariable_Value]" Variable="USERPROFILE" Variable_DisplayArg="USERPROFILE" m_bTextLinkChange="False" />
+        <p:FormatString Input0_Item="{x:Null}" Input0_ItemProp="{x:Null}" Input1_Item="{x:Null}" Input1_ItemProp="{x:Null}" Text_Item="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Format String txtfilename" FormattedString="[FormatString_FormattedString_2]" sap:VirtualizedContainerService.HintSize="583,160" Input0="[GetEnvironmentVariable_Value]" Input0_DisplayArg="Get Environment Variable.Value" Input1="[inFilename]" Input1_DisplayArg="Input Parameters.Shortcut Filename" Moniker="4941aee7-643a-4bce-8c31-94808ae15896" Result="[FormatString_Result_2]" ResultString="[FormatString_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Text="{}{0}\Desktop\{1}.txt" Text_DisplayArg="{}{0}\Desktop\{1}.txt" TypeName="FormatString" m_bTextLinkChange="False" />
+        <p:FormatString Input0_Item="{x:Null}" Input0_ItemProp="{x:Null}" Input1_Item="{x:Null}" Input1_ItemProp="{x:Null}" Text_Item="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Format String URLfilename" FormattedString="[FormatString_FormattedString_1]" sap:VirtualizedContainerService.HintSize="583,160" Input0="[GetEnvironmentVariable_Value]" Input0_DisplayArg="Get Environment Variable.Value" Input1="[inFilename]" Input1_DisplayArg="Input Parameters.Shortcut Filename" Moniker="4874540b-e312-4442-9e4d-a3c931fa8ba6" Result="[FormatString_Result_1]" ResultString="[FormatString_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Text="{}{0}\Desktop\{1}.url" Text_DisplayArg="{}{0}\Desktop\{1}.url" TypeName="FormatString" m_bTextLinkChange="False" />
+        <p:FormatString Input0_Item="{x:Null}" Input0_ItemProp="{x:Null}" Input1="{x:Null}" Input1_DisplayArg="{x:Null}" Input1_Item="{x:Null}" Input1_ItemProp="{x:Null}" Text_Item="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Format String URL" FormattedString="[FormatString_FormattedString]" sap:VirtualizedContainerService.HintSize="583,160" Input0="[iurl]" Input0_DisplayArg="Input Parameters.URL of the website to link to" Moniker="da68f993-55c0-478b-80be-04205c1eed19" Result="[FormatString_Result]" ResultString="[FormatString_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Text="URL={0}" Text_DisplayArg="URL={0}" TypeName="FormatString" m_bTextLinkChange="False" />
+        <p:OutputFile Append_Item="{x:Null}" Append_ItemProp="{x:Null}" Data_Item="{x:Null}" Data_ItemProp="{x:Null}" FileName_Item="{x:Null}" FileName_ItemProp="{x:Null}" Invoke_Item="{x:Null}" Invoke_ItemProp="{x:Null}" Width="{x:Null}" Width_DisplayArg="{x:Null}" Width_Item="{x:Null}" Width_ItemProp="{x:Null}" Append="False" Append_DisplayArg="" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" Data_DisplayArg="[{000214A0-0000-0000-C000-000000000046}]" Data_Type="x:String" DisplayName="Output File" FileName="[FormatString_FormattedString_2]" FileName_DisplayArg="Format String txtfilename.FormattedString" sap:VirtualizedContainerService.HintSize="583,232" Invoke="False" Invoke_DisplayArg="" Moniker="e2f45291-64f0-4582-a5cd-0068fc2bdad9" Result="[OutputFile_Result]" ResultString="[OutputFile_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="OutputFile" m_bTextLinkChange="False">
+          <p:OutputFile.Data>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="[{000214A0-0000-0000-C000-000000000046}]" />
+            </InArgument>
+          </p:OutputFile.Data>
+        </p:OutputFile>
+        <p:OutputFile Append_Item="{x:Null}" Append_ItemProp="{x:Null}" Data_Item="{x:Null}" Data_ItemProp="{x:Null}" FileName_Item="{x:Null}" FileName_ItemProp="{x:Null}" Invoke_Item="{x:Null}" Invoke_ItemProp="{x:Null}" Width="{x:Null}" Width_DisplayArg="{x:Null}" Width_Item="{x:Null}" Width_ItemProp="{x:Null}" Append="True" Append_DisplayArg="" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" Data_DisplayArg="Prop3=19,2" Data_Type="x:String" DisplayName="Output File" FileName="[FormatString_FormattedString_2]" FileName_DisplayArg="Format String txtfilename.FormattedString" sap:VirtualizedContainerService.HintSize="583,232" Invoke="False" Invoke_DisplayArg="" Moniker="a6c70f1c-4aa7-40ba-80f8-b9bfb7b4e25a" Result="[OutputFile_Result_1]" ResultString="[OutputFile_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="OutputFile" m_bTextLinkChange="False">
+          <p:OutputFile.Data>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="Prop3=19,2" />
+            </InArgument>
+          </p:OutputFile.Data>
+        </p:OutputFile>
+        <p:OutputFile Append_Item="{x:Null}" Append_ItemProp="{x:Null}" Data_Item="{x:Null}" Data_ItemProp="{x:Null}" FileName_Item="{x:Null}" FileName_ItemProp="{x:Null}" Invoke_Item="{x:Null}" Invoke_ItemProp="{x:Null}" Width="{x:Null}" Width_DisplayArg="{x:Null}" Width_Item="{x:Null}" Width_ItemProp="{x:Null}" Append="True" Append_DisplayArg="" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" Data_DisplayArg="[InternetShortcut]" Data_Type="x:String" DisplayName="Output File" FileName="[FormatString_FormattedString_2]" FileName_DisplayArg="Format String txtfilename.FormattedString" sap:VirtualizedContainerService.HintSize="583,232" Invoke="False" Invoke_DisplayArg="" Moniker="41433745-d00c-4e54-95a0-06c310da7345" Result="[OutputFile_Result_2]" ResultString="[OutputFile_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="OutputFile" m_bTextLinkChange="False">
+          <p:OutputFile.Data>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="[InternetShortcut]" />
+            </InArgument>
+          </p:OutputFile.Data>
+        </p:OutputFile>
+        <p:OutputFile Append_Item="{x:Null}" Append_ItemProp="{x:Null}" Data_Item="{x:Null}" Data_ItemProp="{x:Null}" FileName_Item="{x:Null}" FileName_ItemProp="{x:Null}" Invoke_Item="{x:Null}" Invoke_ItemProp="{x:Null}" Width="{x:Null}" Width_DisplayArg="{x:Null}" Width_Item="{x:Null}" Width_ItemProp="{x:Null}" Append="True" Append_DisplayArg="" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" Data_DisplayArg="IDList=" Data_Type="x:String" DisplayName="Output File" FileName="[FormatString_FormattedString_2]" FileName_DisplayArg="Format String txtfilename.FormattedString" sap:VirtualizedContainerService.HintSize="583,232" Invoke="False" Invoke_DisplayArg="" Moniker="796d3523-1aae-43ee-9c8c-16befa386375" Result="[OutputFile_Result_3]" ResultString="[OutputFile_ResultString_3]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="OutputFile" m_bTextLinkChange="False">
+          <p:OutputFile.Data>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="IDList=" />
+            </InArgument>
+          </p:OutputFile.Data>
+        </p:OutputFile>
+        <p:OutputFile Append_Item="{x:Null}" Append_ItemProp="{x:Null}" Data_Item="{x:Null}" Data_ItemProp="{x:Null}" FileName_Item="{x:Null}" FileName_ItemProp="{x:Null}" Invoke_Item="{x:Null}" Invoke_ItemProp="{x:Null}" Width="{x:Null}" Width_DisplayArg="{x:Null}" Width_Item="{x:Null}" Width_ItemProp="{x:Null}" Append="True" Append_DisplayArg="" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" Data="[FormatString_FormattedString]" Data_DisplayArg="Format String URL.FormattedString" Data_Type="x:String" DisplayName="Output File" FileName="[FormatString_FormattedString_2]" FileName_DisplayArg="Format String txtfilename.FormattedString" sap:VirtualizedContainerService.HintSize="583,232" Invoke="False" Invoke_DisplayArg="" Moniker="b54cae87-0797-4752-b945-e6b4386c6e07" Result="[OutputFile_Result_4]" ResultString="[OutputFile_ResultString_4]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="OutputFile" m_bTextLinkChange="False" />
+        <p:RenameFile FileName_Item="{x:Null}" FileName_ItemProp="{x:Null}" NewName_Item="{x:Null}" NewName_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Rename File" FileName="[FormatString_FormattedString_2]" FileName_DisplayArg="Format String txtfilename.FormattedString" sap:VirtualizedContainerService.HintSize="583,124" Moniker="221a3469-3af7-4a61-8536-e33c3fb412cd" NewName="[FormatString_FormattedString_1]" NewName_DisplayArg="Format String URLfilename.FormattedString" Result="[RenameFile_Result]" ResultString="[RenameFile_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RenameFile" m_bTextLinkChange="False" />
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="GetEnvironmentVariable_Value" />
+        <Variable x:TypeArguments="x:String" Name="GetEnvironmentVariable_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="GetEnvironmentVariable_Result" />
+        <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString" />
+        <Variable x:TypeArguments="x:String" Name="FormatString_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="FormatString_Result" />
+        <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString_1" />
+        <Variable x:TypeArguments="x:String" Name="FormatString_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="FormatString_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString_2" />
+        <Variable x:TypeArguments="x:String" Name="FormatString_ResultString_2" />
+        <Variable x:TypeArguments="x:Double" Name="FormatString_Result_2" />
+        <Variable x:TypeArguments="x:String" Name="OutputFile_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="OutputFile_Result" />
+        <Variable x:TypeArguments="x:String" Name="OutputFile_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="OutputFile_Result_1" />
+        <Variable x:TypeArguments="x:String" Name="OutputFile_ResultString_2" />
+        <Variable x:TypeArguments="x:Double" Name="OutputFile_Result_2" />
+        <Variable x:TypeArguments="x:String" Name="OutputFile_ResultString_3" />
+        <Variable x:TypeArguments="x:Double" Name="OutputFile_Result_3" />
+        <Variable x:TypeArguments="x:String" Name="OutputFile_ResultString_4" />
+        <Variable x:TypeArguments="x:Double" Name="OutputFile_Result_4" />
+        <Variable x:TypeArguments="x:String" Name="RenameFile_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="RenameFile_Result" />
+        <Variable x:TypeArguments="x:String" Default="Nable Website" Name="inFilename" />
+        <Variable x:TypeArguments="x:String" Default="www.n-able.com" Name="iurl" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="e6b7f500-a5eb-46e7-b44e-c72c907a300f" Name="Monitor - Trend Installed" Description="Q2hlY2tzIHdoZXRoZXIgVHJlbmQgTWljcm8gaXMgaW5zdGFsbGVk" Version="2.16.0.1" MinRequiredVersion="2.16.0.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{364f4212-cacd-42d9-9d38-35c43686031f}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;TrendCheck&quot; Label=&quot;Trend Installed&quot; ParameterType=&quot;string&quot; Value=&quot;Global Variables.Check if Installed&quot; /&gt;&lt;/OutputParameters&gt;&lt;GlobalVariables&gt;&lt;Parameter ParameterName=&quot;InstallCheck&quot; Label=&quot;Check if Installed&quot; ParameterType=&quot;string&quot; Value=&quot;False&quot; /&gt;&lt;/GlobalVariables&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>GlobalVariable.InstallCheck</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>TrendCheck</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.18.3.1" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>1308,1579</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="1308,1579" MinRequiredVersion="2.16.0.1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RegistryValueExists BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" Property_Item="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" Conditional="[RegistryValueExists_Conditional]" DisplayName="Registry Value Exists" sap:VirtualizedContainerService.HintSize="1272,160" Key="SOFTWARE\TrendMicro\PC-cillinNTCorp\CurrentVersion\HostedAgent" Key_DisplayArg="SOFTWARE\TrendMicro\PC-cillinNTCorp\CurrentVersion\HostedAgent" MinRequiredVersion="2.10.0.19" Moniker="b844d5ec-efc7-4df4-abd7-fb33ec357409" Property="AgentGuid" Property_DisplayArg="AgentGuid" Result="[RegistryValueExists_Result]" ResultString="[RegistryValueExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryValueExists" m_bTextLinkChange="False" />
+        <p:RegistryValueExists BaseKey_Item="{x:Null}" BaseKey_ItemProp="{x:Null}" Key_Item="{x:Null}" Key_ItemProp="{x:Null}" Property_Item="{x:Null}" Property_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" BaseKey="HKLM" BaseKey_DisplayArg="HKLM" Conditional="[RegistryValueExists_Conditional_1]" DisplayName="Wow6432 Registry Value Exists" sap:VirtualizedContainerService.HintSize="1272,160" Key="SOFTWARE\Wow6432Node\TrendMicro\PC-cillinNTCorp\CurrentVersion\HostedAgent" Key_DisplayArg="SOFTWARE\Wow6432Node\TrendMicro\PC-cillinNTCorp\CurrentVersion\HostedAgent" MinRequiredVersion="2.10.0.19" Moniker="24c4931c-f586-4b3c-b5fe-ccb71a998ba9" Property="AgentGuid" Property_DisplayArg="AgentGuid" Result="[RegistryValueExists_Result_1]" ResultString="[RegistryValueExists_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RegistryValueExists" m_bTextLinkChange="False" />
+        <p:IfElse CaseSensitive_ItemProp="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" CaseSensitive_Item="{x:Null}" Condition="equals" Condition_DisplayArg="equals" Condition_Item="{x:Null}" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="1272,956" MinRequiredVersion="2.16.0.1" Moniker="a516c46f-4b3e-4638-a600-2900ed8e0b0e" Result="[IfElse_Result]" ResultString="[IfElse_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="True" Value_Type="x:String" Variable="[RegistryValueExists_Conditional]" Variable_DisplayArg="Registry Value Exists.Conditional" Variable_Type="x:String" m_bTextLinkChange="False">
+          <p:IfElse.ElseOption>
+            <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="846,719" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:IfElse CaseSensitive_ItemProp="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" CaseSensitive_Item="{x:Null}" Condition="equals" Condition_DisplayArg="equals" Condition_Item="{x:Null}" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="808,569" MinRequiredVersion="2.16.0.1" Moniker="f174ed97-c540-4dd1-9a88-9cc14e8f0c14" Result="[IfElse_Result_1]" ResultString="[IfElse_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="True" Value_Type="x:String" Variable="[RegistryValueExists_Conditional_1]" Variable_DisplayArg="Wow6432 Registry Value Exists.Conditional" Variable_Type="x:String" m_bTextLinkChange="False">
+                  <p:IfElse.ElseOption>
+                    <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="382,332" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:Assignment Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Global Variable Assignment" sap:VirtualizedContainerService.HintSize="344,182" MinRequiredVersion="2.10.0.19" Moniker="506895e6-03fb-4210-8c5f-bf2561d44cb6" Result="[Assignment_Result_2]" ResultString="[Assignment_ResultString_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="Assignment" Value_DisplayArg="False" Value_Type="x:String" Variable="[InstallCheck]" Variable_DisplayArg="Global Variables.Check if Installed" Variable_Type="x:String" m_bTextLinkChange="False">
+                          <p:Assignment.Value>
+                            <InArgument x:TypeArguments="x:Object">
+                              <p:ObjectLiteral Value="False" />
+                            </InArgument>
+                          </p:Assignment.Value>
+                        </p:Assignment>
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="Assignment_ResultString_2" />
+                        <Variable x:TypeArguments="x:Double" Name="Assignment_Result_2" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfElse.ElseOption>
+                  <p:IfElse.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="382,332" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:Assignment Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Global Variable Assignment" sap:VirtualizedContainerService.HintSize="344,182" MinRequiredVersion="2.10.0.19" Moniker="1f2edae2-8ea5-4dae-91e1-d54c8c094a3e" Result="[Assignment_Result_1]" ResultString="[Assignment_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="Assignment" Value_DisplayArg="True" Value_Type="x:String" Variable="[InstallCheck]" Variable_DisplayArg="Global Variables.Check if Installed" Variable_Type="x:String" m_bTextLinkChange="False">
+                          <p:Assignment.Value>
+                            <InArgument x:TypeArguments="x:Object">
+                              <p:ObjectLiteral Value="True" />
+                            </InArgument>
+                          </p:Assignment.Value>
+                        </p:Assignment>
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="Assignment_ResultString_1" />
+                        <Variable x:TypeArguments="x:Double" Name="Assignment_Result_1" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfElse.IfOption>
+                  <p:IfElse.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="True" />
+                    </InArgument>
+                  </p:IfElse.Value>
+                </p:IfElse>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:Double" Name="IfElse_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="IfElse_ResultString_1" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.ElseOption>
+          <p:IfElse.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="382,332" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:Assignment Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.18.3.1, Culture=neutral, PublicKeyToken=null" DisplayName="Global Variable Assignment" sap:VirtualizedContainerService.HintSize="344,182" MinRequiredVersion="2.10.0.19" Moniker="95622c70-182f-4239-aba0-07f67d1d6cd9" Result="[Assignment_Result]" ResultString="[Assignment_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="Assignment" Value_DisplayArg="True" Value_Type="x:String" Variable="[InstallCheck]" Variable_DisplayArg="Global Variables.Check if Installed" Variable_Type="x:String" m_bTextLinkChange="False">
+                  <p:Assignment.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="True" />
+                    </InArgument>
+                  </p:Assignment.Value>
+                </p:Assignment>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="Assignment_ResultString" />
+                <Variable x:TypeArguments="x:Double" Name="Assignment_Result" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.IfOption>
+          <p:IfElse.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfElse.Value>
+        </p:IfElse>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:Double" Name="IfElse_Result" />
+        <Variable x:TypeArguments="x:String" Name="IfElse_ResultString" />
+        <Variable x:TypeArguments="x:String" Default="False" Name="InstallCheck" />
+        <Variable x:TypeArguments="x:String" Name="RegistryValueExists_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="RegistryValueExists_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="RegistryValueExists_Result" />
+        <Variable x:TypeArguments="x:String" Name="RegistryValueExists_Conditional_1" />
+        <Variable x:TypeArguments="x:String" Name="RegistryValueExists_ResultString_1" />
+        <Variable x:TypeArguments="x:Double" Name="RegistryValueExists_Result_1" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

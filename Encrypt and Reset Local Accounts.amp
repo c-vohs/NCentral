@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="58c677d0-d08a-475d-bf61-5845c067b21c" Name="Encrypt and Reset Local Accounts" Description="RW5jcnlwdHMgZGV2aWNlIHdpdGggQml0bG9ja2VyLiBSZXNldHMgbG9jYWwgcGFzc3dvcmRzLiBEaXNhYmxlcyBzZWN1cml0eSBxdWVzdGlvbnMgYW5kIHJlYm9vdHMgY29tcHV0ZXIu" Version="2.10.0.19" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{5a9cefa9-1477-417a-8cbf-9eec0ed1c13c}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;netsvcPW&quot; Label=&quot;Netsvc Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;rmmtechPW&quot; Label=&quot;Rmmtech Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;defaultPW&quot; Label=&quot;Default Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;/Parameters&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;BitLockKey&quot; Label=&quot;Bitlocker Recovery Key&quot; ParameterType=&quot;string&quot; Value=&quot;Run PowerShell Script.Bitlocker Recovery Key&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>2471ae58-b315-4b33-9a1b-798913f24d65.BitLockKey</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>BitLockKey</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.60.0.3" />
+  <Activity mc:Ignorable="sap sads" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>490,571</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="490,571" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="454,348" Moniker="2471ae58-b315-4b33-9a1b-798913f24d65" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="87174dd0-d771-4338-9ed2-fffaa21357c4" m_bTextLinkChange="False" script="JABCAGkAdABMAG8AYwBrAEsAZQB5ACAAPQAgACIATgBvACAAUgBlAGMAbwB2AGUAcgB5ACAAUABhAHMAcwB3AG8AcgBkACIADQAKAA0ACgAkAFAAYQB0AGgAIAA9ACAAIgBIAEsATABNADoAXABTAE8ARgBUAFcAQQBSAEUAXABQAG8AbABpAGMAaQBlAHMAXABNAGkAYwByAG8AcwBvAGYAdABcAFcAaQBuAGQAbwB3AHMAXABTAHkAcwB0AGUAbQAiAA0ACgANAAoAaQBmACAAKABUAGUAcwB0AC0AUABhAHQAaAAgAC0AUABhAHQAaAAgACQAUABhAHQAaAApACAAewANAAoAIAAgACAAIABTAGUAdAAtAEkAdABlAG0AUAByAG8AcABlAHIAdAB5ACAALQBQAGEAdABoACAAJABQAGEAdABoACAALQBOAGEAbQBlACAATgBvAEwAbwBjAGEAbABQAGEAcwBzAHcAbwByAGQAUgBlAHMAZQB0AFEAdQBlAHMAdABpAG8AbgBzACAALQBWAGEAbAB1AGUAIAAxAA0ACgB9AA0ACgANAAoAJAB1AHMAZQByAHMAIAA9ACAARwBlAHQALQBMAG8AYwBhAGwAVQBzAGUAcgAgAHwAIAA/ACAARQBuAGEAYgBsAGUAZAAgAC0AZQBxACAAVAByAHUAZQANAAoADQAKAGYAbwByAGUAYQBjAGgAIAAoACQAdQBzAGUAcgAgAGkAbgAgACQAdQBzAGUAcgBzACkAIAB7AA0ACgAgACAAIAAgACQAdQBzAGUAcgBQAGEAcwBzAHcAbwByAGQAIAA9ACAAIgBDAGgAdQBjAGsATgBvAHIAcgBpAHMAMQAyADMAIQAiAA0ACgAgACAAIAAgAHMAdwBpAHQAYwBoACAAKAAkAHUAcwBlAHIALgBOAGEAbQBlACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAbgBlAHQAcwB2AGMAIAB7ACAAJAB1AHMAZQByAFAAYQBzAHMAdwBvAHIAZAAgAD0AIAAkAG4AZQB0AHMAdgBjAFAAVwAgAH0ADQAKACAAIAAgACAAIAAgACAAIAByAG0AbQB0AGUAYwBoACAAewAgACQAdQBzAGUAcgBQAGEAcwBzAHcAbwByAGQAIAA9ACAAJAByAG0AbQB0AGUAYwBoAFAAVwAgAH0ADQAKACAAIAAgACAAIAAgACAAIABEAGUAZgBhAHUAbAB0ACAAewAgACQAdQBzAGUAcgBQAGEAcwBzAHcAbwByAGQAIAA9ACAAJABkAGUAZgBhAHUAbAB0AFAAVwAgAH0ADQAKACAAIAAgACAAfQANAAoAIAAgACAAIABXAHIAaQB0AGUALQBIAG8AcwB0ACAAJAB1AHMAZQByAC4ATgBhAG0AZQAgACIAIAAkAHUAcwBlAHIAUABhAHMAcwB3AG8AcgBkACIADQAKACAAIAAgACAAUwBlAHQALQBMAG8AYwBhAGwAVQBzAGUAcgAgAC0ATgBhAG0AZQAgACQAdQBzAGUAcgAuAE4AYQBtAGUAIAAtAFAAYQBzAHMAdwBvAHIAZAAgACQAdQBzAGUAcgBQAGEAcwBzAHcAbwByAGQADQAKAH0ADQAKAA0ACgBpAGYAIAAoAFsAYgBvAG8AbABdACgAKABHAGUAdAAtAEIAaQB0AEwAbwBjAGsAZQByAFYAbwBsAHUAbQBlACAALQBNAG8AdQBuAHQAUABvAGkAbgB0ACAAQwApAC4ASwBlAHkAUAByAG8AdABlAGMAdABvAHIALgBLAGUAeQBQAHIAbwB0AGUAYwB0AG8AcgBUAHkAcABlACAAfAAgAFMAZQBsAGUAYwB0AC0AUwB0AHIAaQBuAGcAIAAiAFIAZQBjAG8AdgBlAHIAeQBQAGEAcwBzAHcAbwByAGQAIgApAC4AYwBvAHUAbgB0ACkAIAB7AA0ACgAgACAAIAAgACQAQgBpAHQATABvAGMAawBLAGUAeQAgAD0AIAAoAEcAZQB0AC0AQgBpAHQATABvAGMAawBlAHIAVgBvAGwAdQBtAGUAIAAtAE0AbwB1AG4AdABQAG8AaQBuAHQAIABDACkALgBLAGUAeQBQAHIAbwB0AGUAYwB0AG8AcgAuAHIAZQBjAG8AdgBlAHIAeQBwAGEAcwBzAHcAbwByAGQAIAB8ACAATwB1AHQALQBTAHQAcgBpAG4AZwANAAoAIAAgACAAIAB9AA0ACgAgACAAIAAgAGUAbABzAGUAIAB7AA0ACgAgACAAIAAgACAAIAAgACAAQQBkAGQALQBCAGkAdABMAG8AYwBrAGUAcgBLAGUAeQBQAHIAbwB0AGUAYwB0AG8AcgAgAC0ATQBvAHUAbgB0AFAAbwBpAG4AdAAgAEMAOgAgAC0AUgBlAGMAbwB2AGUAcgB5AFAAYQBzAHMAdwBvAHIAZABQAHIAbwB0AGUAYwB0AG8AcgANAAoAIAAgACAAIAAgACAAIAAgACQAQgBpAHQATABvAGMAawBLAGUAeQAgAD0AIAAoAEcAZQB0AC0AQgBpAHQATABvAGMAawBlAHIAVgBvAGwAdQBtAGUAIAAtAE0AbwB1AG4AdABQAG8AaQBuAHQAIABDACkALgBLAGUAeQBQAHIAbwB0AGUAYwB0AG8AcgAuAHIAZQBjAG8AdgBlAHIAeQBwAGEAcwBzAHcAbwByAGQAIAB8ACAATwB1AHQALQBTAHQAcgBpAG4AZwANAAoAfQANAAoADQAKAFcAcgBpAHQAZQAtAE8AdQB0AHAAdQB0ACAAJABCAGkAdABMAG8AYwBrAEsAZQB5AA0ACgANAAoARQBuAGEAYgBsAGUALQBCAGkAdABMAG8AYwBrAGUAcgAgAC0ATQBvAHUAbgB0AFAAbwBpAG4AdAAgAEMAOgAgAC0AVABwAG0AUAByAG8AdABlAGMAdABvAHIAIAAtAEUAbgBjAHIAeQBwAHQAaQBvAG4ATQBlAHQAaABvAGQAIABBAGUAcwAyADUANgAgAC0AUwBrAGkAcABIAGEAcgBkAHcAYQByAGUAVABlAHMAdAANAAoADQAKAFMAdABhAHIAdAAtAFMAbABlAGUAcAAgAC0AUwBlAGMAbwBuAGQAcwAgADUADQAKAA0ACgAkAGUAbgBjAHIAeQBwAHQAUwB0AGEAdAB1AHMAIAA9ACAAKABHAGUAdAAtAEIAaQB0AEwAbwBjAGsAZQByAFYAbwBsAHUAbQBlACkALgBWAG8AbAB1AG0AZQBTAHQAYQB0AHUAcwANAAoADQAKAEQAbwAgAHsADQAKACAAIAAgACAAVwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAkAGUAbgBjAHIAeQBwAHQAUwB0AGEAdAB1AHMADQAKACAAIAAgACAAUwB0AGEAcgB0AC0AUwBsAGUAZQBwACAALQBTAGUAYwBvAG4AZABzACAAMwAwADAADQAKACAAIAAgACAAJABlAG4AYwByAHkAcAB0AFMAdABhAHQAdQBzACAAPQAgACgARwBlAHQALQBCAGkAdABMAG8AYwBrAGUAcgBWAG8AbAB1AG0AZQApAC4AVgBvAGwAdQBtAGUAUwB0AGEAdAB1AHMADQAKAH0AIAB3AGgAaQBsAGUAIAAoACQAZQBuAGMAcgB5AHAAdABTAHQAYQB0AHUAcwAgAC0AZQBxACAAIgBFAG4AYwByAHkAcAB0AGkAbwBuAEkAbgBQAHIAbwBnAHIAZQBzAHMAIgApAA0ACgANAAoAUgBlAHMAdABhAHIAdAAtAEMAbwBtAHAAdQB0AGUAcgAgAC0ARgBvAHIAYwBlAA==">
+          <p:RunPowerShellScript.InArgs>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="netsvcPW" ArgType="password" DisplayArg="Input Parameters.Netsvc Password" DisplayName="Netsvc Password" Name="netsvcPW" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:Object">[netsvcPW]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="rmmtechPW" ArgType="password" DisplayArg="Input Parameters.Rmmtech Password" DisplayName="Rmmtech Password" Name="rmmtechPW" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:Object">[rmmtechPW]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="defaultPW" ArgType="password" DisplayArg="Input Parameters.Default Password" DisplayName="Default Password" Name="defaultPW" isRequired="False">
+              <p:InArg.Arg>
+                <InArgument x:TypeArguments="x:Object">[defaultPW]</InArgument>
+              </p:InArg.Arg>
+            </p:InArg>
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="BitLockKey" ArgType="string" DisplayName="Bitlocker Recovery Key" Name="BitLockKey">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:String">[RunPowerShellScript_BitLockKey]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="p:Password" Name="netsvcPW" />
+        <Variable x:TypeArguments="p:Password" Name="rmmtechPW" />
+        <Variable x:TypeArguments="p:Password" Name="defaultPW" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_BitLockKey" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>

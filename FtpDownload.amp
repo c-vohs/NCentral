@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="28671ef2-31cf-40cf-ba4e-6e3096cc6382" Name="FtpDownload" Description="RlRQIERvd25sb2Fk" Version="2.19.0.1" MinRequiredVersion="2.19.0.1" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{1aa76705-ffb4-46bb-b70a-dba53966b1b8}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;Parameters&gt;&lt;Parameter ParameterName=&quot;ftpURL&quot; Label=&quot;FTP URL&quot; ParameterType=&quot;string&quot; Value=&quot;ftp://pandora.paxistech.com/&quot; /&gt;&lt;Parameter ParameterName=&quot;ftpUsername&quot; Label=&quot;FTP Username&quot; ParameterType=&quot;string&quot; Value=&quot;NCentral&quot; /&gt;&lt;Parameter ParameterName=&quot;ftpPassword&quot; Label=&quot;FTP Password&quot; ParameterType=&quot;password&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;ftpFile&quot; Label=&quot;FTP Target File&quot; ParameterType=&quot;string&quot; Value=&quot;&quot; /&gt;&lt;Parameter ParameterName=&quot;targetFolder&quot; Label=&quot;Local Target Folder&quot; ParameterType=&quot;string&quot; Value=&quot;C:\Paxis&quot; /&gt;&lt;/Parameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System" />
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.40.1.3" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>1750,2598</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="1750,2598" MinRequiredVersion="2.19.0.1" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:FormatString Input0_Item="{x:Null}" Input0_ItemProp="{x:Null}" Input1_Item="{x:Null}" Input1_ItemProp="{x:Null}" Text_Item="{x:Null}" Text_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.0.10, Culture=neutral, PublicKeyToken=null" DisplayName="Format String" FormattedString="[FormatString_FormattedString]" sap:VirtualizedContainerService.HintSize="1714,160" Input0="[targetFolder]" Input0_DisplayArg="Input Parameters.Local Target Folder" Input1="[ftpFile]" Input1_DisplayArg="Input Parameters.FTP Target File" MinRequiredVersion="2.10.0.19" Moniker="f09681b3-ea9c-4261-a653-275f9f4f365e" Result="[FormatString_Result]" ResultString="[FormatString_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" Text="{}{0}\{1}" Text_DisplayArg="{}{0}\{1}" TypeName="FormatString" m_bTextLinkChange="False" />
+        <p:FolderExists Folder_Item="{x:Null}" Folder_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.0.10, Culture=neutral, PublicKeyToken=null" Conditional="[FolderExists_Conditional]" DisplayName="Folder Exists" Folder="[targetFolder]" Folder_DisplayArg="Input Parameters.Local Target Folder" sap:VirtualizedContainerService.HintSize="1714,88" MinRequiredVersion="2.10.0.19" Moniker="005d4f48-3547-486a-937f-417dac9c2ad5" Result="[FolderExists_Result]" ResultString="[FolderExists_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="FolderExists" m_bTextLinkChange="False" />
+        <p:IfElse CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="equals" Condition_DisplayArg="equals" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="1714,2047" MinRequiredVersion="2.19.0.1" Moniker="e8dbfc7c-5d3d-4243-b879-2c21ba4f0104" Result="[IfElse_Result]" ResultString="[IfElse_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="True" Value_Type="x:String" Variable="[FolderExists_Conditional]" Variable_DisplayArg="Folder Exists.Conditional" Variable_Type="x:String" m_bTextLinkChange="False">
+          <p:IfElse.ElseOption>
+            <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="506,800" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:CreateFolder Folder_Item="{x:Null}" Folder_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.0.10, Culture=neutral, PublicKeyToken=null" DisplayName="Create Folder" Folder="[targetFolder]" FolderInfo="[CreateFolder_FolderInfo]" Folder_DisplayArg="Input Parameters.Local Target Folder" sap:VirtualizedContainerService.HintSize="468,88" MinRequiredVersion="2.10.0.19" Moniker="40353346-141a-437c-8828-7abd594fd8d9" Result="[CreateFolder_Result]" ResultString="[CreateFolder_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="CreateFolder" m_bTextLinkChange="False" />
+                <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.19.0.10, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" MinRequiredVersion="2.10.0.19" Moniker="b085a00d-8f35-4bb1-82c9-e24a82b75c35" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="5be8ffd3-1bb7-451d-8a76-76a0ffba6dc1" m_bTextLinkChange="False" script="ZgB1AG4AYwB0AGkAbwBuACAARABvAHcAbgBsAG8AYQBkAEYAdABwAEYAaQBsAGUAIAAoACQAdQByAGwALAAgACQAYwByAGUAZABlAG4AdABpAGEAbABzACwAIAAkAGwAbwBjAGEAbABQAGEAdABoACwAIAAkAG4AYQBtAGUAKQAgAHsADQAKACAAIAAgACAAJABsAG8AYwBhAGwARgBpAGwAZQBQAGEAdABoACAAPQAgAEoAbwBpAG4ALQBQAGEAdABoACAAJABsAG8AYwBhAGwAUABhAHQAaAAgACQAbgBhAG0AZQANAAoAIAAgACAAIAAkAGYAaQBsAGUAVQByAGwAIAA9ACAAKAAkAHUAcgBsACAAKwAgACQAbgBhAG0AZQApAA0ACgANAAoAIAAgACAAIAAjAFcAcgBpAHQAZQAtAEgAbwBzAHQAIAAiAEQAbwB3AG4AbABvAGEAZABpAG4AZwAgACQAZgBpAGwAZQBVAHIAbAAgAHQAbwAgACQAbABvAGMAYQBsAEYAaQBsAGUAUABhAHQAaAAiAA0ACgANAAoAIAAgACAAIAAkAGQAbwB3AG4AbABvAGEAZABSAGUAcQB1AGUAcwB0ACAAPQAgAFsATgBlAHQALgBXAGUAYgBSAGUAcQB1AGUAcwB0AF0AOgA6AEMAcgBlAGEAdABlACgAJABmAGkAbABlAFUAcgBsACkADQAKACAAIAAgACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHEAdQBlAHMAdAAuAEUAbgBhAGIAbABlAFMAcwBsACAAPQAgACQAdAByAHUAZQANAAoAIAAgACAAIAAkAGQAbwB3AG4AbABvAGEAZABSAGUAcQB1AGUAcwB0AC4ATQBlAHQAaABvAGQAIAA9AA0ACgAgACAAIAAgACAAIAAgACAAWwBTAHkAcwB0AGUAbQAuAE4AZQB0AC4AVwBlAGIAUgBlAHEAdQBlAHMAdABNAGUAdABoAG8AZABzACsARgB0AHAAXQA6ADoARABvAHcAbgBsAG8AYQBkAEYAaQBsAGUADQAKACAAIAAgACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHEAdQBlAHMAdAAuAEMAcgBlAGQAZQBuAHQAaQBhAGwAcwAgAD0AIAAkAGMAcgBlAGQAZQBuAHQAaQBhAGwAcwANAAoADQAKACAAIAAgACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHMAcABvAG4AcwBlACAAPQAgACQAZABvAHcAbgBsAG8AYQBkAFIAZQBxAHUAZQBzAHQALgBHAGUAdABSAGUAcwBwAG8AbgBzAGUAKAApAA0ACgAgACAAIAAgACQAcwBvAHUAcgBjAGUAUwB0AHIAZQBhAG0AIAA9ACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHMAcABvAG4AcwBlAC4ARwBlAHQAUgBlAHMAcABvAG4AcwBlAFMAdAByAGUAYQBtACgAKQANAAoAIAAgACAAIAAkAHQAYQByAGcAZQB0AFMAdAByAGUAYQBtACAAPQAgAFsAUwB5AHMAdABlAG0ALgBJAE8ALgBGAGkAbABlAF0AOgA6AEMAcgBlAGEAdABlACgAJABsAG8AYwBhAGwARgBpAGwAZQBQAGEAdABoACkADQAKACAAIAAgACAAJABiAHUAZgBmAGUAcgAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAYgB5AHQAZQBbAF0AIAAxADAAMgA0ADAADQAKACAAIAAgACAAdwBoAGkAbABlACAAKAAoACQAcgBlAGEAZAAgAD0AIAAkAHMAbwB1AHIAYwBlAFMAdAByAGUAYQBtAC4AUgBlAGEAZAAoACQAYgB1AGYAZgBlAHIALAAgADAALAAgACQAYgB1AGYAZgBlAHIALgBMAGUAbgBnAHQAaAApACkAIAAtAGcAdAAgADAAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAkAHQAYQByAGcAZQB0AFMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABiAHUAZgBmAGUAcgAsACAAMAAsACAAJAByAGUAYQBkACkAOwANAAoAIAAgACAAIAB9AA0ACgAgACAAIAAgACQAdABhAHIAZwBlAHQAUwB0AHIAZQBhAG0ALgBEAGkAcwBwAG8AcwBlACgAKQANAAoAIAAgACAAIAAkAHMAbwB1AHIAYwBlAFMAdAByAGUAYQBtAC4ARABpAHMAcABvAHMAZQAoACkADQAKACAAIAAgACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHMAcABvAG4AcwBlAC4ARABpAHMAcABvAHMAZQAoACkAIAANAAoAfQANAAoADQAKACQAVABMAFMAMQAyAFAAcgBvAHQAbwBjAG8AbAAgAD0AIABbAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBTAGUAYwB1AHIAaQB0AHkAUAByAG8AdABvAGMAbwBsAFQAeQBwAGUAXQAgACcAUwBzAGwAMwAgACwAIABUAGwAcwAxADIAJwANAAoAWwBTAHkAcwB0AGUAbQAuAE4AZQB0AC4AUwBlAHIAdgBpAGMAZQBQAG8AaQBuAHQATQBhAG4AYQBnAGUAcgBdADoAOgBTAGUAYwB1AHIAaQB0AHkAUAByAG8AdABvAGMAbwBsACAAPQAgACQAVABMAFMAMQAyAFAAcgBvAHQAbwBjAG8AbAANAAoADQAKACQAYwByAGUAZABlAG4AdABpAGEAbABzACAAPQAgAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABTAHkAcwB0AGUAbQAuAE4AZQB0AC4ATgBlAHQAdwBvAHIAawBDAHIAZQBkAGUAbgB0AGkAYQBsACgAJAB1AHMAZQByAG4AYQBtAGUALAAgACQAcABhAHMAcwB3AG8AcgBkACkAIAANAAoARABvAHcAbgBsAG8AYQBkAEYAdABwAEYAaQBsAGUAIAAkAHUAcgBsACAAJABjAHIAZQBkAGUAbgB0AGkAYQBsAHMAIAAkAGwAbwBjAGEAbABmAG8AbABkAGUAcgAgACQAZgB0AHAAVABhAHIAZwBlAHQA">
+                  <p:RunPowerShellScript.InArgs>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="url" ArgType="string" DisplayArg="Input Parameters.FTP URL" DisplayName="FTP URL" Name="url" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:Object">[ftpURL]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="username" ArgType="string" DisplayArg="Input Parameters.FTP Username" DisplayName="FTP Username" Name="username" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:Object">[ftpUsername]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="password" ArgType="password" DisplayArg="Input Parameters.FTP Password" DisplayName="FTP Password" Name="password" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:Object">[ftpPassword]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="localFolder" ArgType="string" DisplayArg="Input Parameters.Local Target Folder" DisplayName="Local Target Folder" Name="localFolder" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:Object">[targetFolder]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="ftpTarget" ArgType="string" DisplayArg="Input Parameters.FTP Target File" DisplayName="FTP Target File" Name="ftpTarget" isRequired="False">
+                      <p:InArg.Arg>
+                        <InArgument x:TypeArguments="x:Object">[ftpFile]</InArgument>
+                      </p:InArg.Arg>
+                    </p:InArg>
+                  </p:RunPowerShellScript.InArgs>
+                  <p:RunPowerShellScript.OutArgs>
+                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                  </p:RunPowerShellScript.OutArgs>
+                </p:RunPowerShellScript>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="CreateFolder_FolderInfo" />
+                <Variable x:TypeArguments="x:Double" Name="CreateFolder_Result" />
+                <Variable x:TypeArguments="x:String" Name="CreateFolder_ResultString" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+                <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+                <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.ElseOption>
+          <p:IfElse.IfOption>
+            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="1164,1810" Name="SequenceActivity">
+              <p:SequenceActivity.Activities>
+                <p:FileExists File_Item="{x:Null}" File_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.0.10, Culture=neutral, PublicKeyToken=null" Conditional="[FileExists_Conditional]" DisplayName="File Exists" File="[FormatString_FormattedString]" File_DisplayArg="Format String.FormattedString" sap:VirtualizedContainerService.HintSize="1126,88" MinRequiredVersion="2.10.0.19" Moniker="6a8bf63b-103a-4001-9e38-e4dd09b132d3" OutPut_64="[FileExists_OutPut_64]" Result="[FileExists_Result]" ResultString="[FileExists_ResultString]" Results_x64="[FileExists_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="Execute64bit" TypeName="FileExists" m_bTextLinkChange="False" />
+                <p:IfElse CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="equals" Condition_DisplayArg="equals" DisplayName="If/Else" sap:VirtualizedContainerService.HintSize="1126,1532" MinRequiredVersion="2.19.0.1" Moniker="27b0d535-02d0-4445-8b4a-e18464d87a4b" Result="[IfElse_Result_1]" ResultString="[IfElse_ResultString_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfElse" Value_DisplayArg="True" Value_Type="x:String" Variable="[FileExists_Conditional]" Variable_DisplayArg="File Exists.Conditional" Variable_Type="x:String" m_bTextLinkChange="False">
+                  <p:IfElse.ElseOption>
+                    <p:SequenceActivity DisplayName="Else" sap:VirtualizedContainerService.HintSize="506,672" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" MinRequiredVersion="2.10.0.19" Moniker="203aa297-d37d-424a-b0cd-9740b5cd8bd3" OutPut_64="[RunPowerShellScript_OutPut_64_2]" Result="[RunPowerShellScript_Result_2]" ResultString="[RunPowerShellScript_ResultString_2]" Results_x64="[RunPowerShellScript_Results_x64_2]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="17d02666-8118-435a-ae89-185ad71f703d" m_bTextLinkChange="False" script="ZgB1AG4AYwB0AGkAbwBuACAARABvAHcAbgBsAG8AYQBkAEYAdABwAEYAaQBsAGUAIAAoACQAdQByAGwALAAgACQAYwByAGUAZABlAG4AdABpAGEAbABzACwAIAAkAGwAbwBjAGEAbABQAGEAdABoACwAIAAkAG4AYQBtAGUAKQAgAHsADQAKACAAIAAgACAAJABsAG8AYwBhAGwARgBpAGwAZQBQAGEAdABoACAAPQAgAEoAbwBpAG4ALQBQAGEAdABoACAAJABsAG8AYwBhAGwAUABhAHQAaAAgACQAbgBhAG0AZQANAAoAIAAgACAAIAAkAGYAaQBsAGUAVQByAGwAIAA9ACAAKAAkAHUAcgBsACAAKwAgACQAbgBhAG0AZQApAA0ACgANAAoAIAAgACAAIAAjAFcAcgBpAHQAZQAtAEgAbwBzAHQAIAAiAEQAbwB3AG4AbABvAGEAZABpAG4AZwAgACQAZgBpAGwAZQBVAHIAbAAgAHQAbwAgACQAbABvAGMAYQBsAEYAaQBsAGUAUABhAHQAaAAiAA0ACgANAAoAIAAgACAAIAAkAGQAbwB3AG4AbABvAGEAZABSAGUAcQB1AGUAcwB0ACAAPQAgAFsATgBlAHQALgBXAGUAYgBSAGUAcQB1AGUAcwB0AF0AOgA6AEMAcgBlAGEAdABlACgAJABmAGkAbABlAFUAcgBsACkADQAKACAAIAAgACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHEAdQBlAHMAdAAuAEUAbgBhAGIAbABlAFMAcwBsACAAPQAgACQAdAByAHUAZQANAAoAIAAgACAAIAAkAGQAbwB3AG4AbABvAGEAZABSAGUAcQB1AGUAcwB0AC4ATQBlAHQAaABvAGQAIAA9AA0ACgAgACAAIAAgACAAIAAgACAAWwBTAHkAcwB0AGUAbQAuAE4AZQB0AC4AVwBlAGIAUgBlAHEAdQBlAHMAdABNAGUAdABoAG8AZABzACsARgB0AHAAXQA6ADoARABvAHcAbgBsAG8AYQBkAEYAaQBsAGUADQAKACAAIAAgACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHEAdQBlAHMAdAAuAEMAcgBlAGQAZQBuAHQAaQBhAGwAcwAgAD0AIAAkAGMAcgBlAGQAZQBuAHQAaQBhAGwAcwANAAoADQAKACAAIAAgACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHMAcABvAG4AcwBlACAAPQAgACQAZABvAHcAbgBsAG8AYQBkAFIAZQBxAHUAZQBzAHQALgBHAGUAdABSAGUAcwBwAG8AbgBzAGUAKAApAA0ACgAgACAAIAAgACQAcwBvAHUAcgBjAGUAUwB0AHIAZQBhAG0AIAA9ACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHMAcABvAG4AcwBlAC4ARwBlAHQAUgBlAHMAcABvAG4AcwBlAFMAdAByAGUAYQBtACgAKQANAAoAIAAgACAAIAAkAHQAYQByAGcAZQB0AFMAdAByAGUAYQBtACAAPQAgAFsAUwB5AHMAdABlAG0ALgBJAE8ALgBGAGkAbABlAF0AOgA6AEMAcgBlAGEAdABlACgAJABsAG8AYwBhAGwARgBpAGwAZQBQAGEAdABoACkADQAKACAAIAAgACAAJABiAHUAZgBmAGUAcgAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAYgB5AHQAZQBbAF0AIAAxADAAMgA0ADAADQAKACAAIAAgACAAdwBoAGkAbABlACAAKAAoACQAcgBlAGEAZAAgAD0AIAAkAHMAbwB1AHIAYwBlAFMAdAByAGUAYQBtAC4AUgBlAGEAZAAoACQAYgB1AGYAZgBlAHIALAAgADAALAAgACQAYgB1AGYAZgBlAHIALgBMAGUAbgBnAHQAaAApACkAIAAtAGcAdAAgADAAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAkAHQAYQByAGcAZQB0AFMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABiAHUAZgBmAGUAcgAsACAAMAAsACAAJAByAGUAYQBkACkAOwANAAoAIAAgACAAIAB9AA0ACgAgACAAIAAgACQAdABhAHIAZwBlAHQAUwB0AHIAZQBhAG0ALgBEAGkAcwBwAG8AcwBlACgAKQANAAoAIAAgACAAIAAkAHMAbwB1AHIAYwBlAFMAdAByAGUAYQBtAC4ARABpAHMAcABvAHMAZQAoACkADQAKACAAIAAgACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHMAcABvAG4AcwBlAC4ARABpAHMAcABvAHMAZQAoACkAIAANAAoAfQANAAoADQAKACQAVABMAFMAMQAyAFAAcgBvAHQAbwBjAG8AbAAgAD0AIABbAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBTAGUAYwB1AHIAaQB0AHkAUAByAG8AdABvAGMAbwBsAFQAeQBwAGUAXQAgACcAUwBzAGwAMwAgACwAIABUAGwAcwAxADIAJwANAAoAWwBTAHkAcwB0AGUAbQAuAE4AZQB0AC4AUwBlAHIAdgBpAGMAZQBQAG8AaQBuAHQATQBhAG4AYQBnAGUAcgBdADoAOgBTAGUAYwB1AHIAaQB0AHkAUAByAG8AdABvAGMAbwBsACAAPQAgACQAVABMAFMAMQAyAFAAcgBvAHQAbwBjAG8AbAANAAoADQAKACQAYwByAGUAZABlAG4AdABpAGEAbABzACAAPQAgAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABTAHkAcwB0AGUAbQAuAE4AZQB0AC4ATgBlAHQAdwBvAHIAawBDAHIAZQBkAGUAbgB0AGkAYQBsACgAJAB1AHMAZQByAG4AYQBtAGUALAAgACQAcABhAHMAcwB3AG8AcgBkACkAIAANAAoARABvAHcAbgBsAG8AYQBkAEYAdABwAEYAaQBsAGUAIAAkAHUAcgBsACAAJABjAHIAZQBkAGUAbgB0AGkAYQBsAHMAIAAkAGwAbwBjAGEAbABmAG8AbABkAGUAcgAgACQAZgB0AHAAVABhAHIAZwBlAHQA">
+                          <p:RunPowerShellScript.InArgs>
+                            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="url" ArgType="string" DisplayArg="Input Parameters.FTP URL" DisplayName="FTP URL" Name="url" isRequired="False">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:Object">[ftpURL]</InArgument>
+                              </p:InArg.Arg>
+                            </p:InArg>
+                            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="username" ArgType="string" DisplayArg="Input Parameters.FTP Username" DisplayName="FTP Username" Name="username" isRequired="False">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:Object">[ftpUsername]</InArgument>
+                              </p:InArg.Arg>
+                            </p:InArg>
+                            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="password" ArgType="password" DisplayArg="Input Parameters.FTP Password" DisplayName="FTP Password" Name="password" isRequired="False">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:Object">[ftpPassword]</InArgument>
+                              </p:InArg.Arg>
+                            </p:InArg>
+                            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="localFolder" ArgType="string" DisplayArg="Input Parameters.Local Target Folder" DisplayName="Local Target Folder" Name="localFolder" isRequired="False">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:Object">[targetFolder]</InArgument>
+                              </p:InArg.Arg>
+                            </p:InArg>
+                            <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="ftpTarget" ArgType="string" DisplayArg="Input Parameters.FTP Target File" DisplayName="FTP Target File" Name="ftpTarget" isRequired="False">
+                              <p:InArg.Arg>
+                                <InArgument x:TypeArguments="x:Object">[ftpFile]</InArgument>
+                              </p:InArg.Arg>
+                            </p:InArg>
+                          </p:RunPowerShellScript.InArgs>
+                          <p:RunPowerShellScript.OutArgs>
+                            <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                          </p:RunPowerShellScript.OutArgs>
+                        </p:RunPowerShellScript>
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64_2" />
+                        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result_2" />
+                        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString_2" />
+                        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64_2" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfElse.ElseOption>
+                  <p:IfElse.IfOption>
+                    <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="576,1295" Name="SequenceActivity">
+                      <p:SequenceActivity.Activities>
+                        <p:FolderSize Folder_Item="{x:Null}" Folder_ItemProp="{x:Null}" Hidden_Item="{x:Null}" Hidden_ItemProp="{x:Null}" Recurse_Item="{x:Null}" Recurse_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="File/Folder Size" FileCount="[FolderSize_FileCount]" Folder="[FormatString_FormattedString]" Folder_DisplayArg="Format String.FormattedString" Hidden="True" Hidden_DisplayArg="true" sap:VirtualizedContainerService.HintSize="538,160" MinRequiredVersion="2.10.0.19" Moniker="139d53fd-f1e1-4710-adb6-1510e3b2775a" Recurse="False" Recurse_DisplayArg="true" Result="[FolderSize_Result]" ResultString="[FolderSize_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" SizeInfo="[FolderSize_SizeInfo]" TypeName="FolderSize" m_bTextLinkChange="False" />
+                        <p:IfObject CaseSensitive_Item="{x:Null}" CaseSensitive_ItemProp="{x:Null}" Condition_Item="{x:Null}" Condition_ItemProp="{x:Null}" Value_Item="{x:Null}" Value_ItemProp="{x:Null}" Variable_Item="{x:Null}" Variable_ItemProp="{x:Null}" VerboseOutput_Item="{x:Null}" VerboseOutput_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" CaseSensitive="False" CaseSensitive_DisplayArg="false" Condition="less than" Condition_DisplayArg="less than" DisplayName="If" sap:VirtualizedContainerService.HintSize="538,945" MinRequiredVersion="2.19.0.1" Moniker="7a997e98-5a74-4c5d-90eb-3b9202fb1791" Result="[IfObject_Result]" ResultString="[IfObject_ResultString]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="None" TypeName="IfObject" Value_DisplayArg="200" Value_Type="x:Double" Variable="[FolderSize_SizeInfo]" Variable_DisplayArg="File/Folder Size.FolderSize" Variable_Type="x:Double" VerboseOutput="False" VerboseOutput_DisplayArg="" m_bTextLinkChange="False">
+                          <p:IfObject.IfOption>
+                            <p:SequenceActivity DisplayName="Then" sap:VirtualizedContainerService.HintSize="506,672" Name="SequenceActivity">
+                              <p:SequenceActivity.Activities>
+                                <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.19.1.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="468,522" MinRequiredVersion="2.10.0.19" Moniker="f93b4f77-fdee-47e8-a296-6ccf560dc241" OutPut_64="[RunPowerShellScript_OutPut_64_1]" Result="[RunPowerShellScript_Result_1]" ResultString="[RunPowerShellScript_ResultString_1]" Results_x64="[RunPowerShellScript_Results_x64_1]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="0b0a9641-7eed-4afb-8f13-fef66538238e" m_bTextLinkChange="False" script="ZgB1AG4AYwB0AGkAbwBuACAARABvAHcAbgBsAG8AYQBkAEYAdABwAEYAaQBsAGUAIAAoACQAdQByAGwALAAgACQAYwByAGUAZABlAG4AdABpAGEAbABzACwAIAAkAGwAbwBjAGEAbABQAGEAdABoACwAIAAkAG4AYQBtAGUAKQAgAHsADQAKACAAIAAgACAAJABsAG8AYwBhAGwARgBpAGwAZQBQAGEAdABoACAAPQAgAEoAbwBpAG4ALQBQAGEAdABoACAAJABsAG8AYwBhAGwAUABhAHQAaAAgACQAbgBhAG0AZQANAAoAIAAgACAAIAAkAGYAaQBsAGUAVQByAGwAIAA9ACAAKAAkAHUAcgBsACAAKwAgACQAbgBhAG0AZQApAA0ACgANAAoAIAAgACAAIAAjAFcAcgBpAHQAZQAtAEgAbwBzAHQAIAAiAEQAbwB3AG4AbABvAGEAZABpAG4AZwAgACQAZgBpAGwAZQBVAHIAbAAgAHQAbwAgACQAbABvAGMAYQBsAEYAaQBsAGUAUABhAHQAaAAiAA0ACgANAAoAIAAgACAAIAAkAGQAbwB3AG4AbABvAGEAZABSAGUAcQB1AGUAcwB0ACAAPQAgAFsATgBlAHQALgBXAGUAYgBSAGUAcQB1AGUAcwB0AF0AOgA6AEMAcgBlAGEAdABlACgAJABmAGkAbABlAFUAcgBsACkADQAKACAAIAAgACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHEAdQBlAHMAdAAuAEUAbgBhAGIAbABlAFMAcwBsACAAPQAgACQAdAByAHUAZQANAAoAIAAgACAAIAAkAGQAbwB3AG4AbABvAGEAZABSAGUAcQB1AGUAcwB0AC4ATQBlAHQAaABvAGQAIAA9AA0ACgAgACAAIAAgACAAIAAgACAAWwBTAHkAcwB0AGUAbQAuAE4AZQB0AC4AVwBlAGIAUgBlAHEAdQBlAHMAdABNAGUAdABoAG8AZABzACsARgB0AHAAXQA6ADoARABvAHcAbgBsAG8AYQBkAEYAaQBsAGUADQAKACAAIAAgACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHEAdQBlAHMAdAAuAEMAcgBlAGQAZQBuAHQAaQBhAGwAcwAgAD0AIAAkAGMAcgBlAGQAZQBuAHQAaQBhAGwAcwANAAoADQAKACAAIAAgACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHMAcABvAG4AcwBlACAAPQAgACQAZABvAHcAbgBsAG8AYQBkAFIAZQBxAHUAZQBzAHQALgBHAGUAdABSAGUAcwBwAG8AbgBzAGUAKAApAA0ACgAgACAAIAAgACQAcwBvAHUAcgBjAGUAUwB0AHIAZQBhAG0AIAA9ACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHMAcABvAG4AcwBlAC4ARwBlAHQAUgBlAHMAcABvAG4AcwBlAFMAdAByAGUAYQBtACgAKQANAAoAIAAgACAAIAAkAHQAYQByAGcAZQB0AFMAdAByAGUAYQBtACAAPQAgAFsAUwB5AHMAdABlAG0ALgBJAE8ALgBGAGkAbABlAF0AOgA6AEMAcgBlAGEAdABlACgAJABsAG8AYwBhAGwARgBpAGwAZQBQAGEAdABoACkADQAKACAAIAAgACAAJABiAHUAZgBmAGUAcgAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAYgB5AHQAZQBbAF0AIAAxADAAMgA0ADAADQAKACAAIAAgACAAdwBoAGkAbABlACAAKAAoACQAcgBlAGEAZAAgAD0AIAAkAHMAbwB1AHIAYwBlAFMAdAByAGUAYQBtAC4AUgBlAGEAZAAoACQAYgB1AGYAZgBlAHIALAAgADAALAAgACQAYgB1AGYAZgBlAHIALgBMAGUAbgBnAHQAaAApACkAIAAtAGcAdAAgADAAKQAgAHsADQAKACAAIAAgACAAIAAgACAAIAAkAHQAYQByAGcAZQB0AFMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABiAHUAZgBmAGUAcgAsACAAMAAsACAAJAByAGUAYQBkACkAOwANAAoAIAAgACAAIAB9AA0ACgAgACAAIAAgACQAdABhAHIAZwBlAHQAUwB0AHIAZQBhAG0ALgBEAGkAcwBwAG8AcwBlACgAKQANAAoAIAAgACAAIAAkAHMAbwB1AHIAYwBlAFMAdAByAGUAYQBtAC4ARABpAHMAcABvAHMAZQAoACkADQAKACAAIAAgACAAJABkAG8AdwBuAGwAbwBhAGQAUgBlAHMAcABvAG4AcwBlAC4ARABpAHMAcABvAHMAZQAoACkAIAANAAoAfQANAAoADQAKACQAVABMAFMAMQAyAFAAcgBvAHQAbwBjAG8AbAAgAD0AIABbAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBTAGUAYwB1AHIAaQB0AHkAUAByAG8AdABvAGMAbwBsAFQAeQBwAGUAXQAgACcAUwBzAGwAMwAgACwAIABUAGwAcwAxADIAJwANAAoAWwBTAHkAcwB0AGUAbQAuAE4AZQB0AC4AUwBlAHIAdgBpAGMAZQBQAG8AaQBuAHQATQBhAG4AYQBnAGUAcgBdADoAOgBTAGUAYwB1AHIAaQB0AHkAUAByAG8AdABvAGMAbwBsACAAPQAgACQAVABMAFMAMQAyAFAAcgBvAHQAbwBjAG8AbAANAAoADQAKACQAYwByAGUAZABlAG4AdABpAGEAbABzACAAPQAgAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABTAHkAcwB0AGUAbQAuAE4AZQB0AC4ATgBlAHQAdwBvAHIAawBDAHIAZQBkAGUAbgB0AGkAYQBsACgAJAB1AHMAZQByAG4AYQBtAGUALAAgACQAcABhAHMAcwB3AG8AcgBkACkAIAANAAoARABvAHcAbgBsAG8AYQBkAEYAdABwAEYAaQBsAGUAIAAkAHUAcgBsACAAJABjAHIAZQBkAGUAbgB0AGkAYQBsAHMAIAAkAGwAbwBjAGEAbABmAG8AbABkAGUAcgAgACQAZgB0AHAAVABhAHIAZwBlAHQA">
+                                  <p:RunPowerShellScript.InArgs>
+                                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="url" ArgType="string" DisplayArg="Input Parameters.FTP URL" DisplayName="FTP URL" Name="url" isRequired="False">
+                                      <p:InArg.Arg>
+                                        <InArgument x:TypeArguments="x:Object">[ftpURL]</InArgument>
+                                      </p:InArg.Arg>
+                                    </p:InArg>
+                                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="username" ArgType="string" DisplayArg="Input Parameters.FTP Username" DisplayName="FTP Username" Name="username" isRequired="False">
+                                      <p:InArg.Arg>
+                                        <InArgument x:TypeArguments="x:Object">[ftpUsername]</InArgument>
+                                      </p:InArg.Arg>
+                                    </p:InArg>
+                                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="password" ArgType="password" DisplayArg="Input Parameters.FTP Password" DisplayName="FTP Password" Name="password" isRequired="False">
+                                      <p:InArg.Arg>
+                                        <InArgument x:TypeArguments="x:Object">[ftpPassword]</InArgument>
+                                      </p:InArg.Arg>
+                                    </p:InArg>
+                                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="localFolder" ArgType="string" DisplayArg="Input Parameters.Local Target Folder" DisplayName="Local Target Folder" Name="localFolder" isRequired="False">
+                                      <p:InArg.Arg>
+                                        <InArgument x:TypeArguments="x:Object">[targetFolder]</InArgument>
+                                      </p:InArg.Arg>
+                                    </p:InArg>
+                                    <p:InArg Item="{x:Null}" ItemProp="{x:Null}" x:Key="ftpTarget" ArgType="string" DisplayArg="Input Parameters.FTP Target File" DisplayName="FTP Target File" Name="ftpTarget" isRequired="False">
+                                      <p:InArg.Arg>
+                                        <InArgument x:TypeArguments="x:Object">[ftpFile]</InArgument>
+                                      </p:InArg.Arg>
+                                    </p:InArg>
+                                  </p:RunPowerShellScript.InArgs>
+                                  <p:RunPowerShellScript.OutArgs>
+                                    <scg:Dictionary x:TypeArguments="x:String, p:OutArg" />
+                                  </p:RunPowerShellScript.OutArgs>
+                                </p:RunPowerShellScript>
+                              </p:SequenceActivity.Activities>
+                              <p:SequenceActivity.Variables>
+                                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64_1" />
+                                <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result_1" />
+                                <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString_1" />
+                                <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64_1" />
+                              </p:SequenceActivity.Variables>
+                            </p:SequenceActivity>
+                          </p:IfObject.IfOption>
+                          <p:IfObject.Value>
+                            <InArgument x:TypeArguments="x:Object">
+                              <p:ObjectLiteral>
+                                <p:ObjectLiteral.Value>
+                                  <x:Double>200</x:Double>
+                                </p:ObjectLiteral.Value>
+                              </p:ObjectLiteral>
+                            </InArgument>
+                          </p:IfObject.Value>
+                        </p:IfObject>
+                      </p:SequenceActivity.Activities>
+                      <p:SequenceActivity.Variables>
+                        <Variable x:TypeArguments="x:Double" Name="FolderSize_FileCount" />
+                        <Variable x:TypeArguments="x:Double" Name="FolderSize_Result" />
+                        <Variable x:TypeArguments="x:String" Name="FolderSize_ResultString" />
+                        <Variable x:TypeArguments="x:Double" Name="FolderSize_SizeInfo" />
+                        <Variable x:TypeArguments="x:Double" Name="IfObject_Result" />
+                        <Variable x:TypeArguments="x:String" Name="IfObject_ResultString" />
+                      </p:SequenceActivity.Variables>
+                    </p:SequenceActivity>
+                  </p:IfElse.IfOption>
+                  <p:IfElse.Value>
+                    <InArgument x:TypeArguments="x:Object">
+                      <p:ObjectLiteral Value="True" />
+                    </InArgument>
+                  </p:IfElse.Value>
+                </p:IfElse>
+              </p:SequenceActivity.Activities>
+              <p:SequenceActivity.Variables>
+                <Variable x:TypeArguments="x:String" Name="FileExists_Conditional" />
+                <Variable x:TypeArguments="x:Double" Name="FileExists_Result" />
+                <Variable x:TypeArguments="x:String" Name="FileExists_ResultString" />
+                <Variable x:TypeArguments="x:String" Name="IfElse_ResultString_1" />
+                <Variable x:TypeArguments="x:Double" Name="IfElse_Result_1" />
+                <Variable x:TypeArguments="x:String" Name="FileExists_OutPut_64" />
+                <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="FileExists_Results_x64" />
+              </p:SequenceActivity.Variables>
+            </p:SequenceActivity>
+          </p:IfElse.IfOption>
+          <p:IfElse.Value>
+            <InArgument x:TypeArguments="x:Object">
+              <p:ObjectLiteral Value="True" />
+            </InArgument>
+          </p:IfElse.Value>
+        </p:IfElse>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="FolderExists_Conditional" />
+        <Variable x:TypeArguments="x:String" Name="FolderExists_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="FolderExists_Result" />
+        <Variable x:TypeArguments="x:String" Name="FormatString_FormattedString" />
+        <Variable x:TypeArguments="x:String" Name="FormatString_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="FormatString_Result" />
+        <Variable x:TypeArguments="x:String" Default="ftp://pandora.paxistech.com/" Name="ftpURL" />
+        <Variable x:TypeArguments="x:String" Default="NCentral" Name="ftpUsername" />
+        <Variable x:TypeArguments="p:Password" Name="ftpPassword">
+          <Variable.Default>
+            <Literal x:TypeArguments="p:Password">
+              <p:Password PasswordValue="TB980Dn+zkIHzYd7I67fsilyOgvUbIfQ+S/op1FrX+0=" />
+            </Literal>
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="x:String" Default="BEST_uninstallTool.exe" Name="ftpFile" />
+        <Variable x:TypeArguments="x:String" Default="C:\Temp\ftp" Name="targetFolder" />
+        <Variable x:TypeArguments="x:String" Name="IfElse_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="IfElse_Result" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
